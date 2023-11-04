@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		72456EAC2AED4D5A00898215 /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EAB2AED4D5A00898215 /* UIButton+Style.swift */; };
 		72456EAE2AED60C400898215 /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EAD2AED60C400898215 /* UIView+Style.swift */; };
+		72456EB12AF15F4700898215 /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EB02AF15F4700898215 /* View+Layer.swift */; };
+		72456EB42AF1602C00898215 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EB32AF1602C00898215 /* UIButton+Styles.swift */; };
+		72456EB72AF16EC100898215 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EB62AF16EC100898215 /* LineTextField.swift */; };
+		72456EB92AF57AC600898215 /* UILabel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EB82AF57AC600898215 /* UILabel+Style.swift */; };
 		728C087C2AE8270F00066F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C087B2AE8270F00066F58 /* AppDelegate.swift */; };
 		728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C087D2AE8270F00066F58 /* SceneDelegate.swift */; };
 		728C08852AE8271000066F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 728C08842AE8271000066F58 /* Assets.xcassets */; };
@@ -21,8 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		72456EAB2AED4D5A00898215 /* UIButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Style.swift"; sourceTree = "<group>"; };
 		72456EAD2AED60C400898215 /* UIView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Style.swift"; sourceTree = "<group>"; };
+		72456EB02AF15F4700898215 /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
+		72456EB32AF1602C00898215 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
+		72456EB62AF16EC100898215 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		72456EB82AF57AC600898215 /* UILabel+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Style.swift"; sourceTree = "<group>"; };
 		728C08782AE8270F00066F58 /* NoteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728C087B2AE8270F00066F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		728C087D2AE8270F00066F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72456EAF2AF15EC400898215 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				72456EB02AF15F4700898215 /* View+Layer.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		72456EB22AF1600300898215 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				72456EAD2AED60C400898215 /* UIView+Style.swift */,
+				72456EB32AF1602C00898215 /* UIButton+Styles.swift */,
+				72456EB82AF57AC600898215 /* UILabel+Style.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		72456EB52AF16E9900898215 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				72456EB62AF16EC100898215 /* LineTextField.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		728C086F2AE8270F00066F58 = {
 			isa = PBXGroup;
 			children = (
@@ -66,11 +98,14 @@
 		728C087A2AE8270F00066F58 /* NoteMe */ = {
 			isa = PBXGroup;
 			children = (
-				728C089B2AE83D7B00066F58 /* Modules */,
 				728C08902AE82DE400066F58 /* App */,
-				728C088F2AE82DBF00066F58 /* Resource */,
-				728C08862AE8271000066F58 /* LaunchScreen.storyboard */,
+				72456EB52AF16E9900898215 /* Custom */,
 				728C08892AE8271000066F58 /* Info.plist */,
+				728C08862AE8271000066F58 /* LaunchScreen.storyboard */,
+				728C089B2AE83D7B00066F58 /* Modules */,
+				728C088F2AE82DBF00066F58 /* Resource */,
+				72456EB22AF1600300898215 /* Styles */,
+				72456EAF2AF15EC400898215 /* Utils */,
 			);
 			path = NoteMe;
 			sourceTree = "<group>";
@@ -99,8 +134,6 @@
 				728C08922AE82E7900066F58 /* UIColor+Consts.swift */,
 				728C08942AE834E200066F58 /* UIFont+Consts.swift */,
 				728C08962AE8382C00066F58 /* UIImage+Consts.swift */,
-				72456EAB2AED4D5A00898215 /* UIButton+Style.swift */,
-				72456EAD2AED60C400898215 /* UIView+Style.swift */,
 			);
 			name = Consts;
 			sourceTree = "<group>";
@@ -209,10 +242,13 @@
 				728C08972AE8382C00066F58 /* UIImage+Consts.swift in Sources */,
 				728C08952AE834E200066F58 /* UIFont+Consts.swift in Sources */,
 				728C089F2AE83DE100066F58 /* LoginVC.swift in Sources */,
-				72456EAC2AED4D5A00898215 /* UIButton+Style.swift in Sources */,
 				728C087C2AE8270F00066F58 /* AppDelegate.swift in Sources */,
 				728C08932AE82E7900066F58 /* UIColor+Consts.swift in Sources */,
+				72456EB12AF15F4700898215 /* View+Layer.swift in Sources */,
 				728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */,
+				72456EB42AF1602C00898215 /* UIButton+Styles.swift in Sources */,
+				72456EB92AF57AC600898215 /* UILabel+Style.swift in Sources */,
+				72456EB72AF16EC100898215 /* LineTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
