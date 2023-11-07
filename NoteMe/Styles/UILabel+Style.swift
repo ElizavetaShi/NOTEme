@@ -19,5 +19,13 @@ extension UILabel {
         return label
     }
     
-    
+    static func infoLabel(_ text: String?) -> UILabel {
+        let label = UILabel()
+        label.text = text
+        label.font = .appFont.withSize(13.0)
+        label.textColor = .appText
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }
 }

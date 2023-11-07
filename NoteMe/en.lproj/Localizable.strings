@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  NoteMe
+
+  Created by Elizaveta Shidlovskaya on 5.11.23.
+  
+*/
+"welcome_label" = "Welcome back!";
+"email_text_field" = "E-mail";
+"login_button" = "Login";
+"new_account_button" = "New Account";

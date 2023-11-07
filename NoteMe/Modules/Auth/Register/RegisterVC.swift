@@ -1,14 +1,14 @@
 //
-//  LoginVC.swift
+//  RegisterVC.swift
 //  NoteMe
 //
-//  Created by Elizaveta Shidlovskaya on 24.10.23.
+//  Created by Elizaveta Shidlovskaya on 4.11.23.
 //
 
 import UIKit
 import SnapKit
 
-final class LoginVC: UIViewController {
+final class RegisterVC: UIViewController {
     
     private lazy var contentView: UIView = {
         let view = UIView()
@@ -19,33 +19,17 @@ final class LoginVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var welcomeLabel: UILabel = .headLabel("Welcome back!") {
-        didSet {
-            welcomeLabel.text = "welcome_label".localizedCapitalized
-        }
-    }
+    private lazy var welcomeLabel: UILabel = .headLabel("Nice to meet you!")
     
-    private lazy var loginButton: UIButton = .yellowRoundedButton("Login") {
-        didSet {
-            loginButton.setTitle("login_button".localizedCapitalized, for: .normal)
-            loginButton.setTitle("login_button".localizedCapitalized, for: .highlighted)
-        }
-    }
+    private lazy var registerButton: UIButton = .yellowRoundedButton("Register")
     
-    
-    private lazy var newAccountButton: UIButton = .underlineYellowButton("New Account") {
-        didSet {
-            newAccountButton.setTitle("new_account_button".localizedCapitalized, for: .normal)
-        }
-    }
-    
-    private lazy var forgotPasswordButton: UIButton = .underlineGreyButton("Forgot Password")
+    private lazy var existingAccountButton: UIButton = .underlineYellowButton("I have an Account")
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "email_text_field".localizedCapitalized
+        textField.title = "E-mail"
         textField.placeholder = "Enter E-mail"
         return textField
     }()
@@ -54,6 +38,13 @@ final class LoginVC: UIViewController {
         let textField = LineTextField()
         textField.title = "Password"
         textField.placeholder = "Enter Password"
+        return textField
+    }()
+    
+    private lazy var repeatPasswordTextField: LineTextField = {
+        let textField = LineTextField()
+        textField.title = "Repeat Password"
+        textField.placeholder = "Enter Login"
         return textField
     }()
     
@@ -71,12 +62,12 @@ final class LoginVC: UIViewController {
         view.addSubview(contentView)
         contentView.addSubview(logoImageView)
         contentView.addSubview(welcomeLabel)
-        view.addSubview(loginButton)
-        view.addSubview(newAccountButton)
+        view.addSubview(registerButton)
+        view.addSubview(existingAccountButton)
         contentView.addSubview(containerView)
-        containerView.addSubview(forgotPasswordButton)
         containerView.addSubview(emailTextField)
         containerView.addSubview(passwordTextField)
+        containerView.addSubview(repeatPasswordTextField)
     }
     
     private func setupConstraints() {
@@ -84,7 +75,7 @@ final class LoginVC: UIViewController {
         contentView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.bottom.equalTo(loginButton.snp.centerY)
+            make.bottom.equalTo(registerButton.snp.centerY)
         }
         
         logoImageView.snp.makeConstraints { make in
@@ -98,16 +89,16 @@ final class LoginVC: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        newAccountButton.snp.makeConstraints { make in
+        existingAccountButton.snp.makeConstraints { make in
             make.height.equalTo(20.0)
             make.horizontalEdges.equalToSuperview().inset(20.0)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
-        loginButton.snp.makeConstraints { make in
+        registerButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(20.0)
             make.height.equalTo(45.0)
-            make.bottom.equalTo(newAccountButton.snp.top).inset(-8)
+            make.bottom.equalTo(existingAccountButton.snp.top).inset(-8)
         }
         
         containerView.snp.makeConstraints { make in
@@ -124,10 +115,10 @@ final class LoginVC: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(16.0)
         }
         
-        forgotPasswordButton.snp.makeConstraints { make in
+        repeatPasswordTextField.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).inset(-16.0)
-            make.bottom.left.equalToSuperview().inset(16.0)
-            make.height.equalTo(17.0)
+            make.bottom.horizontalEdges.equalToSuperview().inset(16.0)
+            
         }
     }
 }
