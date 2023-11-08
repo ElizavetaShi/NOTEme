@@ -19,41 +19,29 @@ final class LoginVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var welcomeLabel: UILabel = .headLabel("Welcome back!") {
-        didSet {
-            welcomeLabel.text = "welcome_label".localizedCapitalized
-        }
-    }
+    private lazy var welcomeLabel: UILabel = .headLabel("welcome_label".localized)
+        
     
-    private lazy var loginButton: UIButton = .yellowRoundedButton("Login") {
-        didSet {
-            loginButton.setTitle("login_button".localizedCapitalized, for: .normal)
-            loginButton.setTitle("login_button".localizedCapitalized, for: .highlighted)
-        }
-    }
+    private lazy var loginButton: UIButton = .yellowRoundedButton("login_button".localized)
     
     
-    private lazy var newAccountButton: UIButton = .underlineYellowButton("New Account") {
-        didSet {
-            newAccountButton.setTitle("new_account_button".localizedCapitalized, for: .normal)
-        }
-    }
+    private lazy var newAccountButton: UIButton = .underlineYellowButton("new_account_button".localized)
     
-    private lazy var forgotPasswordButton: UIButton = .underlineGreyButton("Forgot Password")
+    private lazy var forgotPasswordButton: UIButton = .underlineGreyButton("forgot_password_button".localized)
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "email_text_field".localizedCapitalized
-        textField.placeholder = "Enter E-mail"
+        textField.title = "email_textfield".localized
+        textField.placeholder = "email_placeholder_textfield".localized
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "Password"
-        textField.placeholder = "Enter Password"
+        textField.title = "password_textfield".localized
+        textField.placeholder = "enter_password_placeholder".localized
         return textField
     }()
     

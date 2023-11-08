@@ -6,6 +6,18 @@
   
 */
 "welcome_label" = "Welcome back!";
-"email_text_field" = "E-mail";
+"email_textfield" = "E-mail";
+"email_placeholder_textfield" = "Enter E-mail";
+"password_textfield" = "Password";
+"enter_password_placeholder" = "Enter Password";
+"forgot_password_button" = "Forgot Password";
 "login_button" = "Login";
 "new_account_button" = "New Account";
+"nice_to_meet_you_label" = "Nice to meet you!";
+"repeat_password_textfield" = "Repeat Password";
+"register_button" = "Register";
+"existing_account_button" = "I have an Account";
+"reset_password_label" = "Reset Password";
+"info_label_text" = "Enter your email address and we will share a link to create a new password";
+"reset_button" = "Reset";
+"cancel_button" = "Cancel";

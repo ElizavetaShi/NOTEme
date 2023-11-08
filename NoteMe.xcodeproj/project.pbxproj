@@ -24,6 +24,7 @@
 		728C08972AE8382C00066F58 /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C08962AE8382C00066F58 /* UIImage+Consts.swift */; };
 		728C089A2AE83AF300066F58 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 728C08992AE83AF300066F58 /* SnapKit */; };
 		728C089F2AE83DE100066F58 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C089E2AE83DE100066F58 /* LoginVC.swift */; };
+		729C0ECC2AFAB88900E3D89D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729C0ECB2AFAB88900E3D89D /* String+Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		728C08942AE834E200066F58 /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		728C08962AE8382C00066F58 /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
 		728C089E2AE83DE100066F58 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		729C0ECB2AFAB88900E3D89D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				72456EB02AF15F4700898215 /* View+Layer.swift */,
+				729C0ECB2AFAB88900E3D89D /* String+Localization.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				728C08952AE834E200066F58 /* UIFont+Consts.swift in Sources */,
 				728C089F2AE83DE100066F58 /* LoginVC.swift in Sources */,
 				728C087C2AE8270F00066F58 /* AppDelegate.swift in Sources */,
+				729C0ECC2AFAB88900E3D89D /* String+Localization.swift in Sources */,
 				72456EBF2AF6964D00898215 /* ResetVC.swift in Sources */,
 				728C08932AE82E7900066F58 /* UIColor+Consts.swift in Sources */,
 				72456EB12AF15F4700898215 /* View+Layer.swift in Sources */,

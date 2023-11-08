@@ -6,5 +6,18 @@
   
 */
 "welcome_label" = "Добро пожаловать!";
-"email_text_field" = "Е-мейл";
+"email_textfield" = "Е-мейл";
+"email_placeholder_textfield" = "Введите Е-мейл";
+"password_textfield" = "Пароль";
+"enter_password_placeholder" = "Введите пароль";
+"forgot_password_button" = "Забыл пароль";
 "login_button" = "Войти";
+"new_account_button" = "Новый Аккаунт";
+"nice_to_meet_you_label" = "Приятно познакомиться!";
+"repeat_password_textfield" = "Повторите пароль";
+"register_button" = "Зарегистрироваться";
+"existing_account_button" = "У Меня Есть Аккаунт";
+"reset_password_label" = "Сбросить Пароль";
+"info_label_text" = "Введите ваш емейл адрес и мы вышлем ссылку для создание нового пароля.";
+"reset_button" = "Сбросить";
+"cancel_button" = "Отменить";

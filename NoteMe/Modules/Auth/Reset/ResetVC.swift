@@ -19,19 +19,19 @@ final class ResetVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var welcomeLabel: UILabel = .headLabel("Reset Password")
+    private lazy var headLabel: UILabel = .headLabel("reset_password_label".localized)
     
-    private lazy var resetButton: UIButton = .yellowRoundedButton("Reset")
+    private lazy var resetButton: UIButton = .yellowRoundedButton("reset_button".localized)
     
     private lazy var cancelButton: UIButton = .cancelButton()
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
-    private lazy var infoLabel: UILabel = .infoLabel("Enter your email address and we will share a link to create a new password")
+    private lazy var infoLabel: UILabel = .infoLabel("info_label_text".localized)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.placeholder = "Enter E-mail"
+        textField.placeholder = "email_placeholder_textfield".localized
         return textField
     }()
     
@@ -48,7 +48,7 @@ final class ResetVC: UIViewController {
         
         view.addSubview(contentView)
         contentView.addSubview(logoImageView)
-        contentView.addSubview(welcomeLabel)
+        contentView.addSubview(headLabel)
         contentView.addSubview(containerView)
         view.addSubview(resetButton)
         view.addSubview(cancelButton)
@@ -70,14 +70,14 @@ final class ResetVC: UIViewController {
             make.size.equalTo(96.0)
         }
         
-        welcomeLabel.snp.makeConstraints { make in
+        headLabel.snp.makeConstraints { make in
             make.top.equalTo(logoImageView.snp.bottom).offset(122.0)
             make.centerX.equalToSuperview()
         }
         
         containerView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.top.equalTo(welcomeLabel.snp.bottom).inset(-8.0)
+            make.top.equalTo(headLabel.snp.bottom).inset(-8.0)
         }
         
         resetButton.snp.makeConstraints { make in
