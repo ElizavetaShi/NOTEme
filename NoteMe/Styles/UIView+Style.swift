@@ -20,6 +20,12 @@ extension UIView {
         return view
     }
     
+    static func contentView(_ color: UIColor) -> UIView {
+        let view = UIView()
+        view.backgroundColor = color
+        return view
+    }
+    
     static func separatorView(_ color: UIColor) -> UIView {
         let view = UIView()
         view.backgroundColor = color

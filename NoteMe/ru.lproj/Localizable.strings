@@ -5,19 +5,19 @@
   Created by Elizaveta Shidlovskaya on 5.11.23.
   
 */
-"welcome_label" = "Добро пожаловать!";
-"email_textfield" = "Е-мейл";
-"email_placeholder_textfield" = "Введите Е-мейл";
-"password_textfield" = "Пароль";
-"enter_password_placeholder" = "Введите пароль";
-"forgot_password_button" = "Забыл пароль";
-"login_button" = "Войти";
-"new_account_button" = "Новый Аккаунт";
-"nice_to_meet_you_label" = "Приятно познакомиться!";
-"repeat_password_textfield" = "Повторите пароль";
-"register_button" = "Зарегистрироваться";
-"existing_account_button" = "У Меня Есть Аккаунт";
-"reset_password_label" = "Сбросить Пароль";
-"info_label_text" = "Введите ваш емейл адрес и мы вышлем ссылку для создание нового пароля.";
-"reset_button" = "Сбросить";
-"cancel_button" = "Отменить";
+"auth_welcome_label" = "Добро пожаловать!";
+"auth_email_textfield" = "Е-мейл";
+"auth_email_placeholder_textfield" = "Введите Е-мейл";
+"auth_password_textfield" = "Пароль";
+"auth_enter_password_placeholder" = "Введите пароль";
+"auth_forgot_password_button" = "Забыл пароль";
+"auth_login_button" = "Войти";
+"auth_new_account_button" = "Новый Аккаунт";
+"auth_nice_to_meet_you_label" = "Приятно познакомиться!";
+"auth_repeat_password_textfield" = "Повторите пароль";
+"auth_register_button" = "Зарегистрироваться";
+"auth_existing_account_button" = "У Меня Есть Аккаунт";
+"auth_reset_password_label" = "Сбросить Пароль";
+"auth_info_label_text" = "Введите ваш емейл адрес и мы вышлем ссылку для создание нового пароля.";
+"auth_reset_button" = "Сбросить";
+"auth_cancel_button" = "Отменить";

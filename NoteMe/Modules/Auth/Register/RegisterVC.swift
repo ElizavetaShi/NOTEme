@@ -10,41 +10,41 @@ import SnapKit
 
 final class RegisterVC: UIViewController {
     
-    private lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appGrey
-        return view
-    }()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    private lazy var contentView: UIView = .contentView(.appGrey)
     
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var welcomeLabel: UILabel = .headLabel("nice_to_meet_you_label".localized)
+    private lazy var welcomeLabel: UILabel = .headLabel("auth_nice_to_meet_you_label".localized)
     
-    private lazy var registerButton: UIButton = .yellowRoundedButton("register_button".localized)
+    private lazy var registerButton: UIButton = .yellowRoundedButton("auth_register_button".localized)
     
-    private lazy var existingAccountButton: UIButton = .underlineYellowButton("existing_account_button".localized)
+    private lazy var existingAccountButton: UIButton = .underlineYellowButton("auth_existing_account_button".localized)
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "email_textfield".localized
-        textField.placeholder = "email_placeholder_textfield".localized
+        textField.title = "auth_email_textfield".localized
+        textField.placeholder = "auth_email_placeholder_textfield".localized
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "password_textfield".localized
-        textField.placeholder = "enter_password_placeholder".localized
+        textField.title = "auth_password_textfield".localized
+        textField.placeholder = "auth_enter_password_placeholder".localized
         return textField
     }()
     
     private lazy var repeatPasswordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "repeat_password_textfield".localized
-        textField.placeholder = "enter_password_placeholder".localized
+        textField.title = "auth_repeat_password_textfield".localized
+        textField.placeholder = "auth_enter_password_placeholder".localized
         return textField
     }()
     
@@ -85,7 +85,7 @@ final class RegisterVC: UIViewController {
         }
         
         welcomeLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset(72.0)
+            make.bottom.equalTo(containerView.snp.top).inset(-8.0)
             make.centerX.equalToSuperview()
         }
         
@@ -103,7 +103,7 @@ final class RegisterVC: UIViewController {
         
         containerView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.top.equalTo(welcomeLabel.snp.bottom).inset(-8.0)
+            make.centerY.equalToSuperview()
         }
         
         emailTextField.snp.makeConstraints { make in

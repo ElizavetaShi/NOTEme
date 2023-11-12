@@ -10,28 +10,28 @@ import SnapKit
 
 final class ResetVC: UIViewController {
     
-    private lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appGrey
-        return view
-    }()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    private lazy var contentView: UIView = .contentView(.appGrey)
     
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var headLabel: UILabel = .headLabel("reset_password_label".localized)
+    private lazy var headLabel: UILabel = .headLabel("auth_reset_password_label".localized)
     
-    private lazy var resetButton: UIButton = .yellowRoundedButton("reset_button".localized)
+    private lazy var resetButton: UIButton = .yellowRoundedButton("auth_reset_button".localized)
     
     private lazy var cancelButton: UIButton = .cancelButton()
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
-    private lazy var infoLabel: UILabel = .infoLabel("info_label_text".localized)
+    private lazy var infoLabel: UILabel = .infoLabel("auth_info_label_text".localized)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.placeholder = "email_placeholder_textfield".localized
+        textField.placeholder = "auth_email_placeholder_textfield".localized
         return textField
     }()
     
@@ -71,13 +71,13 @@ final class ResetVC: UIViewController {
         }
         
         headLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset(122.0)
+            make.bottom.equalTo(containerView.snp.top).inset(-8.0)
             make.centerX.equalToSuperview()
         }
         
         containerView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.top.equalTo(headLabel.snp.bottom).inset(-8.0)
+            make.centerY.equalToSuperview()
         }
         
         resetButton.snp.makeConstraints { make in

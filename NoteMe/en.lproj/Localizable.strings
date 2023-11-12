@@ -5,19 +5,20 @@
   Created by Elizaveta Shidlovskaya on 5.11.23.
   
 */
-"welcome_label" = "Welcome back!";
-"email_textfield" = "E-mail";
-"email_placeholder_textfield" = "Enter E-mail";
-"password_textfield" = "Password";
-"enter_password_placeholder" = "Enter Password";
-"forgot_password_button" = "Forgot Password";
-"login_button" = "Login";
-"new_account_button" = "New Account";
-"nice_to_meet_you_label" = "Nice to meet you!";
-"repeat_password_textfield" = "Repeat Password";
-"register_button" = "Register";
-"existing_account_button" = "I have an Account";
-"reset_password_label" = "Reset Password";
-"info_label_text" = "Enter your email address and we will share a link to create a new password";
-"reset_button" = "Reset";
-"cancel_button" = "Cancel";
+//Auth
+"auth_welcome_label" = "Welcome back!";
+"auth_email_textfield" = "E-mail";
+"auth_email_placeholder_textfield" = "Enter E-mail";
+"auth_password_textfield" = "Password";
+"auth_enter_password_placeholder" = "Enter Password";
+"auth_forgot_password_button" = "Forgot Password";
+"auth_login_button" = "Login";
+"auth_new_account_button" = "New Account";
+"auth_nice_to_meet_you_label" = "Nice to meet you!";
+"auth_repeat_password_textfield" = "Repeat Password";
+"auth_register_button" = "Register";
+"auth_existing_account_button" = "I have an Account";
+"auth_reset_password_label" = "Reset Password";
+"auth_info_label_text" = "Enter your email address and we will share a link to create a new password";
+"auth_reset_button" = "Reset";
+"auth_cancel_button" = "Cancel";

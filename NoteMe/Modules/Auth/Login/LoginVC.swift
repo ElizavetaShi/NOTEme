@@ -8,48 +8,85 @@
 import UIKit
 import SnapKit
 
+protocol LoginViewModelProtocol {
+    
+    var catchEmailError: ((String?) -> Void)? { get set }
+    var catchPasswordError: ((String?) -> Void)? { get set }
+    
+    func loginDidTap(email: String?, password: String?)
+    func newAccountDidTap()
+    func forgotPasswordDidTap(email: String?)
+}
+
 final class LoginVC: UIViewController {
     
-    private lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appGrey
-        return view
-    }()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
+    private lazy var contentView: UIView = .contentView(.appGrey)
+   
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var welcomeLabel: UILabel = .headLabel("welcome_label".localized)
+    private lazy var welcomeLabel: UILabel = .headLabel("auth_welcome_label".localized)
         
     
-    private lazy var loginButton: UIButton = .yellowRoundedButton("login_button".localized)
+    private lazy var loginButton: UIButton =
+        .yellowRoundedButton("auth_login_button".localized)
+        .withAction(self, #selector(loginDidTap))
     
     
-    private lazy var newAccountButton: UIButton = .underlineYellowButton("new_account_button".localized)
+    private lazy var newAccountButton: UIButton = .underlineYellowButton("auth_new_account_button".localized)
+        .withAction(self, #selector(newAccountDidTap))
     
-    private lazy var forgotPasswordButton: UIButton = .underlineGreyButton("forgot_password_button".localized)
+    private lazy var forgotPasswordButton: UIButton = .underlineGreyButton("auth_forgot_password_button".localized)
+        .withAction(self, #selector(forgotPasswordDidTap))
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "email_textfield".localized
-        textField.placeholder = "email_placeholder_textfield".localized
+        textField.title = "auth_email_textfield".localized
+        textField.placeholder = "auth_email_placeholder_textfield".localized
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "password_textfield".localized
-        textField.placeholder = "enter_password_placeholder".localized
+        textField.title = "auth_password_textfield".localized
+        textField.placeholder = "auth_enter_password_placeholder".localized
         return textField
     }()
+    
+    private var viewModel: LoginViewModelProtocol
+    
+    init(viewModel: LoginViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        
+        bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setupConstraints()
+    }
+    
+    private func bind() {
+        viewModel.catchEmailError = { errorText in
+            self.emailTextField.errorText = errorText
+        }
+        
+        viewModel.catchPasswordError = {
+            self.passwordTextField.errorText = $0
+        }
     }
     
     private func setupUI() {
@@ -82,7 +119,7 @@ final class LoginVC: UIViewController {
         }
         
         welcomeLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset(72.0)
+            make.bottom.equalTo(containerView.snp.top).inset(-8.0)
             make.centerX.equalToSuperview()
         }
         
@@ -100,7 +137,7 @@ final class LoginVC: UIViewController {
         
         containerView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16.0)
-            make.top.equalTo(welcomeLabel.snp.bottom).inset(-8.0)
+            make.centerY.equalToSuperview()
         }
         
         emailTextField.snp.makeConstraints { make in
@@ -117,5 +154,20 @@ final class LoginVC: UIViewController {
             make.bottom.left.equalToSuperview().inset(16.0)
             make.height.equalTo(17.0)
         }
+    }
+    
+    @objc private func loginDidTap() {
+        viewModel.loginDidTap(email: emailTextField.text,
+                              password: passwordTextField.text)
+    }
+    
+    @objc private func newAccountDidTap() {
+        viewModel.newAccountDidTap()
+        
+    }
+    
+    @objc private func forgotPasswordDidTap() {
+        viewModel.forgotPasswordDidTap(email: emailTextField.text)
+        
     }
 }
