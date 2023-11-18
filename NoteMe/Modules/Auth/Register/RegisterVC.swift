@@ -85,13 +85,15 @@ final class RegisterVC: UIViewController {
         
         view.backgroundColor = .appBlack
         view.addSubview(contentView)
-        
-        contentView.addSubview(logoContainer)
-        logoContainer.addSubview(logoImageView)
-        contentView.addSubview(welcomeLabel)
         view.addSubview(registerButton)
         view.addSubview(existingAccountButton)
+        
         contentView.addSubview(containerView)
+        contentView.addSubview(logoContainer)
+        contentView.addSubview(welcomeLabel)
+        
+        logoContainer.addSubview(logoImageView)
+
         containerView.addSubview(emailTextField)
         containerView.addSubview(passwordTextField)
         containerView.addSubview(repeatPasswordTextField)

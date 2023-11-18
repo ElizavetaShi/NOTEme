@@ -25,6 +25,8 @@ final class LoginVC: UIViewController {
     }
     
     private lazy var contentView: UIView = .contentView(.appGrey)
+    
+    private lazy var logoContainer: UIView = UIView()
    
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
@@ -94,11 +96,15 @@ final class LoginVC: UIViewController {
         view.backgroundColor = .appBlack
         
         view.addSubview(contentView)
-        contentView.addSubview(logoImageView)
-        contentView.addSubview(welcomeLabel)
         view.addSubview(loginButton)
         view.addSubview(newAccountButton)
+        
         contentView.addSubview(containerView)
+        contentView.addSubview(logoContainer)
+        contentView.addSubview(welcomeLabel)
+        
+        logoContainer.addSubview(logoImageView)
+        
         containerView.addSubview(forgotPasswordButton)
         containerView.addSubview(emailTextField)
         containerView.addSubview(passwordTextField)
@@ -112,9 +118,13 @@ final class LoginVC: UIViewController {
             make.bottom.equalTo(loginButton.snp.centerY)
         }
         
+        logoContainer.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(welcomeLabel.snp.top)
+        }
+        
         logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(72.0)
-            make.centerX.equalToSuperview()
+            make.center.equalToSuperview()
             make.size.equalTo(96.0)
         }
         

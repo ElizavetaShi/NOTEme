@@ -16,6 +16,8 @@ final class ResetVC: UIViewController {
     
     private lazy var contentView: UIView = .contentView(.appGrey)
     
+    private lazy var logoContainer: UIView = UIView()
+    
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
@@ -47,13 +49,19 @@ final class ResetVC: UIViewController {
         view.backgroundColor = .appBlack
         
         view.addSubview(contentView)
-        contentView.addSubview(logoImageView)
-        contentView.addSubview(headLabel)
-        contentView.addSubview(containerView)
         view.addSubview(resetButton)
         view.addSubview(cancelButton)
+        
+        contentView.addSubview(logoContainer)
+        contentView.addSubview(headLabel)
+        contentView.addSubview(containerView)
+        
+        logoContainer.addSubview(logoImageView)
+   
         containerView.addSubview(infoLabel)
         containerView.addSubview(emailTextField)
+        
+
     }
     
     private func setupConstraints() {
@@ -64,9 +72,13 @@ final class ResetVC: UIViewController {
             make.bottom.equalTo(resetButton.snp.centerY)
         }
         
+        logoContainer.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(headLabel.snp.top)
+        }
+        
         logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(72.0)
-            make.centerX.equalToSuperview()
+            make.center.equalToSuperview()
             make.size.equalTo(96.0)
         }
         
