@@ -8,13 +8,13 @@
 import UIKit
 import SnapKit
 
-protocol LoginViewModelProtocol {
+@objc protocol LoginViewModelProtocol: AnyObject {
     
     var catchEmailError: ((String?) -> Void)? { get set }
     var catchPasswordError: ((String?) -> Void)? { get set }
     
     func loginDidTap(email: String?, password: String?)
-    func newAccountDidTap()
+    @objc func newAccountDidTap()
     func forgotPasswordDidTap(email: String?)
 }
 
@@ -38,7 +38,7 @@ final class LoginVC: UIViewController {
     
     
     private lazy var newAccountButton: UIButton = .underlineYellowButton("auth_new_account_button".localized)
-        .withAction(self, #selector(newAccountDidTap))
+        .withAction(viewModel, #selector(LoginViewModelProtocol.newAccountDidTap))
     
     private lazy var forgotPasswordButton: UIButton = .underlineGreyButton("auth_forgot_password_button".localized)
         .withAction(self, #selector(forgotPasswordDidTap))
@@ -162,7 +162,7 @@ final class LoginVC: UIViewController {
     }
     
     @objc private func newAccountDidTap() {
-        viewModel.newAccountDidTap()
+        print("\(#function)")
         
     }
     

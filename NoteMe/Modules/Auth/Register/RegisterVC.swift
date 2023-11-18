@@ -8,6 +8,12 @@
 import UIKit
 import SnapKit
 
+@objc protocol RegisterPresenterProtocol: AnyObject {
+    
+    func registerDidTap(email: String?, password: String?, repeat: String?)
+    @objc func haveAccountDidTap()
+}
+
 final class RegisterVC: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -16,14 +22,18 @@ final class RegisterVC: UIViewController {
     
     private lazy var contentView: UIView = .contentView(.appGrey)
     
+    private lazy var logoContainer: UIView = UIView()
+    
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
     private lazy var welcomeLabel: UILabel = .headLabel("auth_nice_to_meet_you_label".localized)
     
     private lazy var registerButton: UIButton = .yellowRoundedButton("auth_register_button".localized)
+        .withAction(self, #selector(registerDidTap))
     
     private lazy var existingAccountButton: UIButton = .underlineYellowButton("auth_existing_account_button".localized)
+        .withAction(presenter, #selector(RegisterPresenterProtocol.haveAccountDidTap))
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
@@ -48,6 +58,17 @@ final class RegisterVC: UIViewController {
         return textField
     }()
     
+    private var presenter: RegisterPresenterProtocol
+    
+    init(presenter: RegisterPresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,12 +76,18 @@ final class RegisterVC: UIViewController {
         setupConstraints()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     private func setupUI() {
         
         view.backgroundColor = .appBlack
-        
         view.addSubview(contentView)
-        contentView.addSubview(logoImageView)
+        
+        contentView.addSubview(logoContainer)
+        logoContainer.addSubview(logoImageView)
         contentView.addSubview(welcomeLabel)
         view.addSubview(registerButton)
         view.addSubview(existingAccountButton)
@@ -78,9 +105,13 @@ final class RegisterVC: UIViewController {
             make.bottom.equalTo(registerButton.snp.centerY)
         }
         
+        logoContainer.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(welcomeLabel.snp.top)
+        }
+        
         logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(72.0)
-            make.centerX.equalToSuperview()
+            make.center.equalToSuperview()
             make.size.equalTo(96.0)
         }
         
@@ -119,6 +150,45 @@ final class RegisterVC: UIViewController {
             make.top.equalTo(passwordTextField.snp.bottom).inset(-16.0)
             make.bottom.horizontalEdges.equalToSuperview().inset(16.0)
             
+        }
+    }
+    
+    @objc private func registerDidTap() {
+        presenter.registerDidTap(email: emailTextField.text,
+                                 password: passwordTextField.text,
+                                 repeat: repeatPasswordTextField.text)
+    }
+}
+
+extension RegisterVC: RegisterPresenterDelegate {
+//    func keyboardFrameChanged(_ frame: CGRect) {
+//        print(frame)
+//    }
+    
+    func setEmailError(error: String?) {
+        emailTextField.errorText = error
+    }
+    
+    func setPasswordError(error: String?) {
+        passwordTextField.errorText = error
+    }
+    
+    func setRepeatPasswordError(error: String?) {
+        repeatPasswordTextField.errorText = error
+    }
+    
+    func keyboardFrameChanged(_ frame: CGRect) {
+        let maxY = containerView.frame.maxY + contentView.frame.minY + 16.0
+        let keyboardY = frame.minY
+        
+        if maxY > keyboardY {
+            let dif = maxY - keyboardY
+            UIView.animate(withDuration: 0.25) {
+                self.containerView.snp.updateConstraints { make in
+                    make.centerY.equalToSuperview().offset(-dif)
+                }
+                self.view.layoutIfNeeded()
+            }
         }
     }
 }
