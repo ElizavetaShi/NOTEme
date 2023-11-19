@@ -10,7 +10,7 @@ import SnapKit
 
 @objc protocol RegisterPresenterProtocol: AnyObject {
     
-    func registerDidTap(email: String?, password: String?, repeat: String?)
+    func registerDidTap(email: String?, password: String?, repeatPassword: String?)
     @objc func haveAccountDidTap()
 }
 
@@ -93,7 +93,7 @@ final class RegisterVC: UIViewController {
         contentView.addSubview(welcomeLabel)
         
         logoContainer.addSubview(logoImageView)
-
+        
         containerView.addSubview(emailTextField)
         containerView.addSubview(passwordTextField)
         containerView.addSubview(repeatPasswordTextField)
@@ -151,21 +151,17 @@ final class RegisterVC: UIViewController {
         repeatPasswordTextField.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).inset(-16.0)
             make.bottom.horizontalEdges.equalToSuperview().inset(16.0)
-            
         }
     }
     
     @objc private func registerDidTap() {
         presenter.registerDidTap(email: emailTextField.text,
                                  password: passwordTextField.text,
-                                 repeat: repeatPasswordTextField.text)
+                                 repeatPassword: repeatPasswordTextField.text)
     }
 }
 
 extension RegisterVC: RegisterPresenterDelegate {
-//    func keyboardFrameChanged(_ frame: CGRect) {
-//        print(frame)
-//    }
     
     func setEmailError(error: String?) {
         emailTextField.errorText = error

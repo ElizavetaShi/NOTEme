@@ -8,3 +8,4 @@
 import UIKit
 
 extension InputValidator: LoginInputValidatorUseCase {}
+

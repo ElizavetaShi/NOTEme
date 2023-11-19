@@ -8,6 +8,14 @@
 import UIKit
 import SnapKit
 
+@objc protocol ResetViewModelProtocol {
+    
+    var catchEmailError: ((String?) -> Void)? { get set }
+    
+    func resetButtonDidTap(email: String?)
+    @objc func cancelButtonDidTap()
+}
+
 final class ResetVC: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -24,8 +32,11 @@ final class ResetVC: UIViewController {
     private lazy var headLabel: UILabel = .headLabel("auth_reset_password_label".localized)
     
     private lazy var resetButton: UIButton = .yellowRoundedButton("auth_reset_button".localized)
+        .withAction(self, #selector(resetButtonDidTap))
     
-    private lazy var cancelButton: UIButton = .cancelButton()
+    private lazy var cancelButton: UIButton =
+        .cancelButton()
+        .withAction(viewModel, #selector(cancelButtonDidTap))
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
@@ -37,11 +48,30 @@ final class ResetVC: UIViewController {
         return textField
     }()
     
+    private var viewModel: ResetViewModelProtocol
+    
+    init(viewModel: ResetViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        
+        bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setupConstraints()
+    }
+    
+    private func bind() {
+        viewModel.catchEmailError = { errorText in
+            self.emailTextField.errorText = errorText
+        }
     }
     
     private func setupUI() {
@@ -57,11 +87,9 @@ final class ResetVC: UIViewController {
         contentView.addSubview(containerView)
         
         logoContainer.addSubview(logoImageView)
-   
+        
         containerView.addSubview(infoLabel)
         containerView.addSubview(emailTextField)
-        
-
     }
     
     private func setupConstraints() {
@@ -114,5 +142,14 @@ final class ResetVC: UIViewController {
             make.bottom.equalToSuperview().inset(20.0)
         }
     }
-}
+    
+    @objc private func resetButtonDidTap() {
         
+        viewModel.resetButtonDidTap(email: emailTextField.text)
+    }
+    
+    @objc private func cancelButtonDidTap() {
+        print("\(#function)")
+    }
+}
+

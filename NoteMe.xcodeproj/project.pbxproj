@@ -33,6 +33,10 @@
 		72B737F52B03DB880039FFED /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B737F42B03DB880039FFED /* RegisterPresenter.swift */; };
 		72B737F72B03E1180039FFED /* RegisterAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B737F62B03E1180039FFED /* RegisterAssembler.swift */; };
 		72B737FA2B03E53A0039FFED /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B737F92B03E53A0039FFED /* KeyboardHelper.swift */; };
+		72B737FD2B0A2D280039FFED /* InputValidator+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B737FC2B0A2D280039FFED /* InputValidator+Register.swift */; };
+		72B737FF2B0A69090039FFED /* ResetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B737FE2B0A69090039FFED /* ResetVM.swift */; };
+		72B738012B0A70430039FFED /* ResetAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738002B0A70430039FFED /* ResetAssembler.swift */; };
+		72B738042B0A70A80039FFED /* InputValidator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738032B0A70A80039FFED /* InputValidator+Reset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,10 @@
 		72B737F42B03DB880039FFED /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		72B737F62B03E1180039FFED /* RegisterAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembler.swift; sourceTree = "<group>"; };
 		72B737F92B03E53A0039FFED /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
+		72B737FC2B0A2D280039FFED /* InputValidator+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Register.swift"; sourceTree = "<group>"; };
+		72B737FE2B0A69090039FFED /* ResetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVM.swift; sourceTree = "<group>"; };
+		72B738002B0A70430039FFED /* ResetAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetAssembler.swift; sourceTree = "<group>"; };
+		72B738032B0A70A80039FFED /* InputValidator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Reset.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 		72456EBA2AF690C400898215 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				72B737FB2B0A2CB80039FFED /* UseCases */,
 				72456EBB2AF690DB00898215 /* RegisterVC.swift */,
 				72B737F42B03DB880039FFED /* RegisterPresenter.swift */,
 				72B737F62B03E1180039FFED /* RegisterAssembler.swift */,
@@ -120,7 +129,10 @@
 		72456EBD2AF6963D00898215 /* Reset */ = {
 			isa = PBXGroup;
 			children = (
+				72B738022B0A70870039FFED /* UseCases */,
 				72456EBE2AF6964D00898215 /* ResetVC.swift */,
+				72B737FE2B0A69090039FFED /* ResetVM.swift */,
+				72B738002B0A70430039FFED /* ResetAssembler.swift */,
 			);
 			path = Reset;
 			sourceTree = "<group>";
@@ -248,6 +260,22 @@
 			path = KeyboardHelper;
 			sourceTree = "<group>";
 		};
+		72B737FB2B0A2CB80039FFED /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				72B737FC2B0A2D280039FFED /* InputValidator+Register.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		72B738022B0A70870039FFED /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				72B738032B0A70A80039FFED /* InputValidator+Reset.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -341,13 +369,17 @@
 				728C08932AE82E7900066F58 /* UIColor+Consts.swift in Sources */,
 				72456EB12AF15F4700898215 /* View+Layer.swift in Sources */,
 				728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */,
+				72B738012B0A70430039FFED /* ResetAssembler.swift in Sources */,
 				72B737EF2AFEA1B90039FFED /* InputValidator.swift in Sources */,
 				72B737FA2B03E53A0039FFED /* KeyboardHelper.swift in Sources */,
 				72B737F52B03DB880039FFED /* RegisterPresenter.swift in Sources */,
 				72456EB42AF1602C00898215 /* UIButton+Styles.swift in Sources */,
 				72456EBC2AF690DB00898215 /* RegisterVC.swift in Sources */,
 				72456EB92AF57AC600898215 /* UILabel+Style.swift in Sources */,
+				72B737FD2B0A2D280039FFED /* InputValidator+Register.swift in Sources */,
+				72B737FF2B0A69090039FFED /* ResetVM.swift in Sources */,
 				72456EB72AF16EC100898215 /* LineTextField.swift in Sources */,
+				72B738042B0A70A80039FFED /* InputValidator+Reset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

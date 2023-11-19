@@ -22,7 +22,6 @@ final class KeyboardHelper {
     
     deinit {
         removeObservers()
-        
     }
     
     private func addObservers() {
@@ -46,7 +45,6 @@ final class KeyboardHelper {
                            selector: #selector(keyboardDidHide),
                            name: UIResponder.keyboardDidHideNotification,
                            object: nil)
-        
     }
     
     private func removeObservers() {
@@ -76,24 +74,17 @@ final class KeyboardHelper {
             let frame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
         else { return .zero }
         return frame
-        
     }
-    @objc private func keyboardWillShow(_ notification: Notification) {
     
-        
+    @objc private func keyboardWillShow(_ notification: Notification) {
         willShow?(frame(from: notification))
-        
     }
     
     @objc private func keyboardDidShow(_ notification: Notification) {
-        
         didShow?(frame(from: notification))
-        
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
-    
-        
         willHide?(frame(from: notification))
     }
     

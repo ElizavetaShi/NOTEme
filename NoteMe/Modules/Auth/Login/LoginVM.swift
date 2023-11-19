@@ -11,7 +11,6 @@ protocol LoginInputValidatorUseCase {
     
     func validate(email: String?) -> Bool
     func validate(password: String?) -> Bool
-    
 }
 
 protocol LoginAuthServiceUseCase {
