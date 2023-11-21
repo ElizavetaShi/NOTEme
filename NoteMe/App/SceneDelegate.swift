@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: windowScene)
         
-        window?.rootViewController = ResetAssembler.make()
+        window?.rootViewController = RegisterAssembler.make()
         window?.makeKeyAndVisible()
     }
 

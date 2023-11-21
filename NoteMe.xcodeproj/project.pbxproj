@@ -37,6 +37,7 @@
 		72B737FF2B0A69090039FFED /* ResetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B737FE2B0A69090039FFED /* ResetVM.swift */; };
 		72B738012B0A70430039FFED /* ResetAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738002B0A70430039FFED /* ResetAssembler.swift */; };
 		72B738042B0A70A80039FFED /* InputValidator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738032B0A70A80039FFED /* InputValidator+Reset.swift */; };
+		72B738062B0BDAEC0039FFED /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738052B0BDAEC0039FFED /* KeyboardHelper+Register.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		72B737FE2B0A69090039FFED /* ResetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetVM.swift; sourceTree = "<group>"; };
 		72B738002B0A70430039FFED /* ResetAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetAssembler.swift; sourceTree = "<group>"; };
 		72B738032B0A70A80039FFED /* InputValidator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Reset.swift"; sourceTree = "<group>"; };
+		72B738052B0BDAEC0039FFED /* KeyboardHelper+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Register.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				72B737FC2B0A2D280039FFED /* InputValidator+Register.swift */,
+				72B738052B0BDAEC0039FFED /* KeyboardHelper+Register.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72456EAE2AED60C400898215 /* UIView+Style.swift in Sources */,
+				72B738062B0BDAEC0039FFED /* KeyboardHelper+Register.swift in Sources */,
 				728C08972AE8382C00066F58 /* UIImage+Consts.swift in Sources */,
 				72B737F32AFEA8140039FFED /* InputValidator+Login.swift in Sources */,
 				728C08952AE834E200066F58 /* UIFont+Consts.swift in Sources */,

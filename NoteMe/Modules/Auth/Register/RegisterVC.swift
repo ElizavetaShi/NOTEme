@@ -187,6 +187,15 @@ extension RegisterVC: RegisterPresenterDelegate {
                 }
                 self.view.layoutIfNeeded()
             }
+        } else {
+            UIView.animate(withDuration: 0.25) {
+                self.containerView.snp.updateConstraints { make in
+                    make.centerY.equalToSuperview()
+                }
+            }
         }
     }
 }
+
+
+

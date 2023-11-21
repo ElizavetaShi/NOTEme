@@ -29,16 +29,23 @@ protocol RegisterInputValidatorUseCase {
     func validate(password: String?) -> Bool
 }
 
+protocol RegisterKeyboardHelperUseCase {
+    func onWillShow(_ handler: @escaping KeyboardHelper.KeyboardFrameHandler) -> Self
+    
+    @discardableResult
+    func onWillHide(_ handler: @escaping KeyboardHelper.KeyboardFrameHandler) -> Self
+}
+
 final class RegisterPresenter: RegisterPresenterProtocol {
     
     weak var delegate: RegisterPresenterDelegate?
     
-    private let keyboardHelper: KeyboardHelper
+    private let keyboardHelper: RegisterKeyboardHelperUseCase
     private let authServise: RegisterAuthServiceUseCase
     private let inputValidator: RegisterInputValidatorUseCase
     
     
-    init(keyboardHelper: KeyboardHelper,
+    init(keyboardHelper: RegisterKeyboardHelperUseCase,
          authServise: RegisterAuthServiceUseCase,
          inputValidator: RegisterInputValidatorUseCase) {
         self.keyboardHelper = keyboardHelper

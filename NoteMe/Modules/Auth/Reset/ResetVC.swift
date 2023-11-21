@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-@objc protocol ResetViewModelProtocol {
+@objc protocol ResetViewModelProtocol: AnyObject {
     
     var catchEmailError: ((String?) -> Void)? { get set }
     
