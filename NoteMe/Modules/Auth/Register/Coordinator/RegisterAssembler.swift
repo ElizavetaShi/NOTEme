@@ -11,8 +11,9 @@ final class RegisterAssembler {
     
     private init() {}
     
-    static func make() -> UIViewController {
-        let presenter = RegisterPresenter(keyboardHelper: KeyboardHelper(),
+    static func make(coordinator: RegisterCoordinatorProtocol) -> UIViewController {
+        let presenter = RegisterPresenter(coordinator: coordinator,
+                                          keyboardHelper: KeyboardHelper(),
                                           authServise: TESTAuthService(),
                                           inputValidator: InputValidator())
         let vc = RegisterVC(presenter: presenter)

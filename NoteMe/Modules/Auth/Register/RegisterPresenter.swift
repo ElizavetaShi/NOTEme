@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol RegisterCoordinatorProtocol: AnyObject {
+    
+    func finish()
+    
+}
+
 protocol RegisterPresenterDelegate: AnyObject {
     
     func setEmailError(error: String?)
@@ -30,7 +36,10 @@ protocol RegisterInputValidatorUseCase {
 }
 
 protocol RegisterKeyboardHelperUseCase {
-    func onWillShow(_ handler: @escaping KeyboardHelper.KeyboardFrameHandler) -> Self
+    @discardableResult
+//    func onWillShow(_ handler: @escaping KeyboardHelper.KeyboardFrameHandler) -> Self
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+
     
     @discardableResult
     func onWillHide(_ handler: @escaping KeyboardHelper.KeyboardFrameHandler) -> Self
@@ -40,17 +49,21 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     
     weak var delegate: RegisterPresenterDelegate?
     
+    private weak var coordinator: RegisterCoordinatorProtocol?
+    
     private let keyboardHelper: RegisterKeyboardHelperUseCase
     private let authServise: RegisterAuthServiceUseCase
     private let inputValidator: RegisterInputValidatorUseCase
     
     
-    init(keyboardHelper: RegisterKeyboardHelperUseCase,
+    init(coordinator: RegisterCoordinatorProtocol,
+         keyboardHelper: RegisterKeyboardHelperUseCase,
          authServise: RegisterAuthServiceUseCase,
          inputValidator: RegisterInputValidatorUseCase) {
         self.keyboardHelper = keyboardHelper
         self.authServise = authServise
         self.inputValidator = inputValidator
+        self.coordinator = coordinator
         
         bind()
     }
@@ -74,10 +87,12 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         authServise.register(email: email, password: password, repeatPassword: repeatPassword) { isSuccess in
             print(isSuccess)
         }
+        
+        coordinator?.finish()
     }
     
     func haveAccountDidTap() {
-        
+        coordinator?.finish()
     }
     
     private func checkValidation(email: String?, password: String?, repeatPassword: String?) -> Bool {

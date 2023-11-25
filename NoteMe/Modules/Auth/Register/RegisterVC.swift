@@ -192,6 +192,7 @@ extension RegisterVC: RegisterPresenterDelegate {
                 self.containerView.snp.updateConstraints { make in
                     make.centerY.equalToSuperview()
                 }
+                self.view.layoutIfNeeded()
             }
         }
     }

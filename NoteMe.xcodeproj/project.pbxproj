@@ -38,6 +38,10 @@
 		72B738012B0A70430039FFED /* ResetAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738002B0A70430039FFED /* ResetAssembler.swift */; };
 		72B738042B0A70A80039FFED /* InputValidator+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738032B0A70A80039FFED /* InputValidator+Reset.swift */; };
 		72B738062B0BDAEC0039FFED /* KeyboardHelper+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738052B0BDAEC0039FFED /* KeyboardHelper+Register.swift */; };
+		72B7382B2B0D124D0039FFED /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7382A2B0D124D0039FFED /* AppCoordinator.swift */; };
+		72B7382E2B0D12AF0039FFED /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7382D2B0D12AF0039FFED /* Coordinator.swift */; };
+		72B738312B0D1B700039FFED /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738302B0D1B700039FFED /* LoginCoordinator.swift */; };
+		72B738342B0D24C50039FFED /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738332B0D24C50039FFED /* RegisterCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,10 @@
 		72B738002B0A70430039FFED /* ResetAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetAssembler.swift; sourceTree = "<group>"; };
 		72B738032B0A70A80039FFED /* InputValidator+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+Reset.swift"; sourceTree = "<group>"; };
 		72B738052B0BDAEC0039FFED /* KeyboardHelper+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Register.swift"; sourceTree = "<group>"; };
+		72B7382A2B0D124D0039FFED /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		72B7382D2B0D12AF0039FFED /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		72B738302B0D1B700039FFED /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		72B738332B0D24C50039FFED /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +128,10 @@
 		72456EBA2AF690C400898215 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				72B738322B0D24B10039FFED /* Coordinator */,
 				72B737FB2B0A2CB80039FFED /* UseCases */,
 				72456EBB2AF690DB00898215 /* RegisterVC.swift */,
 				72B737F42B03DB880039FFED /* RegisterPresenter.swift */,
-				72B737F62B03E1180039FFED /* RegisterAssembler.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -160,11 +168,11 @@
 			children = (
 				728C08902AE82DE400066F58 /* App */,
 				72456EB52AF16E9900898215 /* Custom */,
-				728C08892AE8271000066F58 /* Info.plist */,
 				728C08862AE8271000066F58 /* LaunchScreen.storyboard */,
 				728C089B2AE83D7B00066F58 /* Modules */,
 				728C088F2AE82DBF00066F58 /* Resource */,
 				72B737EC2AFEA14F0039FFED /* Services */,
+				728C08892AE8271000066F58 /* Info.plist */,
 				72456EB22AF1600300898215 /* Styles */,
 				72456EAF2AF15EC400898215 /* Utils */,
 			);
@@ -186,6 +194,7 @@
 			children = (
 				728C087D2AE8270F00066F58 /* SceneDelegate.swift */,
 				728C087B2AE8270F00066F58 /* AppDelegate.swift */,
+				72B7382A2B0D124D0039FFED /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -221,10 +230,10 @@
 		728C089D2AE83DC400066F58 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				72B7382F2B0D1B590039FFED /* Coordinator */,
 				72B737F12AFEA7C90039FFED /* UseCases */,
 				728C089E2AE83DE100066F58 /* LoginVC.swift */,
 				72B737E82AFE97800039FFED /* LoginVM.swift */,
-				72B737EA2AFE97F40039FFED /* LoginAssembler.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -232,6 +241,7 @@
 		72B737EC2AFEA14F0039FFED /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				72B7382C2B0D12920039FFED /* Coordinator */,
 				72B737F82B03E5110039FFED /* KeyboardHelper */,
 				72B737ED2AFEA1620039FFED /* InputValidator */,
 			);
@@ -277,6 +287,32 @@
 				72B738032B0A70A80039FFED /* InputValidator+Reset.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		72B7382C2B0D12920039FFED /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				72B7382D2B0D12AF0039FFED /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		72B7382F2B0D1B590039FFED /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				72B738302B0D1B700039FFED /* LoginCoordinator.swift */,
+				72B737EA2AFE97F40039FFED /* LoginAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		72B738322B0D24B10039FFED /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				72B738332B0D24C50039FFED /* RegisterCoordinator.swift */,
+				72B737F62B03E1180039FFED /* RegisterAssembler.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,15 +405,19 @@
 				72B737EB2AFE97F40039FFED /* LoginAssembler.swift in Sources */,
 				729C0ECC2AFAB88900E3D89D /* String+Localization.swift in Sources */,
 				72456EBF2AF6964D00898215 /* ResetVC.swift in Sources */,
+				72B738312B0D1B700039FFED /* LoginCoordinator.swift in Sources */,
 				72B737E72AFE942D0039FFED /* UIButton+Actions.swift in Sources */,
 				728C08932AE82E7900066F58 /* UIColor+Consts.swift in Sources */,
 				72456EB12AF15F4700898215 /* View+Layer.swift in Sources */,
 				728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */,
 				72B738012B0A70430039FFED /* ResetAssembler.swift in Sources */,
 				72B737EF2AFEA1B90039FFED /* InputValidator.swift in Sources */,
+				72B7382E2B0D12AF0039FFED /* Coordinator.swift in Sources */,
 				72B737FA2B03E53A0039FFED /* KeyboardHelper.swift in Sources */,
 				72B737F52B03DB880039FFED /* RegisterPresenter.swift in Sources */,
+				72B7382B2B0D124D0039FFED /* AppCoordinator.swift in Sources */,
 				72456EB42AF1602C00898215 /* UIButton+Styles.swift in Sources */,
+				72B738342B0D24C50039FFED /* RegisterCoordinator.swift in Sources */,
 				72456EBC2AF690DB00898215 /* RegisterVC.swift in Sources */,
 				72456EB92AF57AC600898215 /* UILabel+Style.swift in Sources */,
 				72B737FD2B0A2D280039FFED /* InputValidator+Register.swift in Sources */,
