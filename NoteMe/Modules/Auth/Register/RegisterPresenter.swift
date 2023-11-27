@@ -37,7 +37,6 @@ protocol RegisterInputValidatorUseCase {
 protocol RegisterKeyboardHelperUseCase {
     @discardableResult
     func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
-
     
     @discardableResult
     func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self

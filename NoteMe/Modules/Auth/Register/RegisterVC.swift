@@ -60,8 +60,13 @@ final class RegisterVC: UIViewController {
     
     private var presenter: RegisterPresenterProtocol
     
-    init(presenter: RegisterPresenterProtocol) {
+    private var keyboardAnimation: KeyboardAnimation?
+    
+    init(
+//        keyboardAnimation: KeyboardAnimation,
+        presenter: RegisterPresenterProtocol) {
         self.presenter = presenter
+//        self.keyboardAnimation = KeyboardAnimation(containerView: containerView, contentView: contentView)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -71,6 +76,8 @@ final class RegisterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        keyboardAnimation = KeyboardAnimation(containerView: containerView, contentView: contentView)
         
         setupUI()
         setupConstraints()
@@ -176,25 +183,7 @@ extension RegisterVC: RegisterPresenterDelegate {
     }
     
     func keyboardFrameChanged(_ frame: CGRect) {
-        let maxY = containerView.frame.maxY + contentView.frame.minY + 16.0
-        let keyboardY = frame.minY
-        
-        if maxY > keyboardY {
-            let dif = maxY - keyboardY
-            UIView.animate(withDuration: 0.25) {
-                self.containerView.snp.updateConstraints { make in
-                    make.centerY.equalToSuperview().offset(-dif)
-                }
-                self.view.layoutIfNeeded()
-            }
-        } else {
-            UIView.animate(withDuration: 0.25) {
-                self.containerView.snp.updateConstraints { make in
-                    make.centerY.equalToSuperview()
-                }
-                self.view.layoutIfNeeded()
-            }
-        }
+        keyboardAnimation?.keyboardFrameChanged(frame)
     }
 }
 

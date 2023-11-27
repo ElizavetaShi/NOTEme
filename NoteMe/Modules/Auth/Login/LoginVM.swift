@@ -26,7 +26,16 @@ protocol LoginAuthServiceUseCase {
                completion: @escaping (Bool) -> Void)
 }
 
+//protocol LoginKeyboardHelperUseCase {
+//    @discardableResult
+//    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+//    
+//    @discardableResult
+//    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
+//}
+
 final class LoginVM: LoginViewModelProtocol {
+    
     var catchEmailError: ((String?) -> Void)?
     var catchPasswordError: ((String?) -> Void)?
     
@@ -34,13 +43,17 @@ final class LoginVM: LoginViewModelProtocol {
     
     private let authService: LoginAuthServiceUseCase
     private let inputValidator: LoginInputValidatorUseCase
+//    private var keyboardHelper: LoginKeyboardHelperUseCase
     
-    init(coordinator: LoginCoordinatorProtocol,
+    init(
+//        keyboardHelper: LoginKeyboardHelperUseCase,
+        coordinator: LoginCoordinatorProtocol,
          authService: LoginAuthServiceUseCase,
          inputValidator: LoginInputValidatorUseCase) {
         self.authService = authService
         self.inputValidator = inputValidator
         self.coordinator = coordinator
+//        self.keyboardHelper = keyboardHelper
     }
     
     func loginDidTap(email: String?, password: String?) {
@@ -49,6 +62,7 @@ final class LoginVM: LoginViewModelProtocol {
             checkValidation(email: email, password: password),
             let email, let password
         else { return }
+    
         authService.login(email: email,
                           password: password) { [weak coordinator] isSuccess in
             print(isSuccess)

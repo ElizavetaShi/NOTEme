@@ -9,7 +9,7 @@ import UIKit
 
 final class ResetCoordinator: Coordinator {
     
-    private var vc: UIViewController?
+//    private var vc: UIViewController?
   
     override func start() -> UIViewController {
         return ResetAssembler.make(coordinator: self)

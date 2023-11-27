@@ -173,7 +173,7 @@ final class LoginVC: UIViewController {
     
     @objc private func newAccountDidTap() {
         print("\(#function)")
-        
+        viewModel.newAccountDidTap()
     }
     
     @objc private func forgotPasswordDidTap() {
