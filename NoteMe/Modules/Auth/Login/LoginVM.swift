@@ -11,7 +11,6 @@ protocol LoginCoordinatorProtocol: AnyObject {
     func finish()
     func openRegisterModule()
     func openResetModule()
-    
 }
 
 protocol LoginInputValidatorUseCase {

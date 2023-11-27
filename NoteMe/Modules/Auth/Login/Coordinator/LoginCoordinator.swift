@@ -16,10 +16,6 @@ final class LoginCoordinator: Coordinator {
         rootVC = vc
         return vc
     }
-    
-    override func finish() {
-        onDidFinish?(self)
-    }
 }
 
 
@@ -40,8 +36,17 @@ extension LoginCoordinator: LoginCoordinatorProtocol {
     }
     
     func openResetModule() {
+        let coordinator = ResetCoordinator()
+        children.append(coordinator)
+        let vc = coordinator.start()
         
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll { coordinator == $0 }
+            vc.dismiss(animated: true)
+        }
+        
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .flipHorizontal
+        rootVC?.present(vc, animated: true)
     }
-    
-    
 }

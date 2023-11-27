@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol ResetCoordinatorProtocol: AnyObject {
+    
+    func finish()
+//    func showResetPasswordAlert()
+}
+
 protocol ResetAuthServiceUseCase {
     func reset(email: String, completion: @escaping (Bool) -> Void)
 }
@@ -16,15 +22,21 @@ protocol ResetInputValidatorUseCase {
 }
 
 final class ResetVM: ResetViewModelProtocol {
+
+    
     var catchEmailError: ((String?) -> Void)?
     
     private let authService: ResetAuthServiceUseCase
     private let inputValidator: ResetInputValidatorUseCase
     
-    init(authService: ResetAuthServiceUseCase,
+    private weak var coordinator: ResetCoordinatorProtocol?
+    
+    init(coordinator: ResetCoordinatorProtocol,
+        authService: ResetAuthServiceUseCase,
          inputValidator: ResetInputValidatorUseCase) {
         self.authService = authService
         self.inputValidator = inputValidator
+        self.coordinator = coordinator
     }
     
     
@@ -34,13 +46,16 @@ final class ResetVM: ResetViewModelProtocol {
             checkValidation(email: email), let email
         else { return }
         
-        authService.reset(email: email) { isSuccess in
+        authService.reset(email: email) { [weak coordinator ] isSuccess in
             print(isSuccess)
+//            coordinator?.showResetPasswordAlert()
+            coordinator?.finish()
         }
     }
     
     func cancelButtonDidTap() {
         print("\(#function)")
+        coordinator?.finish()
     }
     
     private func checkValidation(email: String?) -> Bool {

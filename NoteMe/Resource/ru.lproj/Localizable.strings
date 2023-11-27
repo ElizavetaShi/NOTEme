@@ -5,7 +5,7 @@
   Created by Elizaveta Shidlovskaya on 5.11.23.
   
 */
-"auth_welcome_label" = "Добро пожаловать!";
+"auth_welcome_label" = "С возвращением!";
 "auth_email_textfield" = "Е-мейл";
 "auth_email_placeholder_textfield" = "Введите Е-мейл";
 "auth_password_textfield" = "Пароль";

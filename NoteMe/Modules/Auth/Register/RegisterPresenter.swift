@@ -10,7 +10,6 @@ import UIKit
 protocol RegisterCoordinatorProtocol: AnyObject {
     
     func finish()
-    
 }
 
 protocol RegisterPresenterDelegate: AnyObject {
@@ -37,12 +36,11 @@ protocol RegisterInputValidatorUseCase {
 
 protocol RegisterKeyboardHelperUseCase {
     @discardableResult
-//    func onWillShow(_ handler: @escaping KeyboardHelper.KeyboardFrameHandler) -> Self
     func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
 
     
     @discardableResult
-    func onWillHide(_ handler: @escaping KeyboardHelper.KeyboardFrameHandler) -> Self
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
 }
 
 final class RegisterPresenter: RegisterPresenterProtocol {
@@ -84,11 +82,10 @@ final class RegisterPresenter: RegisterPresenterProtocol {
             let email, let password, let repeatPassword
         else { return }
         
-        authServise.register(email: email, password: password, repeatPassword: repeatPassword) { isSuccess in
+        authServise.register(email: email, password: password, repeatPassword: repeatPassword) { [weak coordinator]  isSuccess in
             print(isSuccess)
+            coordinator?.finish()
         }
-        
-        coordinator?.finish()
     }
     
     func haveAccountDidTap() {

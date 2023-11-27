@@ -11,7 +11,6 @@ class Coordinator {
     
     var onDidFinish: ((Coordinator) -> Void)?
     
-    
     var children: [Coordinator] = []
     
     func start() -> UIViewController {
@@ -21,16 +20,10 @@ class Coordinator {
     func finish() {
         onDidFinish?(self)
     }
-    
-   
 }
-
 
 extension Coordinator: Equatable {
     static func == (lhs: Coordinator, rhs: Coordinator) -> Bool {
         return lhs === rhs
     }
-    
-    
-    
 }

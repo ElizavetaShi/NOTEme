@@ -12,6 +12,8 @@ import SnapKit
     
     var catchEmailError: ((String?) -> Void)? { get set }
     
+
+    
     func resetButtonDidTap(email: String?)
     @objc func cancelButtonDidTap()
 }

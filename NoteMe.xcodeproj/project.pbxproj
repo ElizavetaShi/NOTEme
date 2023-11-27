@@ -15,6 +15,7 @@
 		72456EBC2AF690DB00898215 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EBB2AF690DB00898215 /* RegisterVC.swift */; };
 		72456EBF2AF6964D00898215 /* ResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EBE2AF6964D00898215 /* ResetVC.swift */; };
 		72456EC32AF77E6A00898215 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72456EC52AF77E6A00898215 /* Localizable.strings */; };
+		726CEA162B136C9A00E734FC /* ResetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA152B136C9A00E734FC /* ResetCoordinator.swift */; };
 		728C087C2AE8270F00066F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C087B2AE8270F00066F58 /* AppDelegate.swift */; };
 		728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C087D2AE8270F00066F58 /* SceneDelegate.swift */; };
 		728C08852AE8271000066F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 728C08842AE8271000066F58 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		72456EC42AF77E6A00898215 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		72456EC62AF77E7B00898215 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		72456EC72AF77E7B00898215 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		726CEA152B136C9A00E734FC /* ResetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetCoordinator.swift; sourceTree = "<group>"; };
 		728C08782AE8270F00066F58 /* NoteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728C087B2AE8270F00066F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		728C087D2AE8270F00066F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,12 +141,21 @@
 		72456EBD2AF6963D00898215 /* Reset */ = {
 			isa = PBXGroup;
 			children = (
+				726CEA142B136C8200E734FC /* Coordinator */,
 				72B738022B0A70870039FFED /* UseCases */,
 				72456EBE2AF6964D00898215 /* ResetVC.swift */,
 				72B737FE2B0A69090039FFED /* ResetVM.swift */,
-				72B738002B0A70430039FFED /* ResetAssembler.swift */,
 			);
 			path = Reset;
+			sourceTree = "<group>";
+		};
+		726CEA142B136C8200E734FC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				726CEA152B136C9A00E734FC /* ResetCoordinator.swift */,
+				72B738002B0A70430039FFED /* ResetAssembler.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		728C086F2AE8270F00066F58 = {
@@ -417,6 +428,7 @@
 				72B737F52B03DB880039FFED /* RegisterPresenter.swift in Sources */,
 				72B7382B2B0D124D0039FFED /* AppCoordinator.swift in Sources */,
 				72456EB42AF1602C00898215 /* UIButton+Styles.swift in Sources */,
+				726CEA162B136C9A00E734FC /* ResetCoordinator.swift in Sources */,
 				72B738342B0D24C50039FFED /* RegisterCoordinator.swift in Sources */,
 				72456EBC2AF690DB00898215 /* RegisterVC.swift in Sources */,
 				72456EB92AF57AC600898215 /* UILabel+Style.swift in Sources */,
