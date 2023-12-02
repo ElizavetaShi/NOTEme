@@ -18,6 +18,15 @@
 		726CEA162B136C9A00E734FC /* ResetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA152B136C9A00E734FC /* ResetCoordinator.swift */; };
 		726CEA182B14FD8700E734FC /* KeyboardHelper+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA172B14FD8700E734FC /* KeyboardHelper+Login.swift */; };
 		726CEA1B2B15018100E734FC /* KeyboardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA1A2B15018100E734FC /* KeyboardAnimation.swift */; };
+		726CEA1E2B164B6100E734FC /* ParametersHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA1D2B164B6100E734FC /* ParametersHelper.swift */; };
+		726CEA232B16547800E734FC /* OnboardFirstStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA222B16547800E734FC /* OnboardFirstStepVC.swift */; };
+		726CEA252B16568600E734FC /* OnboardFirstStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA242B16568600E734FC /* OnboardFirstStepVM.swift */; };
+		726CEA272B16572800E734FC /* OnboardFirstStepAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA262B16572800E734FC /* OnboardFirstStepAssembler.swift */; };
+		726CEA292B1657D900E734FC /* OnboardFirstStepCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA282B1657D900E734FC /* OnboardFirstStepCoordinator.swift */; };
+		726CEA2D2B165B1C00E734FC /* OnboardSecondStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA2C2B165B1C00E734FC /* OnboardSecondStepVC.swift */; };
+		726CEA2F2B165CA900E734FC /* OnboardSecondStepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA2E2B165CA900E734FC /* OnboardSecondStepVM.swift */; };
+		726CEA312B165D9500E734FC /* OnboardSecondStepCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA302B165D9500E734FC /* OnboardSecondStepCoordinator.swift */; };
+		726CEA332B165DD000E734FC /* OnboardSecondStepAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA322B165DD000E734FC /* OnboardSecondStepAssembler.swift */; };
 		728C087C2AE8270F00066F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C087B2AE8270F00066F58 /* AppDelegate.swift */; };
 		728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C087D2AE8270F00066F58 /* SceneDelegate.swift */; };
 		728C08852AE8271000066F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 728C08842AE8271000066F58 /* Assets.xcassets */; };
@@ -61,6 +70,15 @@
 		726CEA152B136C9A00E734FC /* ResetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetCoordinator.swift; sourceTree = "<group>"; };
 		726CEA172B14FD8700E734FC /* KeyboardHelper+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardHelper+Login.swift"; sourceTree = "<group>"; };
 		726CEA1A2B15018100E734FC /* KeyboardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAnimation.swift; sourceTree = "<group>"; };
+		726CEA1D2B164B6100E734FC /* ParametersHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersHelper.swift; sourceTree = "<group>"; };
+		726CEA222B16547800E734FC /* OnboardFirstStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepVC.swift; sourceTree = "<group>"; };
+		726CEA242B16568600E734FC /* OnboardFirstStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepVM.swift; sourceTree = "<group>"; };
+		726CEA262B16572800E734FC /* OnboardFirstStepAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepAssembler.swift; sourceTree = "<group>"; };
+		726CEA282B1657D900E734FC /* OnboardFirstStepCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstStepCoordinator.swift; sourceTree = "<group>"; };
+		726CEA2C2B165B1C00E734FC /* OnboardSecondStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepVC.swift; sourceTree = "<group>"; };
+		726CEA2E2B165CA900E734FC /* OnboardSecondStepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepVM.swift; sourceTree = "<group>"; };
+		726CEA302B165D9500E734FC /* OnboardSecondStepCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepCoordinator.swift; sourceTree = "<group>"; };
+		726CEA322B165DD000E734FC /* OnboardSecondStepAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSecondStepAssembler.swift; sourceTree = "<group>"; };
 		728C08782AE8270F00066F58 /* NoteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728C087B2AE8270F00066F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		728C087D2AE8270F00066F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +188,61 @@
 			path = KeyboardAnimation;
 			sourceTree = "<group>";
 		};
+		726CEA1C2B164B4A00E734FC /* ParametersHelper */ = {
+			isa = PBXGroup;
+			children = (
+				726CEA1D2B164B6100E734FC /* ParametersHelper.swift */,
+			);
+			path = ParametersHelper;
+			sourceTree = "<group>";
+		};
+		726CEA1F2B16542600E734FC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				726CEA2A2B165AEE00E734FC /* OnboardSecondStep */,
+				726CEA202B16543A00E734FC /* OnboardFirstStep */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		726CEA202B16543A00E734FC /* OnboardFirstStep */ = {
+			isa = PBXGroup;
+			children = (
+				726CEA212B16544C00E734FC /* Coordinator */,
+				726CEA222B16547800E734FC /* OnboardFirstStepVC.swift */,
+				726CEA242B16568600E734FC /* OnboardFirstStepVM.swift */,
+			);
+			path = OnboardFirstStep;
+			sourceTree = "<group>";
+		};
+		726CEA212B16544C00E734FC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				726CEA262B16572800E734FC /* OnboardFirstStepAssembler.swift */,
+				726CEA282B1657D900E734FC /* OnboardFirstStepCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		726CEA2A2B165AEE00E734FC /* OnboardSecondStep */ = {
+			isa = PBXGroup;
+			children = (
+				726CEA2B2B165AFA00E734FC /* Coordinator */,
+				726CEA2C2B165B1C00E734FC /* OnboardSecondStepVC.swift */,
+				726CEA2E2B165CA900E734FC /* OnboardSecondStepVM.swift */,
+			);
+			path = OnboardSecondStep;
+			sourceTree = "<group>";
+		};
+		726CEA2B2B165AFA00E734FC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				726CEA302B165D9500E734FC /* OnboardSecondStepCoordinator.swift */,
+				726CEA322B165DD000E734FC /* OnboardSecondStepAssembler.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		728C086F2AE8270F00066F58 = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +308,7 @@
 		728C089B2AE83D7B00066F58 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				726CEA1F2B16542600E734FC /* Onboarding */,
 				728C089C2AE83DB200066F58 /* Auth */,
 			);
 			path = Modules;
@@ -264,6 +338,7 @@
 		72B737EC2AFEA14F0039FFED /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				726CEA1C2B164B4A00E734FC /* ParametersHelper */,
 				726CEA192B15015400E734FC /* KeyboardAnimation */,
 				72B7382C2B0D12920039FFED /* Coordinator */,
 				72B737F82B03E5110039FFED /* KeyboardHelper */,
@@ -419,9 +494,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				72456EAE2AED60C400898215 /* UIView+Style.swift in Sources */,
+				726CEA232B16547800E734FC /* OnboardFirstStepVC.swift in Sources */,
 				72B738062B0BDAEC0039FFED /* KeyboardHelper+Register.swift in Sources */,
 				728C08972AE8382C00066F58 /* UIImage+Consts.swift in Sources */,
 				72B737F32AFEA8140039FFED /* InputValidator+Login.swift in Sources */,
+				726CEA312B165D9500E734FC /* OnboardSecondStepCoordinator.swift in Sources */,
 				728C08952AE834E200066F58 /* UIFont+Consts.swift in Sources */,
 				726CEA1B2B15018100E734FC /* KeyboardAnimation.swift in Sources */,
 				728C089F2AE83DE100066F58 /* LoginVC.swift in Sources */,
@@ -432,12 +509,16 @@
 				72B737EB2AFE97F40039FFED /* LoginAssembler.swift in Sources */,
 				729C0ECC2AFAB88900E3D89D /* String+Localization.swift in Sources */,
 				72456EBF2AF6964D00898215 /* ResetVC.swift in Sources */,
+				726CEA272B16572800E734FC /* OnboardFirstStepAssembler.swift in Sources */,
+				726CEA1E2B164B6100E734FC /* ParametersHelper.swift in Sources */,
 				72B738312B0D1B700039FFED /* LoginCoordinator.swift in Sources */,
+				726CEA332B165DD000E734FC /* OnboardSecondStepAssembler.swift in Sources */,
 				72B737E72AFE942D0039FFED /* UIButton+Actions.swift in Sources */,
 				728C08932AE82E7900066F58 /* UIColor+Consts.swift in Sources */,
 				72456EB12AF15F4700898215 /* View+Layer.swift in Sources */,
 				728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */,
 				72B738012B0A70430039FFED /* ResetAssembler.swift in Sources */,
+				726CEA252B16568600E734FC /* OnboardFirstStepVM.swift in Sources */,
 				72B737EF2AFEA1B90039FFED /* InputValidator.swift in Sources */,
 				72B7382E2B0D12AF0039FFED /* Coordinator.swift in Sources */,
 				72B737FA2B03E53A0039FFED /* KeyboardHelper.swift in Sources */,
@@ -448,8 +529,11 @@
 				72B738342B0D24C50039FFED /* RegisterCoordinator.swift in Sources */,
 				72456EBC2AF690DB00898215 /* RegisterVC.swift in Sources */,
 				72456EB92AF57AC600898215 /* UILabel+Style.swift in Sources */,
+				726CEA2D2B165B1C00E734FC /* OnboardSecondStepVC.swift in Sources */,
 				72B737FD2B0A2D280039FFED /* InputValidator+Register.swift in Sources */,
 				72B737FF2B0A69090039FFED /* ResetVM.swift in Sources */,
+				726CEA292B1657D900E734FC /* OnboardFirstStepCoordinator.swift in Sources */,
+				726CEA2F2B165CA900E734FC /* OnboardSecondStepVM.swift in Sources */,
 				72456EB72AF16EC100898215 /* LineTextField.swift in Sources */,
 				72B738042B0A70A80039FFED /* InputValidator+Reset.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import UIKit
 protocol ResetCoordinatorProtocol: AnyObject {
     
     func finish()
-//    func showResetPasswordAlert()
+//      func showResetPasswordAlert()
 }
 
 protocol ResetAuthServiceUseCase {
