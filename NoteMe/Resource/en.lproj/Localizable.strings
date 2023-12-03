@@ -22,3 +22,19 @@
 "auth_info_label_text" = "Enter your email address and we will share a link to create a new password";
 "auth_reset_button" = "Reset";
 "auth_cancel_button" = "Cancel";
+
+//Onboarding
+"onboard1_welcome_label" = "Welcome!";
+"onboard1_info_label_text" = "NoteMe is an application, which notify you about everything!";
+"onboard1_next_button" = "Next";
+"onboard2_welcome_label" = "Different types!";
+"onboard2_info_label_text" = "You can use 3 types of notifications:
+• Calendar - choose the date, when you want to receive notification.
+• Location - choose the region and notification will come after you enter it.
+• Timer - set timer and after selected period you will receive the notification.";
+"onboard2_calendar_label" = "Calendar";
+"onboard2_location_label" = "Location";
+"onboard2_timer_label" = "Timer";
+"calendar_key" = "Calendar";
+"location_key" = "Location";
+"timer_key" = "Timer";

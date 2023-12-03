@@ -21,3 +21,21 @@
 "auth_info_label_text" = "Введите ваш емейл адрес и мы вышлем ссылку для создание нового пароля.";
 "auth_reset_button" = "Сбросить";
 "auth_cancel_button" = "Отменить";
+
+
+//Onboarding
+"onboard1_welcome_label" = "Добро пожаловать!";
+"onboard1_info_label_text" = "NoteMe это приложение, которое уведомляет тебя обо всем!";
+"onboard1_next_button" = "Далее";
+"onboard2_welcome_label" = "Разные типы!";
+"onboard2_info_label_text" = "Ты можешь выбрать 3 типа уведомлений:
+• Календарь - выбери дату, когда ты хочешь получить уведомление.
+• Локация - выбери место и уведомление придет когда ты зайдешь в эту зону.
+• Таймер - установи таймер и после указанного периода ты получишь уведомление.";
+"onboard2_calendar_label" = "Календарь";
+"onboard2_location_label" = "Локация";
+"onboard2_timer_label" = "Таймер";
+"calendar_key" = "Календарь";
+"location_key" = "Локация";
+"timer_key" = "Таймер";
+

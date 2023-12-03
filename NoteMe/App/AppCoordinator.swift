@@ -21,9 +21,9 @@ final class AppCoordinator: Coordinator {
         if ParametersHelper.get(.authenticated) {
             
             //        FIXME: - TESTCODE
-//                                ParametersHelper.set(.authenticated, value: false)
+            //  ParametersHelper.set(.authenticated, value: false)
             
-            //            open onboarding or mainApp
+            //  open onboarding or mainApp
             openOnboardingModule()
         } else {
             openAuthModule()
