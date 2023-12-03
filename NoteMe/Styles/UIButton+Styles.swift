@@ -73,4 +73,10 @@ extension UIButton {
                                         attributes: highlightedAttr) , for: .highlighted)
         return button
     }
+    
+    static func plusButton(_ image: UIImage?) -> UIButton {
+        let button = UIButton()
+        button.setBackgroundImage(image, for: .normal)
+        return button
+    }
 }
