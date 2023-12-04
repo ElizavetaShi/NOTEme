@@ -21,7 +21,7 @@ final class AppCoordinator: Coordinator {
 //                ParametersHelper.set(.authenticated, value: false)
 //                ParametersHelper.set(.onboarded, value: false)
         
-        if ParametersHelper.get(.authenticated) && ParametersHelper.get(.onboarded) {
+        if ParametersHelper.get(.onboarded) {
             openMainModule()
         } else if ParametersHelper.get(.authenticated) {
             openOnboardingModule()
