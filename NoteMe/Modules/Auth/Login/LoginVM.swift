@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol LoginCoordinatorProtocol: AnyObject {
     func finish()
     func openRegisterModule()
     func openResetModule()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol LoginInputValidatorUseCase {
@@ -43,32 +45,38 @@ final class LoginVM: LoginViewModelProtocol {
     
     private let authService: LoginAuthServiceUseCase
     private let inputValidator: LoginInputValidatorUseCase
-//    private var keyboardHelper: LoginKeyboardHelperUseCase
+    //    private var keyboardHelper: LoginKeyboardHelperUseCase
     
     init(
-//        keyboardHelper: LoginKeyboardHelperUseCase,
+        //        keyboardHelper: LoginKeyboardHelperUseCase,
         coordinator: LoginCoordinatorProtocol,
-         authService: LoginAuthServiceUseCase,
-         inputValidator: LoginInputValidatorUseCase) {
-        self.authService = authService
-        self.inputValidator = inputValidator
-        self.coordinator = coordinator
-//        self.keyboardHelper = keyboardHelper
-    }
+        authService: LoginAuthServiceUseCase,
+        inputValidator: LoginInputValidatorUseCase) {
+            self.authService = authService
+            self.inputValidator = inputValidator
+            self.coordinator = coordinator
+            //        self.keyboardHelper = keyboardHelper
+        }
     
     func loginDidTap(email: String?, password: String?) {
-    
+        
         guard
             checkValidation(email: email, password: password),
             let email, let password
         else { return }
-    
+        
+        
+        
         authService.login(email: email,
                           password: password) { [weak coordinator] isSuccess in
             print(isSuccess)
             if isSuccess {
-                ParametersHelper.set(.authenticated, value: true)
-                coordinator?.finish()
+                //                FIXME: - uncomment
+                //                                ParametersHelper.set(.authenticated, value: true)
+                //                                coordinator?.finish()
+            } else {
+                let alertVC = AlertBuilder.build(title: "Error", message: "Invalid email or password. Please enter correct one", okTitle: "Ok")
+                coordinator?.showAlert(alertVC)
             }
         }
     }
@@ -91,6 +99,6 @@ final class LoginVM: LoginViewModelProtocol {
         catchEmailError?(isEmailValid ? nil : "Wrong e-mail")
         catchPasswordError?(isPasswordValid ? nil : "Non-valid password")
         
-       return isEmailValid && isPasswordValid
+        return isEmailValid && isPasswordValid
     }
 }

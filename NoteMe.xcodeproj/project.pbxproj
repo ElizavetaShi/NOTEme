@@ -30,6 +30,19 @@
 		726CEA392B1C920C00E734FC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA382B1C920C00E734FC /* TabBarController.swift */; };
 		726CEA3C2B1C929400E734FC /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA3B2B1C929400E734FC /* HomeVC.swift */; };
 		726CEA3F2B1C92D100E734FC /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA3E2B1C92D100E734FC /* ProfileVC.swift */; };
+		726CEA452B1F84B500E734FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 726CEA442B1F84B500E734FC /* GoogleService-Info.plist */; };
+		726CEA482B1F8B4B00E734FC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 726CEA472B1F8B4B00E734FC /* FirebaseAnalytics */; };
+		726CEA4A2B1F8B4B00E734FC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 726CEA492B1F8B4B00E734FC /* FirebaseAnalyticsOnDeviceConversion */; };
+		726CEA4C2B1F8B4B00E734FC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 726CEA4B2B1F8B4B00E734FC /* FirebaseAnalyticsSwift */; };
+		726CEA4E2B1F8B4B00E734FC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 726CEA4D2B1F8B4B00E734FC /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		726CEA502B1F8B4B00E734FC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 726CEA4F2B1F8B4B00E734FC /* FirebaseAuth */; };
+		726CEA522B1F8B4B00E734FC /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 726CEA512B1F8B4B00E734FC /* FirebaseAuthCombine-Community */; };
+		726CEA542B1F8B4B00E734FC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 726CEA532B1F8B4B00E734FC /* FirebaseCrashlytics */; };
+		726CEA572B1F95D700E734FC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA562B1F95D700E734FC /* AuthService.swift */; };
+		726CEA592B1F975D00E734FC /* AuthService+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA582B1F975D00E734FC /* AuthService+Login.swift */; };
+		726CEA5C2B1F98E900E734FC /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA5B2B1F98E900E734FC /* AlertBuilder.swift */; };
+		726CEA602B246EF300E734FC /* AuthService+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA5F2B246EF300E734FC /* AuthService+Register.swift */; };
+		726CEA622B2477D800E734FC /* AuthService+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA612B2477D800E734FC /* AuthService+Reset.swift */; };
 		728C087C2AE8270F00066F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C087B2AE8270F00066F58 /* AppDelegate.swift */; };
 		728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C087D2AE8270F00066F58 /* SceneDelegate.swift */; };
 		728C08852AE8271000066F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 728C08842AE8271000066F58 /* Assets.xcassets */; };
@@ -85,6 +98,12 @@
 		726CEA382B1C920C00E734FC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		726CEA3B2B1C929400E734FC /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		726CEA3E2B1C92D100E734FC /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		726CEA442B1F84B500E734FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		726CEA562B1F95D700E734FC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		726CEA582B1F975D00E734FC /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
+		726CEA5B2B1F98E900E734FC /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
+		726CEA5F2B246EF300E734FC /* AuthService+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Register.swift"; sourceTree = "<group>"; };
+		726CEA612B2477D800E734FC /* AuthService+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Reset.swift"; sourceTree = "<group>"; };
 		728C08782AE8270F00066F58 /* NoteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728C087B2AE8270F00066F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		728C087D2AE8270F00066F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +139,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726CEA4C2B1F8B4B00E734FC /* FirebaseAnalyticsSwift in Frameworks */,
+				726CEA502B1F8B4B00E734FC /* FirebaseAuth in Frameworks */,
+				726CEA4E2B1F8B4B00E734FC /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				726CEA482B1F8B4B00E734FC /* FirebaseAnalytics in Frameworks */,
+				726CEA4A2B1F8B4B00E734FC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				726CEA542B1F8B4B00E734FC /* FirebaseCrashlytics in Frameworks */,
+				726CEA522B1F8B4B00E734FC /* FirebaseAuthCombine-Community in Frameworks */,
 				728C089A2AE83AF300066F58 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +309,22 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		726CEA552B1F95B800E734FC /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				726CEA562B1F95D700E734FC /* AuthService.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		726CEA5A2B1F98D400E734FC /* AlertBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				726CEA5B2B1F98E900E734FC /* AlertBuilder.swift */,
+			);
+			path = AlertBuilder;
+			sourceTree = "<group>";
+		};
 		728C086F2AE8270F00066F58 = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +344,7 @@
 		728C087A2AE8270F00066F58 /* NoteMe */ = {
 			isa = PBXGroup;
 			children = (
+				726CEA442B1F84B500E734FC /* GoogleService-Info.plist */,
 				728C08902AE82DE400066F58 /* App */,
 				72456EB52AF16E9900898215 /* Custom */,
 				728C08862AE8271000066F58 /* LaunchScreen.storyboard */,
@@ -348,9 +391,9 @@
 		728C089B2AE83D7B00066F58 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				728C089C2AE83DB200066F58 /* Auth */,
 				726CEA362B1C91DC00E734FC /* Main */,
 				726CEA1F2B16542600E734FC /* Onboarding */,
-				728C089C2AE83DB200066F58 /* Auth */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -379,6 +422,8 @@
 		72B737EC2AFEA14F0039FFED /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				726CEA5A2B1F98D400E734FC /* AlertBuilder */,
+				726CEA552B1F95B800E734FC /* AuthService */,
 				726CEA1C2B164B4A00E734FC /* ParametersHelper */,
 				726CEA192B15015400E734FC /* KeyboardAnimation */,
 				72B7382C2B0D12920039FFED /* Coordinator */,
@@ -401,6 +446,7 @@
 			children = (
 				72B737F22AFEA8140039FFED /* InputValidator+Login.swift */,
 				726CEA172B14FD8700E734FC /* KeyboardHelper+Login.swift */,
+				726CEA582B1F975D00E734FC /* AuthService+Login.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -418,6 +464,7 @@
 			children = (
 				72B737FC2B0A2D280039FFED /* InputValidator+Register.swift */,
 				72B738052B0BDAEC0039FFED /* KeyboardHelper+Register.swift */,
+				726CEA5F2B246EF300E734FC /* AuthService+Register.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -426,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				72B738032B0A70A80039FFED /* InputValidator+Reset.swift */,
+				726CEA612B2477D800E734FC /* AuthService+Reset.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -474,6 +522,13 @@
 			name = NoteMe;
 			packageProductDependencies = (
 				728C08992AE83AF300066F58 /* SnapKit */,
+				726CEA472B1F8B4B00E734FC /* FirebaseAnalytics */,
+				726CEA492B1F8B4B00E734FC /* FirebaseAnalyticsOnDeviceConversion */,
+				726CEA4B2B1F8B4B00E734FC /* FirebaseAnalyticsSwift */,
+				726CEA4D2B1F8B4B00E734FC /* FirebaseAnalyticsWithoutAdIdSupport */,
+				726CEA4F2B1F8B4B00E734FC /* FirebaseAuth */,
+				726CEA512B1F8B4B00E734FC /* FirebaseAuthCombine-Community */,
+				726CEA532B1F8B4B00E734FC /* FirebaseCrashlytics */,
 			);
 			productName = NoteMe;
 			productReference = 728C08782AE8270F00066F58 /* NoteMe.app */;
@@ -506,6 +561,7 @@
 			mainGroup = 728C086F2AE8270F00066F58;
 			packageReferences = (
 				728C08982AE83AF300066F58 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				726CEA462B1F8B4A00E734FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 728C08792AE8270F00066F58 /* Products */;
 			projectDirPath = "";
@@ -522,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				728C08882AE8271000066F58 /* LaunchScreen.storyboard in Resources */,
+				726CEA452B1F84B500E734FC /* GoogleService-Info.plist in Resources */,
 				72456EC32AF77E6A00898215 /* Localizable.strings in Resources */,
 				728C08852AE8271000066F58 /* Assets.xcassets in Resources */,
 			);
@@ -539,6 +596,7 @@
 				72B738062B0BDAEC0039FFED /* KeyboardHelper+Register.swift in Sources */,
 				728C08972AE8382C00066F58 /* UIImage+Consts.swift in Sources */,
 				72B737F32AFEA8140039FFED /* InputValidator+Login.swift in Sources */,
+				726CEA5C2B1F98E900E734FC /* AlertBuilder.swift in Sources */,
 				726CEA312B165D9500E734FC /* OnboardSecondStepCoordinator.swift in Sources */,
 				728C08952AE834E200066F58 /* UIFont+Consts.swift in Sources */,
 				726CEA1B2B15018100E734FC /* KeyboardAnimation.swift in Sources */,
@@ -552,6 +610,7 @@
 				729C0ECC2AFAB88900E3D89D /* String+Localization.swift in Sources */,
 				72456EBF2AF6964D00898215 /* ResetVC.swift in Sources */,
 				726CEA272B16572800E734FC /* OnboardFirstStepAssembler.swift in Sources */,
+				726CEA572B1F95D700E734FC /* AuthService.swift in Sources */,
 				726CEA1E2B164B6100E734FC /* ParametersHelper.swift in Sources */,
 				72B738312B0D1B700039FFED /* LoginCoordinator.swift in Sources */,
 				726CEA332B165DD000E734FC /* OnboardSecondStepAssembler.swift in Sources */,
@@ -570,10 +629,13 @@
 				72B7382B2B0D124D0039FFED /* AppCoordinator.swift in Sources */,
 				72456EB42AF1602C00898215 /* UIButton+Styles.swift in Sources */,
 				726CEA162B136C9A00E734FC /* ResetCoordinator.swift in Sources */,
+				726CEA602B246EF300E734FC /* AuthService+Register.swift in Sources */,
 				72B738342B0D24C50039FFED /* RegisterCoordinator.swift in Sources */,
 				72456EBC2AF690DB00898215 /* RegisterVC.swift in Sources */,
+				726CEA622B2477D800E734FC /* AuthService+Reset.swift in Sources */,
 				72456EB92AF57AC600898215 /* UILabel+Style.swift in Sources */,
 				726CEA2D2B165B1C00E734FC /* OnboardSecondStepVC.swift in Sources */,
+				726CEA592B1F975D00E734FC /* AuthService+Login.swift in Sources */,
 				72B737FD2B0A2D280039FFED /* InputValidator+Register.swift in Sources */,
 				72B737FF2B0A69090039FFED /* ResetVM.swift in Sources */,
 				726CEA292B1657D900E734FC /* OnboardFirstStepCoordinator.swift in Sources */,
@@ -807,6 +869,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		726CEA462B1F8B4A00E734FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		728C08982AE83AF300066F58 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -818,6 +888,41 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		726CEA472B1F8B4B00E734FC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726CEA462B1F8B4A00E734FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		726CEA492B1F8B4B00E734FC /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726CEA462B1F8B4A00E734FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		726CEA4B2B1F8B4B00E734FC /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726CEA462B1F8B4A00E734FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		726CEA4D2B1F8B4B00E734FC /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726CEA462B1F8B4A00E734FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		726CEA4F2B1F8B4B00E734FC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726CEA462B1F8B4A00E734FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		726CEA512B1F8B4B00E734FC /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726CEA462B1F8B4A00E734FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		726CEA532B1F8B4B00E734FC /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 726CEA462B1F8B4A00E734FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		728C08992AE83AF300066F58 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 728C08982AE83AF300066F58 /* XCRemoteSwiftPackageReference "SnapKit" */;

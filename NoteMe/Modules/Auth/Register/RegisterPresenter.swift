@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol RegisterCoordinatorProtocol: AnyObject {
     
@@ -81,7 +82,9 @@ final class RegisterPresenter: RegisterPresenterProtocol {
             let email, let password, let repeatPassword
         else { return }
         
-        authServise.register(email: email, password: password, repeatPassword: repeatPassword) { [weak coordinator]  isSuccess in
+        authServise.register(email: email,
+                             password: password,
+                             repeatPassword: repeatPassword) { [weak coordinator] isSuccess in
             print(isSuccess)
             coordinator?.finish()
         }

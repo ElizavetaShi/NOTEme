@@ -6,11 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 protocol ResetCoordinatorProtocol: AnyObject {
-    
     func finish()
-//      func showResetPasswordAlert()
 }
 
 protocol ResetAuthServiceUseCase {
@@ -22,7 +21,6 @@ protocol ResetInputValidatorUseCase {
 }
 
 final class ResetVM: ResetViewModelProtocol {
-
     
     var catchEmailError: ((String?) -> Void)?
     
@@ -32,13 +30,12 @@ final class ResetVM: ResetViewModelProtocol {
     private weak var coordinator: ResetCoordinatorProtocol?
     
     init(coordinator: ResetCoordinatorProtocol,
-        authService: ResetAuthServiceUseCase,
+         authService: ResetAuthServiceUseCase,
          inputValidator: ResetInputValidatorUseCase) {
         self.authService = authService
         self.inputValidator = inputValidator
         self.coordinator = coordinator
     }
-    
     
     func resetButtonDidTap(email: String?) {
         
@@ -46,10 +43,12 @@ final class ResetVM: ResetViewModelProtocol {
             checkValidation(email: email), let email
         else { return }
         
-        authService.reset(email: email) { [weak coordinator ] isSuccess in
+        authService.reset(email: email) { [weak coordinator] isSuccess in
             print(isSuccess)
-//            coordinator?.showResetPasswordAlert()
-            coordinator?.finish()
+            if isSuccess {
+                coordinator?.finish()
+            } else {
+            }
         }
     }
     

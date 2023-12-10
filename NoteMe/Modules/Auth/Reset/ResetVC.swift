@@ -11,7 +11,6 @@ import SnapKit
 @objc protocol ResetViewModelProtocol: AnyObject {
     
     var catchEmailError: ((String?) -> Void)? { get set }
-    
 
     
     func resetButtonDidTap(email: String?)
@@ -38,7 +37,7 @@ final class ResetVC: UIViewController {
     
     private lazy var cancelButton: UIButton =
         .cancelButton()
-        .withAction(viewModel, #selector(cancelButtonDidTap))
+        .withAction(viewModel, #selector(ResetViewModelProtocol.cancelButtonDidTap))
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
