@@ -51,6 +51,7 @@ final class OnboardFirstStepVC: UIViewController {
         
         setupUI()
         setupConstraints()
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     private func setupUI() {

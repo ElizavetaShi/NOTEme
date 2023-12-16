@@ -31,7 +31,7 @@ final class OnboardSecondStepVC: UIViewController {
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
     private lazy var infoLabel: UILabel =
-        .infoLabelWithAttributedText()
+        .infoLabel("onboard2_info_label_text".localized)
     
     private lazy var menuContainerView: UIView = UIView()
     
@@ -44,7 +44,7 @@ final class OnboardSecondStepVC: UIViewController {
     private lazy var timerLabel: UILabel = .menuLabel("onboard2_timer_label".localized)
     
     private lazy var doneButton: UIButton =
-        .yellowRoundedButton("Done")
+        .yellowRoundedButton("done_button".localized)
         .withAction(viewModel, #selector(OnboardSecondStepViewModelProtocol.doneDidTap))
     
     private var viewModel: OnboardSecondStepViewModelProtocol
@@ -139,26 +139,24 @@ final class OnboardSecondStepVC: UIViewController {
         }
         
         calendarLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(18.0)
+            make.left.equalToSuperview().inset(24.0)
             make.top.equalToSuperview().inset(19.0)
             make.width.equalTo(116.0)
             make.height.equalTo(24.0)
         }
         
         locationLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(18.0)
+            make.left.equalToSuperview().inset(24.0)
             make.top.equalTo(calendarLabel.snp.bottom).offset(12.0)
             make.width.equalTo(116.0)
             make.height.equalTo(24.0)
-
         }
         
         timerLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(18.0)
+            make.left.equalToSuperview().inset(24.0)
             make.top.equalTo(locationLabel.snp.bottom).offset(12.0)
             make.width.equalTo(116.0)
             make.height.equalTo(24.0)
-
         }
         
         doneButton.snp.makeConstraints { make in

@@ -80,6 +80,7 @@
 		72B7382E2B0D12AF0039FFED /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B7382D2B0D12AF0039FFED /* Coordinator.swift */; };
 		72B738312B0D1B700039FFED /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738302B0D1B700039FFED /* LoginCoordinator.swift */; };
 		72B738342B0D24C50039FFED /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738332B0D24C50039FFED /* RegisterCoordinator.swift */; };
+		72ED6CDA2B2DF5580038D14C /* NSAttributedString+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED6CD92B2DF5580038D14C /* NSAttributedString+HTML.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +153,7 @@
 		72B7382D2B0D12AF0039FFED /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		72B738302B0D1B700039FFED /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		72B738332B0D24C50039FFED /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		72ED6CD92B2DF5580038D14C /* NSAttributedString+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+HTML.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				72456EB02AF15F4700898215 /* View+Layer.swift */,
 				729C0ECB2AFAB88900E3D89D /* String+Localization.swift */,
 				72B737E62AFE942D0039FFED /* UIButton+Actions.swift */,
+				72ED6CD92B2DF5580038D14C /* NSAttributedString+HTML.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				728C08952AE834E200066F58 /* UIFont+Consts.swift in Sources */,
 				726CEA1B2B15018100E734FC /* KeyboardAnimation.swift in Sources */,
 				726CEA772B2DCDC300E734FC /* MainTabBarAssembler.swift in Sources */,
+				72ED6CDA2B2DF5580038D14C /* NSAttributedString+HTML.swift in Sources */,
 				728C089F2AE83DE100066F58 /* LoginVC.swift in Sources */,
 				726CEA752B28D35400E734FC /* HomeCoordinator.swift in Sources */,
 				72B737E92AFE97800039FFED /* LoginVM.swift in Sources */,
