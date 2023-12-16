@@ -14,7 +14,8 @@ final class LoginAssembler {
     static func make(coordinator: LoginCoordinatorProtocol) -> UIViewController {
         let vm = LoginVM(coordinator: coordinator,
                          authService: AuthService(),
-                         inputValidator: InputValidator())
+                         inputValidator: InputValidator(),
+                         alertService: AlertService.current)
         
         return LoginVC(viewModel: vm)
     }

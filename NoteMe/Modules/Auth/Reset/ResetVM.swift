@@ -10,6 +10,7 @@ import FirebaseAuth
 
 protocol ResetCoordinatorProtocol: AnyObject {
     func finish()
+    func showAlert(_ alert: UIAlertController)
 }
 
 protocol ResetAuthServiceUseCase {
@@ -48,6 +49,10 @@ final class ResetVM: ResetViewModelProtocol {
             if isSuccess {
                 coordinator?.finish()
             } else {
+//                let alertVC = AlertBuilder.build(title: "Error",
+//                                                 message: "E-mail is invalid.",
+//                                                 okTitle: "Ok")
+//                coordinator?.showAlert(alertVC)
             }
         }
     }

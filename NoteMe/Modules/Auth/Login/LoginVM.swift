@@ -12,7 +12,6 @@ protocol LoginCoordinatorProtocol: AnyObject {
     func finish()
     func openRegisterModule()
     func openResetModule()
-    func showAlert(_ alert: UIAlertController)
 }
 
 protocol LoginInputValidatorUseCase {
@@ -26,6 +25,10 @@ protocol LoginAuthServiceUseCase {
     func login(email: String,
                password: String,
                completion: @escaping (Bool) -> Void)
+}
+
+protocol LoginAlertServiceUseCase {
+    func showAlert(title: String, message: String, okTitle: String)
 }
 
 //protocol LoginKeyboardHelperUseCase {
@@ -45,16 +48,19 @@ final class LoginVM: LoginViewModelProtocol {
     
     private let authService: LoginAuthServiceUseCase
     private let inputValidator: LoginInputValidatorUseCase
+    private let alertService: LoginAlertServiceUseCase
     //    private var keyboardHelper: LoginKeyboardHelperUseCase
     
     init(
         //        keyboardHelper: LoginKeyboardHelperUseCase,
         coordinator: LoginCoordinatorProtocol,
         authService: LoginAuthServiceUseCase,
-        inputValidator: LoginInputValidatorUseCase) {
+        inputValidator: LoginInputValidatorUseCase,
+        alertService: LoginAlertServiceUseCase) {
             self.authService = authService
             self.inputValidator = inputValidator
             self.coordinator = coordinator
+            self.alertService = alertService
             //        self.keyboardHelper = keyboardHelper
         }
     
@@ -68,15 +74,17 @@ final class LoginVM: LoginViewModelProtocol {
         
         
         authService.login(email: email,
-                          password: password) { [weak coordinator] isSuccess in
+                          password: password) { [weak self] isSuccess in
             print(isSuccess)
             if isSuccess {
                 //                FIXME: - uncomment
-                //                                ParametersHelper.set(.authenticated, value: true)
-                //                                coordinator?.finish()
+                ParametersHelper.set(.authenticated, value: true)
+                self?.coordinator?.finish()
             } else {
-                let alertVC = AlertBuilder.build(title: "Error", message: "Invalid email or password. Please enter correct one", okTitle: "Ok")
-                coordinator?.showAlert(alertVC)
+                self?.alertService.showAlert(
+                    title: "Error.",
+                    message: "Invalid e-mail or password. Please enter correct one.",
+                    okTitle: "Ok.")
             }
         }
     }
