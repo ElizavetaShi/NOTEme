@@ -20,6 +20,7 @@ protocol RegisterPresenterDelegate: AnyObject {
     func setRepeatPasswordError(error: String?)
     
     func keyboardFrameChanged(_ frame: CGRect)
+    
 }
 
 protocol RegisterAuthServiceUseCase {
@@ -52,7 +53,6 @@ final class RegisterPresenter: RegisterPresenterProtocol {
     private let keyboardHelper: RegisterKeyboardHelperUseCase
     private let authServise: RegisterAuthServiceUseCase
     private let inputValidator: RegisterInputValidatorUseCase
-    
     
     init(coordinator: RegisterCoordinatorProtocol,
          keyboardHelper: RegisterKeyboardHelperUseCase,

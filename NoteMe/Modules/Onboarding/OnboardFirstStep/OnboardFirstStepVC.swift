@@ -14,6 +14,12 @@ import SnapKit
 
 final class OnboardFirstStepVC: UIViewController {
     
+    private enum L10n {
+        static let welcome: String = "onboard1_welcome_label".localized
+        static let infoText: String = "onboard1_info_label_text".localized
+        static let next: String = "onboard1_next_button".localized
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -25,14 +31,14 @@ final class OnboardFirstStepVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var welcomeLabel: UILabel = .headLabel("onboard1_welcome_label".localized)
+    private lazy var welcomeLabel: UILabel = .headLabel(L10n.welcome)
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
-    private lazy var infoLabel: UILabel = .infoLabel("onboard1_info_label_text".localized)
+    private lazy var infoLabel: UILabel = .infoLabel(L10n.infoText)
     
     private lazy var nextButton: UIButton =
-        .yellowRoundedButton("onboard1_next_button".localized)
+        .yellowRoundedButton(L10n.next)
         .withAction(viewModel, #selector(OnboardFirstStepViewModelProtocol.nextButtonDidTap))
     
     private var viewModel: OnboardFirstStepViewModelProtocol

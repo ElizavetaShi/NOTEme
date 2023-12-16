@@ -19,6 +19,13 @@ import SnapKit
 
 final class ResetVC: UIViewController {
     
+    private enum L10n {
+        static let headLabel: String = "auth_reset_password_label".localized
+        static let reset: String = "auth_reset_button".localized
+        static let infoText: String = "auth_info_label_text".localized
+        static let email: String = "auth_email_placeholder_textfield".localized
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -30,9 +37,9 @@ final class ResetVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var headLabel: UILabel = .headLabel("auth_reset_password_label".localized)
+    private lazy var headLabel: UILabel = .headLabel(L10n.headLabel)
     
-    private lazy var resetButton: UIButton = .yellowRoundedButton("auth_reset_button".localized)
+    private lazy var resetButton: UIButton = .yellowRoundedButton(L10n.reset)
         .withAction(self, #selector(resetButtonDidTap))
     
     private lazy var cancelButton: UIButton =
@@ -41,11 +48,11 @@ final class ResetVC: UIViewController {
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
-    private lazy var infoLabel: UILabel = .infoLabel("auth_info_label_text".localized)
+    private lazy var infoLabel: UILabel = .infoLabel(L10n.infoText)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.placeholder = "auth_email_placeholder_textfield".localized
+        textField.placeholder = L10n.email
         return textField
     }()
     

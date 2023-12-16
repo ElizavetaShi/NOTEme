@@ -40,10 +40,8 @@
 		726CEA542B1F8B4B00E734FC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 726CEA532B1F8B4B00E734FC /* FirebaseCrashlytics */; };
 		726CEA572B1F95D700E734FC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA562B1F95D700E734FC /* AuthService.swift */; };
 		726CEA592B1F975D00E734FC /* AuthService+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA582B1F975D00E734FC /* AuthService+Login.swift */; };
-		726CEA5C2B1F98E900E734FC /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA5B2B1F98E900E734FC /* AlertBuilder.swift */; };
 		726CEA602B246EF300E734FC /* AuthService+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA5F2B246EF300E734FC /* AuthService+Register.swift */; };
 		726CEA622B2477D800E734FC /* AuthService+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA612B2477D800E734FC /* AuthService+Reset.swift */; };
-		726CEA652B28BC8800E734FC /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA642B28BC8800E734FC /* AlertVC.swift */; };
 		726CEA672B28C1E000E734FC /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA662B28C1DF00E734FC /* AlertService.swift */; };
 		726CEA692B28C95800E734FC /* AlertService+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA682B28C95800E734FC /* AlertService+Login.swift */; };
 		726CEA6E2B28D1B300E734FC /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726CEA6D2B28D1B300E734FC /* MainTabBarCoordinator.swift */; };
@@ -81,6 +79,7 @@
 		72B738312B0D1B700039FFED /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738302B0D1B700039FFED /* LoginCoordinator.swift */; };
 		72B738342B0D24C50039FFED /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738332B0D24C50039FFED /* RegisterCoordinator.swift */; };
 		72ED6CDA2B2DF5580038D14C /* NSAttributedString+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED6CD92B2DF5580038D14C /* NSAttributedString+HTML.swift */; };
+		72ED6CDC2B2E15C70038D14C /* KeyboardAnimation+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED6CDB2B2E15C70038D14C /* KeyboardAnimation+Register.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,10 +111,8 @@
 		726CEA442B1F84B500E734FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		726CEA562B1F95D700E734FC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		726CEA582B1F975D00E734FC /* AuthService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Login.swift"; sourceTree = "<group>"; };
-		726CEA5B2B1F98E900E734FC /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		726CEA5F2B246EF300E734FC /* AuthService+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Register.swift"; sourceTree = "<group>"; };
 		726CEA612B2477D800E734FC /* AuthService+Reset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService+Reset.swift"; sourceTree = "<group>"; };
-		726CEA642B28BC8800E734FC /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		726CEA662B28C1DF00E734FC /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		726CEA682B28C95800E734FC /* AlertService+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+Login.swift"; sourceTree = "<group>"; };
 		726CEA6D2B28D1B300E734FC /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -154,6 +151,7 @@
 		72B738302B0D1B700039FFED /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		72B738332B0D24C50039FFED /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		72ED6CD92B2DF5580038D14C /* NSAttributedString+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+HTML.swift"; sourceTree = "<group>"; };
+		72ED6CDB2B2E15C70038D14C /* KeyboardAnimation+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardAnimation+Register.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,22 +331,12 @@
 			path = AuthService;
 			sourceTree = "<group>";
 		};
-		726CEA5A2B1F98D400E734FC /* AlertBuilder */ = {
+		726CEA5A2B1F98D400E734FC /* AlertService */ = {
 			isa = PBXGroup;
 			children = (
-				726CEA632B28BC7700E734FC /* AlertVC */,
-				726CEA5B2B1F98E900E734FC /* AlertBuilder.swift */,
 				726CEA662B28C1DF00E734FC /* AlertService.swift */,
 			);
-			path = AlertBuilder;
-			sourceTree = "<group>";
-		};
-		726CEA632B28BC7700E734FC /* AlertVC */ = {
-			isa = PBXGroup;
-			children = (
-				726CEA642B28BC8800E734FC /* AlertVC.swift */,
-			);
-			path = AlertVC;
+			path = AlertService;
 			sourceTree = "<group>";
 		};
 		726CEA6A2B28D0B400E734FC /* Coordinator */ = {
@@ -477,7 +465,7 @@
 		72B737EC2AFEA14F0039FFED /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				726CEA5A2B1F98D400E734FC /* AlertBuilder */,
+				726CEA5A2B1F98D400E734FC /* AlertService */,
 				726CEA552B1F95B800E734FC /* AuthService */,
 				726CEA1C2B164B4A00E734FC /* ParametersHelper */,
 				726CEA192B15015400E734FC /* KeyboardAnimation */,
@@ -521,6 +509,7 @@
 				72B737FC2B0A2D280039FFED /* InputValidator+Register.swift */,
 				72B738052B0BDAEC0039FFED /* KeyboardHelper+Register.swift */,
 				726CEA5F2B246EF300E734FC /* AuthService+Register.swift */,
+				72ED6CDB2B2E15C70038D14C /* KeyboardAnimation+Register.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -653,7 +642,6 @@
 				72B738062B0BDAEC0039FFED /* KeyboardHelper+Register.swift in Sources */,
 				728C08972AE8382C00066F58 /* UIImage+Consts.swift in Sources */,
 				72B737F32AFEA8140039FFED /* InputValidator+Login.swift in Sources */,
-				726CEA5C2B1F98E900E734FC /* AlertBuilder.swift in Sources */,
 				726CEA312B165D9500E734FC /* OnboardSecondStepCoordinator.swift in Sources */,
 				728C08952AE834E200066F58 /* UIFont+Consts.swift in Sources */,
 				726CEA1B2B15018100E734FC /* KeyboardAnimation.swift in Sources */,
@@ -664,6 +652,7 @@
 				72B737E92AFE97800039FFED /* LoginVM.swift in Sources */,
 				726CEA7A2B2DCFFD00E734FC /* ProfileCoordinator.swift in Sources */,
 				726CEA732B28D31F00E734FC /* HomeAssembler.swift in Sources */,
+				72ED6CDC2B2E15C70038D14C /* KeyboardAnimation+Register.swift in Sources */,
 				72B737F72B03E1180039FFED /* RegisterAssembler.swift in Sources */,
 				728C087C2AE8270F00066F58 /* AppDelegate.swift in Sources */,
 				726CEA182B14FD8700E734FC /* KeyboardHelper+Login.swift in Sources */,
@@ -684,7 +673,6 @@
 				726CEA3F2B1C92D100E734FC /* ProfileVC.swift in Sources */,
 				72456EB12AF15F4700898215 /* View+Layer.swift in Sources */,
 				728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */,
-				726CEA652B28BC8800E734FC /* AlertVC.swift in Sources */,
 				72B738012B0A70430039FFED /* ResetAssembler.swift in Sources */,
 				726CEA252B16568600E734FC /* OnboardFirstStepVM.swift in Sources */,
 				72B737EF2AFEA1B90039FFED /* InputValidator.swift in Sources */,

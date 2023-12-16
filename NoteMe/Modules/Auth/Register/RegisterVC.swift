@@ -14,7 +14,23 @@ import SnapKit
     @objc func haveAccountDidTap()
 }
 
+protocol RegisterKeyboardAnimationUseCase {
+    func frameChanged(for view: UIView, frame: CGRect)
+}
+
 final class RegisterVC: UIViewController {
+    
+    private enum L10n {
+        static let welcome: String = "auth_nice_to_meet_you_label".localized
+        static let register: String = "auth_register_button".localized
+        static let existingAccount: String = "auth_existing_account_button".localized
+        static let email: String = "auth_email_textfield".localized
+        static let emailPlaceholder: String = "auth_email_placeholder_textfield".localized
+        static let password: String = "auth_password_textfield".localized
+        static let passwordPlaceholder: String = "auth_enter_password_placeholder".localized
+        static let repeatPassword: String = "auth_repeat_password_textfield".localized
+        static let repeatPasswordPlaceholder: String = "auth_enter_password_placeholder".localized
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -27,46 +43,46 @@ final class RegisterVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var welcomeLabel: UILabel = .headLabel("auth_nice_to_meet_you_label".localized)
+    private lazy var welcomeLabel: UILabel = .headLabel(L10n.welcome)
     
-    private lazy var registerButton: UIButton = .yellowRoundedButton("auth_register_button".localized)
+    private lazy var registerButton: UIButton = .yellowRoundedButton(L10n.register)
         .withAction(self, #selector(registerDidTap))
     
-    private lazy var existingAccountButton: UIButton = .underlineYellowButton("auth_existing_account_button".localized)
+    private lazy var existingAccountButton: UIButton = .underlineYellowButton(L10n.existingAccount)
         .withAction(presenter, #selector(RegisterPresenterProtocol.haveAccountDidTap))
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "auth_email_textfield".localized
-        textField.placeholder = "auth_email_placeholder_textfield".localized
+        textField.title = L10n.email
+        textField.placeholder = L10n.emailPlaceholder
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "auth_password_textfield".localized
-        textField.placeholder = "auth_enter_password_placeholder".localized
+        textField.title = L10n.password
+        textField.placeholder = L10n.passwordPlaceholder
         return textField
     }()
     
     private lazy var repeatPasswordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "auth_repeat_password_textfield".localized
-        textField.placeholder = "auth_enter_password_placeholder".localized
+        textField.title = L10n.repeatPassword
+        textField.placeholder = L10n.repeatPasswordPlaceholder
         return textField
     }()
     
     private var presenter: RegisterPresenterProtocol
     
-    private var keyboardAnimation: KeyboardAnimation?
+    private var keyboardAnimator: RegisterKeyboardAnimationUseCase
     
     init(
-//        keyboardAnimation: KeyboardAnimation,
-        presenter: RegisterPresenterProtocol) {
+        presenter: RegisterPresenterProtocol,
+        keyboardAnimator: RegisterKeyboardAnimationUseCase) {
         self.presenter = presenter
-//        self.keyboardAnimation = KeyboardAnimation(containerView: containerView, contentView: contentView)
+        self.keyboardAnimator = keyboardAnimator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -77,7 +93,6 @@ final class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        keyboardAnimation = KeyboardAnimation(containerView: containerView, contentView: contentView)
         
         setupUI()
         setupConstraints()
@@ -181,11 +196,19 @@ extension RegisterVC: RegisterPresenterDelegate {
     func setRepeatPasswordError(error: String?) {
         repeatPasswordTextField.errorText = error
     }
-    
+   
     func keyboardFrameChanged(_ frame: CGRect) {
-        keyboardAnimation?.keyboardFrameChanged(frame)
+        keyboardAnimator.frameChanged(for: containerView, frame: frame)
     }
 }
+
+
+   
+    
+   
+    
+    
+
 
 
 

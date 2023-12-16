@@ -20,6 +20,17 @@ import SnapKit
 
 final class LoginVC: UIViewController {
     
+    private enum L10n {
+        static let welcome: String = "auth_welcome_label".localized
+        static let login: String = "auth_login_button".localized
+        static let newAccount: String = "auth_new_account_button".localized
+        static let forgotPassword: String = "auth_forgot_password_button".localized
+        static let email: String = "auth_email_textfield".localized
+        static let emailPlaceholder: String = "auth_email_placeholder_textfield".localized
+        static let password: String = "auth_password_textfield".localized
+        static let passwordPlaceholder: String = "auth_enter_password_placeholder".localized
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -31,33 +42,32 @@ final class LoginVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var welcomeLabel: UILabel = .headLabel("auth_welcome_label".localized)
+    private lazy var welcomeLabel: UILabel = .headLabel(L10n.welcome)
         
-    
     private lazy var loginButton: UIButton =
-        .yellowRoundedButton("auth_login_button".localized)
+        .yellowRoundedButton(L10n.login)
         .withAction(self, #selector(loginDidTap))
     
     
-    private lazy var newAccountButton: UIButton = .underlineYellowButton("auth_new_account_button".localized)
+    private lazy var newAccountButton: UIButton = .underlineYellowButton(L10n.newAccount)
         .withAction(viewModel, #selector(LoginViewModelProtocol.newAccountDidTap))
     
-    private lazy var forgotPasswordButton: UIButton = .underlineGreyButton("auth_forgot_password_button".localized)
+    private lazy var forgotPasswordButton: UIButton = .underlineGreyButton(L10n.forgotPassword)
         .withAction(self, #selector(forgotPasswordDidTap))
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
     private lazy var emailTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "auth_email_textfield".localized
-        textField.placeholder = "auth_email_placeholder_textfield".localized
+        textField.title = L10n.email
+        textField.placeholder = L10n.emailPlaceholder
         return textField
     }()
     
     private lazy var passwordTextField: LineTextField = {
         let textField = LineTextField()
-        textField.title = "auth_password_textfield".localized
-        textField.placeholder = "auth_enter_password_placeholder".localized
+        textField.title = L10n.password
+        textField.placeholder = L10n.passwordPlaceholder
         return textField
     }()
     

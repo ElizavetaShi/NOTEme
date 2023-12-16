@@ -36,3 +36,9 @@
 "location_key" = "Location";
 "timer_key" = "Timer";
 "done_button" = "Done";
+
+//Home
+"home_button" = "Home";
+
+//Profile
+"profile_button" = "Profile";

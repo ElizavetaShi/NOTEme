@@ -15,6 +15,15 @@ import SnapKit
 
 final class OnboardSecondStepVC: UIViewController {
     
+    private enum L10n {
+        static let welcome: String = "onboard2_welcome_label".localized
+        static let infoText = "onboard2_info_label_text".localized
+        static let calendar: String = "onboard2_calendar_label".localized
+        static let location: String = "onboard2_location_label".localized
+        static let timer: String = "onboard2_timer_label".localized
+        static let done: String = "done_button".localized
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -26,25 +35,25 @@ final class OnboardSecondStepVC: UIViewController {
     private lazy var logoImageView: UIImageView =
     UIImageView(image: .General.logo)
     
-    private lazy var welcomeLabel: UILabel = .headLabel("onboard2_welcome_label".localized)
+    private lazy var welcomeLabel: UILabel = .headLabel(L10n.welcome)
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
     private lazy var infoLabel: UILabel =
-        .infoLabel("onboard2_info_label_text".localized)
+        .infoLabel(L10n.infoText)
     
     private lazy var menuContainerView: UIView = UIView()
     
     private lazy var onboardImageView: UIImageView = UIImageView(image: .General.onboardStep2)
     
-    private lazy var calendarLabel: UILabel = .menuLabel("onboard2_calendar_label".localized)
+    private lazy var calendarLabel: UILabel = .menuLabel(L10n.calendar)
     
-    private lazy var locationLabel: UILabel = .menuLabel("onboard2_location_label".localized)
+    private lazy var locationLabel: UILabel = .menuLabel(L10n.location)
     
-    private lazy var timerLabel: UILabel = .menuLabel("onboard2_timer_label".localized)
+    private lazy var timerLabel: UILabel = .menuLabel(L10n.timer)
     
     private lazy var doneButton: UIButton =
-        .yellowRoundedButton("done_button".localized)
+        .yellowRoundedButton(L10n.done)
         .withAction(viewModel, #selector(OnboardSecondStepViewModelProtocol.doneDidTap))
     
     private var viewModel: OnboardSecondStepViewModelProtocol

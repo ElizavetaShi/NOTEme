@@ -37,3 +37,11 @@
 "timer_key" = "Таймер";
 "done_button" = "Готово";
 
+//Home
+"home_button" = "Домой";
+
+//Profile
+"profile_button" = "Профиль";
+
+
+
