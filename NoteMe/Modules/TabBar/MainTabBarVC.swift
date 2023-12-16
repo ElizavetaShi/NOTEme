@@ -1,9 +1,9 @@
-////
-////  MainTabBarVC.swift
-////  NoteMe
-////
-////  Created by Elizaveta Shidlovskaya on 3.12.23.
-////
+//
+//  MainTabBarVC.swift
+//  NoteMe
+//
+//  Created by Elizaveta Shidlovskaya on 3.12.23.
+//
 //
 import UIKit
 import SnapKit

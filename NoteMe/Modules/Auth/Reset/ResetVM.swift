@@ -10,7 +10,7 @@ import FirebaseAuth
 
 protocol ResetCoordinatorProtocol: AnyObject {
     func finish()
-    func showAlert(_ alert: UIAlertController)
+
 }
 
 protocol ResetAuthServiceUseCase {
@@ -21,21 +21,28 @@ protocol ResetInputValidatorUseCase {
     func validate(email: String?) -> Bool
 }
 
+protocol ResetAlertServiceUseCase {
+    func showResetAlert(title: String, message: String, okTitle: String)
+}
+
 final class ResetVM: ResetViewModelProtocol {
     
     var catchEmailError: ((String?) -> Void)?
     
     private let authService: ResetAuthServiceUseCase
     private let inputValidator: ResetInputValidatorUseCase
+    private let alertService: ResetAlertServiceUseCase
     
     private weak var coordinator: ResetCoordinatorProtocol?
     
     init(coordinator: ResetCoordinatorProtocol,
          authService: ResetAuthServiceUseCase,
-         inputValidator: ResetInputValidatorUseCase) {
+         inputValidator: ResetInputValidatorUseCase,
+         alertService: ResetAlertServiceUseCase) {
         self.authService = authService
         self.inputValidator = inputValidator
         self.coordinator = coordinator
+        self.alertService = alertService
     }
     
     func resetButtonDidTap(email: String?) {
@@ -44,11 +51,15 @@ final class ResetVM: ResetViewModelProtocol {
             checkValidation(email: email), let email
         else { return }
         
-        authService.reset(email: email) { [weak coordinator] isSuccess in
+        authService.reset(email: email) { [weak self] isSuccess in
             print(isSuccess)
             if isSuccess {
-                coordinator?.finish()
+                self?.coordinator?.finish()
             } else {
+                self?.alertService.showResetAlert(title: "Error",
+                                            message: "E-mail is invalid.",
+                                            okTitle: "Ok")
+               
 //                let alertVC = AlertBuilder.build(title: "Error",
 //                                                 message: "E-mail is invalid.",
 //                                                 okTitle: "Ok")

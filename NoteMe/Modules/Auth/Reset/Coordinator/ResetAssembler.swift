@@ -15,7 +15,8 @@ final class ResetAssembler {
         
         let vm = ResetVM(coordinator: coordinator,
                          authService: AuthService(),
-                         inputValidator: InputValidator())
+                         inputValidator: InputValidator(),
+                         alertService: AlertService.current)
         return ResetVC(viewModel: vm)
     }
 }
