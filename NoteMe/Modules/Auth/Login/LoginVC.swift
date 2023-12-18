@@ -16,6 +16,12 @@ import SnapKit
     func loginDidTap(email: String?, password: String?)
     @objc func newAccountDidTap()
     func forgotPasswordDidTap(email: String?)
+ 
+    var keyboardFrameChanged: ((CGRect) -> Void)? { get set }
+}
+
+protocol LoginKeyboardAnimationUseCase {
+    func frameChanged(for view: UIView, frame: CGRect)
 }
 
 final class LoginVC: UIViewController {
@@ -73,8 +79,12 @@ final class LoginVC: UIViewController {
     
     private var viewModel: LoginViewModelProtocol
     
-    init(viewModel: LoginViewModelProtocol) {
+    private var keyboardAnimator: LoginKeyboardAnimationUseCase
+    
+    init(viewModel: LoginViewModelProtocol,
+         keyboardAnimator: LoginKeyboardAnimationUseCase) {
         self.viewModel = viewModel
+        self.keyboardAnimator = keyboardAnimator
         super.init(nibName: nil, bundle: nil)
         
         bind()
@@ -98,6 +108,10 @@ final class LoginVC: UIViewController {
         
         viewModel.catchPasswordError = {
             self.passwordTextField.errorText = $0
+        }
+        
+        viewModel.keyboardFrameChanged = { frame in
+            self.keyboardAnimator.frameChanged(for: self.containerView, frame: frame)
         }
     }
     

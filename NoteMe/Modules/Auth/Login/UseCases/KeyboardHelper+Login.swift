@@ -7,4 +7,4 @@
 
 import UIKit
 
-//extension KeyboardHelper: LoginKeyboardHelperUseCase {}
+extension KeyboardHelper: LoginKeyboardHelperUseCase {}

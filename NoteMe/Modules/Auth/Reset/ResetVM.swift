@@ -59,11 +59,6 @@ final class ResetVM: ResetViewModelProtocol {
                 self?.alertService.showResetAlert(title: "Error",
                                             message: "E-mail is invalid.",
                                             okTitle: "Ok")
-               
-//                let alertVC = AlertBuilder.build(title: "Error",
-//                                                 message: "E-mail is invalid.",
-//                                                 okTitle: "Ok")
-//                coordinator?.showAlert(alertVC)
             }
         }
     }

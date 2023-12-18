@@ -31,15 +31,17 @@ protocol LoginAlertServiceUseCase {
     func showAlert(title: String, message: String, okTitle: String)
 }
 
-//protocol LoginKeyboardHelperUseCase {
-//    @discardableResult
-//    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
-//    
-//    @discardableResult
-//    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
-//}
+protocol LoginKeyboardHelperUseCase {
+    @discardableResult
+    func onWillShow(_ handler: @escaping (CGRect) -> Void) -> Self
+    
+    @discardableResult
+    func onWillHide(_ handler: @escaping (CGRect) -> Void) -> Self
+}
 
 final class LoginVM: LoginViewModelProtocol {
+    
+    var keyboardFrameChanged: ((CGRect) -> Void)?
     
     var catchEmailError: ((String?) -> Void)?
     var catchPasswordError: ((String?) -> Void)?
@@ -49,10 +51,10 @@ final class LoginVM: LoginViewModelProtocol {
     private let authService: LoginAuthServiceUseCase
     private let inputValidator: LoginInputValidatorUseCase
     private let alertService: LoginAlertServiceUseCase
-    //    private var keyboardHelper: LoginKeyboardHelperUseCase
+    private var keyboardHelper: LoginKeyboardHelperUseCase
     
     init(
-        //        keyboardHelper: LoginKeyboardHelperUseCase,
+        keyboardHelper: LoginKeyboardHelperUseCase,
         coordinator: LoginCoordinatorProtocol,
         authService: LoginAuthServiceUseCase,
         inputValidator: LoginInputValidatorUseCase,
@@ -61,8 +63,19 @@ final class LoginVM: LoginViewModelProtocol {
             self.inputValidator = inputValidator
             self.coordinator = coordinator
             self.alertService = alertService
-            //        self.keyboardHelper = keyboardHelper
+            self.keyboardHelper = keyboardHelper
+            bind()
         }
+    
+    private func bind() {
+        keyboardHelper.onWillShow { frame in
+            self.keyboardFrameChanged?(frame)
+        }
+        
+        keyboardHelper.onWillHide { frame in
+            self.keyboardFrameChanged?(frame)
+        }
+    }
     
     func loginDidTap(email: String?, password: String?) {
         

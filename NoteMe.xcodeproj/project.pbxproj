@@ -80,6 +80,7 @@
 		72B738342B0D24C50039FFED /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B738332B0D24C50039FFED /* RegisterCoordinator.swift */; };
 		72ED6CDA2B2DF5580038D14C /* NSAttributedString+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED6CD92B2DF5580038D14C /* NSAttributedString+HTML.swift */; };
 		72ED6CDC2B2E15C70038D14C /* KeyboardAnimation+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED6CDB2B2E15C70038D14C /* KeyboardAnimation+Register.swift */; };
+		72ED6CDE2B2E5B5D0038D14C /* KeyboardAnimation+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED6CDD2B2E5B5D0038D14C /* KeyboardAnimation+Login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +153,7 @@
 		72B738332B0D24C50039FFED /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		72ED6CD92B2DF5580038D14C /* NSAttributedString+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+HTML.swift"; sourceTree = "<group>"; };
 		72ED6CDB2B2E15C70038D14C /* KeyboardAnimation+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardAnimation+Register.swift"; sourceTree = "<group>"; };
+		72ED6CDD2B2E5B5D0038D14C /* KeyboardAnimation+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardAnimation+Login.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +493,7 @@
 				726CEA172B14FD8700E734FC /* KeyboardHelper+Login.swift */,
 				726CEA582B1F975D00E734FC /* AuthService+Login.swift */,
 				726CEA682B28C95800E734FC /* AlertService+Login.swift */,
+				72ED6CDD2B2E5B5D0038D14C /* KeyboardAnimation+Login.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				72B738062B0BDAEC0039FFED /* KeyboardHelper+Register.swift in Sources */,
 				728C08972AE8382C00066F58 /* UIImage+Consts.swift in Sources */,
 				72B737F32AFEA8140039FFED /* InputValidator+Login.swift in Sources */,
+				72ED6CDE2B2E5B5D0038D14C /* KeyboardAnimation+Login.swift in Sources */,
 				726CEA312B165D9500E734FC /* OnboardSecondStepCoordinator.swift in Sources */,
 				728C08952AE834E200066F58 /* UIFont+Consts.swift in Sources */,
 				726CEA1B2B15018100E734FC /* KeyboardAnimation.swift in Sources */,
