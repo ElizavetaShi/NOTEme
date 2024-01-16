@@ -46,11 +46,12 @@ final class OnboardSecondStepVC: UIViewController {
     
     private lazy var onboardImageView: UIImageView = UIImageView(image: .General.onboardStep2)
     
-    private lazy var calendarLabel: UILabel = .menuLabel(L10n.calendar)
+    private lazy var calendarLabel: UILabel = .menuLabel(L10n.calendar, fontSize: 16.0)
     
-    private lazy var locationLabel: UILabel = .menuLabel(L10n.location)
     
-    private lazy var timerLabel: UILabel = .menuLabel(L10n.timer)
+    private lazy var locationLabel: UILabel = .menuLabel(L10n.location, fontSize: 16.0)
+    
+    private lazy var timerLabel: UILabel = .menuLabel(L10n.timer, fontSize: 16.0)
     
     private lazy var doneButton: UIButton =
         .yellowRoundedButton(L10n.done)

@@ -10,34 +10,23 @@ import SnapKit
 //
 final class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
     
+    private lazy var plusButton: UIButton = .plusButton(UIImage(named: "plus"))
+    
     override func viewDidLoad() {
         tabBar.tintColor = .appYellow
         tabBar.backgroundColor = .appBlack
         tabBar.unselectedItemTintColor = .appWhite
+        
+        self.tabBar.addSubview(plusButton)
+        setupConstraints()
+        
     }
-
-//    private lazy var plusButton: UIButton = .plusButton(UIImage(named: "plus"))
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        setupTabs()
-//
-//        self.tabBar.barTintColor = .black
-//        self.tabBar.isTranslucent = false
-//
-//       self.tabBar.addSubview(plusButton)
-//        setupConstraints()
-////        self.delegate = self
-//    }
-
-//    private func setupConstraints() {
-//        plusButton.snp.makeConstraints { make in
-//            make.size.equalTo(50.0)
-//            make.centerY.equalTo(tabBar.snp.top)
-//            make.centerX.equalToSuperview()
-//        }
-//    }
+    
+    private func setupConstraints() {
+        plusButton.snp.makeConstraints { make in
+            make.size.equalTo(50.0)
+            make.centerY.equalTo(tabBar.snp.top)
+            make.centerX.equalToSuperview()
+        }
+    }
 }
-//
-//

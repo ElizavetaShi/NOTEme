@@ -79,4 +79,15 @@ extension UIButton {
         button.setBackgroundImage(image, for: .normal)
         return button
     }
+    
+    static func settingsButton(_ title: String?, titleColor: UIColor) -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(titleColor, for: .normal)
+        button.setTitleColor(titleColor.withAlphaComponent(0.75), for: .highlighted)
+        button.titleLabel?.font = .appFont.withSize(14.0)
+        button.contentHorizontalAlignment = .left
+        return button
+    }
 }

@@ -24,4 +24,6 @@ extension UIColor {
     static var appGreyText: UIColor = .init(170, 170, 170, 1)
     static var viewShadow: UIColor = .init(0, 0, 0, 0.05)
     static var appWhite: UIColor = .init(255, 255, 255, 1)
+    static var appMidGrey: UIColor = .init(137, 138, 141, 1)
+    static var appLightGrey: UIColor = .init(151, 151, 151, 1)
 }

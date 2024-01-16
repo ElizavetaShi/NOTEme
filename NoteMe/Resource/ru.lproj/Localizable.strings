@@ -42,6 +42,8 @@
 
 //Profile
 "profile_button" = "Профиль";
+"account_title_label" = "Профиль";
+"settings_title_label" = "Настройки";
 
 
 

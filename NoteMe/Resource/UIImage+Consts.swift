@@ -14,5 +14,8 @@ extension UIImage {
         
         static let logo: UIImage? = .init(named: "logo")
         static let onboardStep2: UIImage? = .init(named: "onboardStep2")
+        static let notifications: UIImage? = .init(named: "notification")
+        static let export: UIImage? = .init(named: "export")
+        static let logout: UIImage? = .init(named: "logout")
     }
 }
