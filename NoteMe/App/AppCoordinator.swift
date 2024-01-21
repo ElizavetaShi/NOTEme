@@ -9,13 +9,12 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
     
-    static var windowScene: UIWindowScene?
+    private let container: Container
+    private let windowManager: WindowManager
     
-    private var window: UIWindow
-    
-    init(scene: UIWindowScene) {
-        self.window = UIWindow(windowScene: scene)
-        Self.windowScene = scene
+    init(container: Container) {
+        self.container = container
+        self.windowManager = container.resolve()
     }
     
     func startApp() {
@@ -34,7 +33,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func openAuthModule() {
-        let coordinator = LoginCoordinator()
+        let coordinator = LoginCoordinator(container: container)
         children.append(coordinator)
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll { $0 == coordinator }
@@ -43,8 +42,9 @@ final class AppCoordinator: Coordinator {
         
         let vc = coordinator.start()
         
+        let window = windowManager.get(type: .main)
         window.rootViewController = vc
-        window.makeKeyAndVisible()
+        windowManager.show(type: .main)
     }
     
     private func openOnboardingModule() {
@@ -55,8 +55,10 @@ final class AppCoordinator: Coordinator {
             self?.startApp()
         }
         let vc = coordinator.start()
+        
+        let window = windowManager.get(type: .main)
         window.rootViewController = vc
-        window.makeKeyAndVisible()
+        windowManager.show(type: .main)
     }
     
     private func openMainModule() {
@@ -69,8 +71,9 @@ final class AppCoordinator: Coordinator {
         }
         let vc = coordinator.start()
       
+        let window = windowManager.get(type: .main)
         window.rootViewController = vc
-        window.makeKeyAndVisible()
+        windowManager.show(type: .main)
     }
 }
 

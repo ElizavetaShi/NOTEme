@@ -41,6 +41,11 @@ protocol LoginKeyboardHelperUseCase {
 
 final class LoginVM: LoginViewModelProtocol {
     
+    private enum L10n {
+        static let error: String = "errorTitle_login_label".localized
+        static let errorMessage: String = "errorMessage_login_label".localized
+    }
+    
     var keyboardFrameChanged: ((CGRect) -> Void)?
     
     var catchEmailError: ((String?) -> Void)?
@@ -95,8 +100,8 @@ final class LoginVM: LoginViewModelProtocol {
                 self?.coordinator?.finish()
             } else {
                 self?.alertService.showAlert(
-                    title: "Error.",
-                    message: "Invalid e-mail or password. Please enter correct one.",
+                    title: L10n.error,
+                    message: L10n.errorMessage,
                     okTitle: "Ok.")
             }
         }

@@ -22,6 +22,14 @@
 "auth_info_label_text" = "Enter your email address and we will share a link to create a new password";
 "auth_reset_button" = "Reset";
 "auth_cancel_button" = "Cancel";
+"errorTitle_login_label" = "Error";
+"errorMessage_login_label" = "Invalid e-mail or password. Please enter correct one.";
+"errorEmail_register_label" = "Wrong e-mail!";
+"errorPassword_register_label" = "Non-valid password!";
+"errPasswordEqual_register_label" = "Passwords are not equal!";
+"error_reset_label" = "Error";
+"errorMessage_reset_label" = "E-mail is invalid.";
+"errorEmail_reset_label" = "Wrong e-mail";
 
 //Onboarding
 "onboard1_welcome_label" = "Welcome!";

@@ -27,6 +27,12 @@ protocol ResetAlertServiceUseCase {
 
 final class ResetVM: ResetViewModelProtocol {
     
+    private enum L10n {
+        static let error: String = "error_reset_label".localized
+        static let errorMessage: String = "errorMessage_reset_label".localized
+        static let errorEmail: String = "errorEmail_reset_label".localized
+    }
+    
     var catchEmailError: ((String?) -> Void)?
     
     private let authService: ResetAuthServiceUseCase
@@ -56,8 +62,8 @@ final class ResetVM: ResetViewModelProtocol {
             if isSuccess {
                 self?.coordinator?.finish()
             } else {
-                self?.alertService.showResetAlert(title: "Error",
-                                            message: "E-mail is invalid.",
+                self?.alertService.showResetAlert(title: L10n.error,
+                                                  message: L10n.errorMessage,
                                             okTitle: "Ok")
             }
         }
@@ -72,7 +78,7 @@ final class ResetVM: ResetViewModelProtocol {
         
         let isEmailValid = inputValidator.validate(email: email)
         
-        catchEmailError?(isEmailValid ? nil : "Wrong e-mail")
+        catchEmailError?(isEmailValid ? nil : L10n.errorEmail)
         
         return isEmailValid
     }

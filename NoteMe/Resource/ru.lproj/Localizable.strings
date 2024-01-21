@@ -21,6 +21,15 @@
 "auth_info_label_text" = "Введите ваш емейл адрес и мы вышлем ссылку для создание нового пароля.";
 "auth_reset_button" = "Сбросить";
 "auth_cancel_button" = "Отменить";
+"errorTitle_loginVM_label" = "Ошибка";
+"errorMessage_loginVM_label" = "Неверный е-мейл или пароль. Пожалуйста, ввведите верный.";
+"errorEmail_register_label" = "Неверный е-мейл!";
+"errorPassword_register_label" = "Неверный пароль!";
+"errPasswordEqual_register_label" = "Пароли не совпадают!";
+"error_reset_label" = "Ошибка";
+"errorMessage_reset_label" = "Е-мейл неверный.";
+"errorEmail_reset_label" = "Е-мейл неверный";
+
 
 
 //Onboarding
@@ -36,6 +45,7 @@
 "location_key" = "Локация";
 "timer_key" = "Таймер";
 "done_button" = "Готово";
+
 
 //Home
 "home_button" = "Домой";

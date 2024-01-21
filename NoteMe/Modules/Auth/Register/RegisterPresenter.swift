@@ -46,6 +46,12 @@ protocol RegisterKeyboardHelperUseCase {
 
 final class RegisterPresenter: RegisterPresenterProtocol {
     
+    private enum L10n {
+        static let errorEmail: String = "errorEmail_register_label".localized
+        static let errorPassword: String = "errorPassword_register_label".localized
+        static let errPasswordEqual: String = "errPasswordEqual_register_label".localized
+    }
+    
     weak var delegate: RegisterPresenterDelegate?
     
     private weak var coordinator: RegisterCoordinatorProtocol?
@@ -99,9 +105,9 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         let isEmailValid = inputValidator.validate(email: email)
         let isPasswordValid = inputValidator.validate(password: password)
         
-        delegate?.setEmailError(error: isEmailValid ? nil : "Wrong e-mail!")
-        delegate?.setPasswordError(error: isPasswordValid ? nil : "Non-valid password!")
-        delegate?.setRepeatPasswordError(error: password == repeatPassword ? nil : "Passwords are not equal!")
+        delegate?.setEmailError(error: isEmailValid ? nil : L10n.errorEmail)
+        delegate?.setPasswordError(error: isPasswordValid ? nil : L10n.errorPassword)
+        delegate?.setRepeatPasswordError(error: password == repeatPassword ? nil : L10n.errPasswordEqual)
         
         return isEmailValid && isPasswordValid && password == repeatPassword
     }
