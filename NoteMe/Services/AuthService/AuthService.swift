@@ -38,4 +38,18 @@ final class AuthService {
             completion(error == nil)
         }
     }
+    
+    func getUserEmail() -> String? {
+        firebase.currentUser?.email
+    }
+
+    func logout(completion: @escaping (Bool) -> Void) {
+        
+        do {
+            try firebase.signOut()
+            }
+        catch let signOutError as NSError {
+            print("Error signing out: \(signOutError)")
+        }
+    }
 }

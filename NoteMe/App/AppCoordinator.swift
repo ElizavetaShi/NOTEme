@@ -62,7 +62,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func openMainModule() {
-        let coordinator = MainTabBarCoordinator()
+        let coordinator = MainTabBarCoordinator(container: container)
         children.append(coordinator)
         coordinator.onDidFinish = {
             [weak self] coordinator in

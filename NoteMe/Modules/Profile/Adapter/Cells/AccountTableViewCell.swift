@@ -36,6 +36,10 @@ final class AccountTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setup(_ email: String) {
+        emailLabel.text = email
+    }
+    
     private func setupUI() {
         
         backgroundColor = .clear
@@ -59,9 +63,7 @@ final class AccountTableViewCell: UITableViewCell {
         emailLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(4.0)
             make.left.bottom.equalToSuperview().inset(16.0)
-            
         }
     }
-    
 }
 

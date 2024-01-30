@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ProfileViewModelProtocol {
+    var username: String { get set }
+   func makeTableView() -> UITableView
+}
+
 final class ProfileVC: UIViewController {
     
     private enum L10n {
@@ -17,24 +22,19 @@ final class ProfileVC: UIViewController {
     
     private lazy var contentView: UIView = .contentView(.appGrey)
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .clear
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderIdentifier")
-        tableView.register(AccountTableViewCell.self, forCellReuseIdentifier: AccountTableViewCell.identifier)
-        tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
-        return tableView
-    }()
+    private lazy var tableView: UITableView = viewModel.makeTableView()
+//        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderIdentifier")
+
+
+    
+    private var viewModel: ProfileViewModelProtocol
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    init() {
+    init(viewModel: ProfileViewModelProtocol) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupTabBarItem()
     }
@@ -45,14 +45,13 @@ final class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
       
         setupUI()
         setupConstraints()
     }
     
     private func setupUI() {
-//        view.backgroundColor = .appGrey
+        view.backgroundColor = .appGrey
         view.addSubview(contentView)
         contentView.addSubview(tableView)
     }
@@ -75,54 +74,70 @@ final class ProfileVC: UIViewController {
 }
 
 
-extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
+//extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return viewModel.sections.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        let sectionType = viewModel.sections[section]
+//        return sectionType.numberOfRows
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+////        if indexPath.section == 0 {
+////            let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier) as! AccountTableViewCell
+////            return cell
+////        }
+////        else if indexPath.section == 1 {
+////            if indexPath.row == 0 {
+////                let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier) as! SettingsTableViewCell
+////                return cell
+////            }
+////        }
+////        return UITableViewCell()
+//
+//        let section = viewModel.sections[indexPath.section]
+//        switch section {
+//        case .account(let email):
+//            let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier) as! AccountTableViewCell
+//            cell.setup(email)
+//            return cell
+//        case .settings(let rows):
+//            let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier) as! SettingsTableViewCell
+//            cell.setup(rows[indexPath.row])
+//            return cell
+//        }
+//    }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 { return 1 }
-        else if section == 1 { return 1 }
-        return .zero
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier) as! AccountTableViewCell
-            return cell
-        }
-        else if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier) as! SettingsTableViewCell
-                return cell
-            }
-        }
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderIdentifier") as? HeaderView else { return nil }
-        if section == 0 {
-            headerView.titleLabel.text = L10n.account
-        } else if section == 1 {
-            headerView.titleLabel.text = L10n.settings
-        }
-        return headerView
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+////        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderIdentifier") as? HeaderView else { return nil }
+////        if section == 0 {
+////            headerView.titleLabel.text = L10n.account
+////        } else if section == 1 {
+////            headerView.titleLabel.text = L10n.settings
+////        }
+////        return headerView
+//
+//        let section = viewModel.sections[section]
+//        let header = ProfileTableViewHeader()
+//        header.text = section.headerText
+//        return header
+//    }
     
     
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
- 
-}
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 50
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//
+//}

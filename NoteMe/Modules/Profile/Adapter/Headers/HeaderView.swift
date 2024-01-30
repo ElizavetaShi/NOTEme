@@ -17,6 +17,11 @@ final class HeaderView: UITableViewHeaderFooterView {
         return label
     }()
     
+    var text: String? {
+        get { titleLabel.text }
+        set { titleLabel.text = newValue }
+    }
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
