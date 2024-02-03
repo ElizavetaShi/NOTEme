@@ -7,6 +7,14 @@
 
 import UIKit
 
+fileprivate enum L10n {
+    static let account: String = "account".localized
+    static let settings: String = "settings".localized
+    static let notifications: String = "notifications".localized
+    static let export: String = "export".localized
+    static let logout: String = "logout".localized
+}
+
 enum ProfileSections {
     
     case account(String)
@@ -21,8 +29,8 @@ enum ProfileSections {
     
     var headerText: String {
         switch self {
-        case .account: return "Account".localized
-        case .settings(_): return "Settings".localized
+        case .account: return L10n.account
+        case .settings(_): return L10n.settings
         }
     }
 }
@@ -33,20 +41,19 @@ enum ProfileSettingsRows: CaseIterable {
     case export
     case logout
     
-    var icon: UIImage {
+    var icon: UIImage? {
         switch self {
-        case .notifications: return UIImage(named: "notifications")!
-        case .export: return UIImage(named: "export")!
-        case .logout: return UIImage(named: "logout")!
-
+        case .notifications: return .Profile.notifications
+        case .export: return .Profile.export
+        case .logout: return .Profile.logout
         }
     }
     
     var title: String {
         switch self {
-        case .notifications: return "Notifications".localized
-        case .export: return "export".localized
-        case .logout: return "Logout".localized
+        case .notifications: return L10n.notifications
+        case .export: return L10n.export
+        case .logout: return L10n.logout
         }
     }
     

@@ -57,7 +57,7 @@ final class ProfileVC: UIViewController {
     }
     
     private func setupTabBarItem() {
-        self.tabBarItem = UITabBarItem(title: L10n.profile, image: UIImage(named: "profile"), tag: .zero)
+        self.tabBarItem = UITabBarItem(title: L10n.profile, image: .Profile.profile, tag: .zero)
     }
     
     private func setupConstraints() {

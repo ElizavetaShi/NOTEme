@@ -51,9 +51,18 @@
 "home_button" = "Домой";
 
 //Profile
-"profile_button" = "Профиль";
-"account_title_label" = "Профиль";
-"settings_title_label" = "Настройки";
+//"profile_button" = "Профиль";
+//"account_title_label" = "Профиль";
+//"settings_title_label" = "Настройки";
+"account" = "Профиль";
+"settings" = "Настройки";
+"notifications" = "Напоминания";
+"export" = "Поделиться";
+"logout" = "Выйти";
+
+
+
+
 
 
 

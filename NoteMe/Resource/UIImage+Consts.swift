@@ -18,4 +18,11 @@ extension UIImage {
         static let export: UIImage? = .init(named: "export")
         static let logout: UIImage? = .init(named: "logout")
     }
+    
+    enum Profile {
+        static let profile: UIImage? = .init(named: "profile")
+        static let notifications: UIImage? = .init(named: "notification")
+        static let export: UIImage? = .init(named: "export")
+        static let logout: UIImage? = .init(named: "logout")
+    }
 }

@@ -49,6 +49,11 @@
 "home_button" = "Home";
 
 //Profile
-"profile_button" = "Profile";
-"account_title_label" = "Account";
-"settings_title_label" = "Settings";
+//"profile_button" = "Profile";
+//"account_title_label" = "Account";
+//"settings_title_label" = "Settings";
+"account" = "Account";
+"settings" = "Settings";
+"notifications" = "Notifications";
+"export" = "Export";
+"logout" = "Logout";
