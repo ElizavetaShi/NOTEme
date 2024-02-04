@@ -49,7 +49,7 @@
 "home_button" = "Home";
 
 //Profile
-//"profile_button" = "Profile";
+"profile_button" = "Profile";
 //"account_title_label" = "Account";
 //"settings_title_label" = "Settings";
 "account" = "Account";
@@ -57,3 +57,9 @@
 "notifications" = "Notifications";
 "export" = "Export";
 "logout" = "Logout";
+"logout_title" = "Logout";
+"logout_message" = "Do you want to logout";
+"cancel_message" = "Cancel";
+"ok_message" = "Log out";
+
+

@@ -15,6 +15,8 @@ final class ProfileAdapter: NSObject {
         }
     }
     
+    var didSelectRow: ((ProfileSettingsRows) -> Void)?
+    
     private var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         return tableView
@@ -30,7 +32,8 @@ final class ProfileAdapter: NSObject {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
+        tableView.separatorInset = .init(top: 0.0, left: 32.0, bottom: 0.0, right: 32.0)
         tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderIdentifier")
         tableView.register(AccountTableViewCell.self, forCellReuseIdentifier: AccountTableViewCell.identifier)
         tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
@@ -44,8 +47,7 @@ extension ProfileAdapter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionType = sections[section]
-        return sectionType.numberOfRows
+        return sections[section].numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,6 +64,17 @@ extension ProfileAdapter: UITableViewDataSource {
             return cell
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let section = sections[indexPath.section]
+        switch section {
+        case .settings(let rows):
+            didSelectRow?(rows[indexPath.row])
+        case .account(_): break
+        }
+    }
+
 }
 
 extension ProfileAdapter: UITableViewDelegate {
@@ -72,6 +85,11 @@ extension ProfileAdapter: UITableViewDelegate {
         header.text = section.headerText
         return header
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+
 }
 
 extension ProfileAdapter: ProfileAdapterProtocol {

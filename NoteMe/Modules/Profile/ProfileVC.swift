@@ -23,9 +23,6 @@ final class ProfileVC: UIViewController {
     private lazy var contentView: UIView = .contentView(.appGrey)
     
     private lazy var tableView: UITableView = viewModel.makeTableView()
-//        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderIdentifier")
-
-
     
     private var viewModel: ProfileViewModelProtocol
     
@@ -90,17 +87,7 @@ final class ProfileVC: UIViewController {
 //    }
 //
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-////        if indexPath.section == 0 {
-////            let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier) as! AccountTableViewCell
-////            return cell
-////        }
-////        else if indexPath.section == 1 {
-////            if indexPath.row == 0 {
-////                let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier) as! SettingsTableViewCell
-////                return cell
-////            }
-////        }
-////        return UITableViewCell()
+
 //
 //        let section = viewModel.sections[indexPath.section]
 //        switch section {
@@ -116,14 +103,7 @@ final class ProfileVC: UIViewController {
 //    }
     
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-////        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderIdentifier") as? HeaderView else { return nil }
-////        if section == 0 {
-////            headerView.titleLabel.text = L10n.account
-////        } else if section == 1 {
-////            headerView.titleLabel.text = L10n.settings
-////        }
-////        return headerView
-//
+
 //        let section = viewModel.sections[section]
 //        let header = ProfileTableViewHeader()
 //        header.text = section.headerText

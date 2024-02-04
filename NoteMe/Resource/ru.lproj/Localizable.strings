@@ -51,7 +51,7 @@
 "home_button" = "Домой";
 
 //Profile
-//"profile_button" = "Профиль";
+"profile_button" = "Профиль";
 //"account_title_label" = "Профиль";
 //"settings_title_label" = "Настройки";
 "account" = "Профиль";
@@ -59,6 +59,14 @@
 "notifications" = "Напоминания";
 "export" = "Поделиться";
 "logout" = "Выйти";
+"logout_title" = "Выйти";
+"logout_message" = "Хотите выйти из профиля";
+"cancel_message" = "Отменить";
+"ok_message" = "Выйти";
+
+
+
+
 
 
 

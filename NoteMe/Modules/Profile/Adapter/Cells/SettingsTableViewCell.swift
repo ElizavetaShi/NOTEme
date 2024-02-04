@@ -22,18 +22,18 @@ final class SettingsTableViewCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-         label.textColor = .appText
-         label.font = .appFont.withSize(12.0)
-         return label
-     }()
+        label.textColor = .appText
+        label.font = .appFont.withSize(12.0)
+        return label
+    }()
     
     private lazy var statusLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = .appFont.withSize(12.0)
         label.textColor = .appLightGrey
         return label
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -48,7 +48,7 @@ final class SettingsTableViewCell: UITableViewCell {
     private func setupUI() {
         
         backgroundColor = .clear
-//        selectionStyle = .none
+        //        selectionStyle = .none
         
         contentView.addSubview(containerView)
         containerView.addSubview(iconImageView)

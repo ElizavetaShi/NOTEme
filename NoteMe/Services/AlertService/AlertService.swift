@@ -38,9 +38,6 @@ final class AlertService {
         window.rootViewController?.present(alertVC, animated: true)
     }
     
-   
-   
-    
     private func buildAlert(title: String?,
                             message: String?,
                             cancelTitle: String? = nil,
@@ -50,8 +47,6 @@ final class AlertService {
         let alertVC = UIAlertController(title: title,
                                         message: message,
                                         preferredStyle: .alert)
-        
-      
         
         if let cancelTitle {
             let action = UIAlertAction(title: cancelTitle, style: .cancel) { [weak self] _ in
@@ -71,12 +66,3 @@ final class AlertService {
         return alertVC
     }
 }
-
-//extension UIAlertController {
-//    func show() {
-//        let alertService = AlertService.current
-//        alertService.buildWindow()
-//        alertService.window?.makeKeyAndVisible()
-//        alertService.window?.rootViewController?.present(self, animated: true)
-//    }
-//}

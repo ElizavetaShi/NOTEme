@@ -18,7 +18,8 @@ final class ProfileAssembler {
         let adapter = ProfileAdapter()
         let vm = ProfileVM(adapter: adapter,
                            authService: authService,
-                           alertService: alertService, coordinator: coordinator)
+                           alertService: alertService,
+                           coordinator: coordinator)
         
         return ProfileVC(viewModel: vm)
     }

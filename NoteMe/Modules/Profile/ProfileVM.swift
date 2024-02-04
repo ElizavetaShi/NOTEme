@@ -32,9 +32,16 @@ protocol ProfileAlertServiceUseCase {
 }
 
 final class ProfileVM: ProfileViewModelProtocol {
+    
+    private enum L10n {
+        static let logout: String = "logout_title".localized
+        static let logoutMessage: String = "logout_message".localized
+        static let cancel: String = "cancel_message".localized
+        static let ok: String = "ok_message".localized
+    }
     var username: String = ""
     
-    private let adapter: ProfileAdapterProtocol
+    private var adapter: ProfileAdapterProtocol
     private let authService: ProfileAuthServiceUseCase
     private let alertService: ProfileAlertServiceUseCase
     
@@ -47,12 +54,23 @@ final class ProfileVM: ProfileViewModelProtocol {
         self.alertService = alertService
         self.coordinator = coordinator
         commonInit()
+        bind()
     }
     
     private var sections: [ProfileSections] {
         return [
             .account(authService.getUserEmail() ?? ""),
             .settings(ProfileSettingsRows.allCases)]
+    }
+    
+    private func bind() {
+        adapter.didSelectRow = { [weak self] row in
+            switch row {
+            case .notifications: break
+            case .export: break
+            case .logout: self?.logout()
+            }
+        }
     }
     
     func makeTableView() -> UITableView {
@@ -73,11 +91,12 @@ private extension ProfileVM {
     }
     
     private func logout() {
-        alertService.showAlert(title: "Logout",
-                               message: "Do you want to logout \(username)?",
-                               cancelTitle: "Cancel",
-                               okTitle: "Ok", okHandler: {
-            self.logoutDidTap()
+        
+        alertService.showAlert(title: L10n.logout,
+                               message: L10n.logoutMessage + "\(username)?",
+                               cancelTitle: L10n.cancel,
+                               okTitle: L10n.ok,
+                               okHandler: { self.logoutDidTap()
         })
     }
     
@@ -85,6 +104,7 @@ private extension ProfileVM {
         authService.logout { [weak self] isSuccess in
             if isSuccess {
                 ParametersHelper.set(.authenticated, value: false)
+                self?.coordinator?.finish()
             } else {
                 self?.alertService.showAlert(title: "Error", message: "Something went wrong", okTitle: "Ok")
             }
