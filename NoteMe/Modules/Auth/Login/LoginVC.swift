@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Storage
 
 @objc protocol LoginViewModelProtocol: AnyObject {
     
@@ -76,6 +77,8 @@ final class LoginVC: UIViewController {
         textField.placeholder = L10n.passwordPlaceholder
         return textField
     }()
+    
+    
     
     private var viewModel: LoginViewModelProtocol
     

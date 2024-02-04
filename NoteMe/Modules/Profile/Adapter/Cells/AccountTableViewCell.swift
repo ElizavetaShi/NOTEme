@@ -26,7 +26,6 @@ final class AccountTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
        
         setupUI()
         setupConstraints()
@@ -43,6 +42,7 @@ final class AccountTableViewCell: UITableViewCell {
     private func setupUI() {
         
         backgroundColor = .clear
+        selectionStyle = .none
         
         contentView.addSubview(containerView)
         containerView.addSubview(titleLabel)
@@ -53,7 +53,7 @@ final class AccountTableViewCell: UITableViewCell {
         
         containerView.snp.makeConstraints { make in
             make.verticalEdges.equalToSuperview()
-            make.horizontalEdges.equalToSuperview().inset(20.0)
+            make.horizontalEdges.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in

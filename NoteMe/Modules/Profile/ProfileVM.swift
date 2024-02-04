@@ -78,7 +78,6 @@ final class ProfileVM: ProfileViewModelProtocol {
     }
 }
 
-
 private extension ProfileVM {
     
     private func commonInit() {

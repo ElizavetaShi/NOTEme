@@ -33,10 +33,9 @@ final class ProfileAdapter: NSObject {
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .singleLine
-        tableView.separatorInset = .init(top: 0.0, left: 32.0, bottom: 0.0, right: 32.0)
-        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: "HeaderIdentifier")
-        tableView.register(AccountTableViewCell.self, forCellReuseIdentifier: AccountTableViewCell.identifier)
-        tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
+        tableView.separatorInset = .init(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
+        tableView.register(AccountTableViewCell.self)
+        tableView.register(SettingsTableViewCell.self)
     }
 }
 
@@ -55,12 +54,20 @@ extension ProfileAdapter: UITableViewDataSource {
         let section = sections[indexPath.section]
         switch section {
         case .account(let email):
-            let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier) as! AccountTableViewCell
+            let cell: AccountTableViewCell = tableView.dequeue(at: indexPath)
             cell.setup(email)
             return cell
         case .settings(let rows):
-            let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier) as! SettingsTableViewCell
+            let cell: SettingsTableViewCell = tableView.dequeue(at: indexPath)
             cell.setup(rows[indexPath.row])
+            #warning("ARRANGE CHANGES FOR CORNERS")
+//            if indexPath.row == 0 {
+//                cell.containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+//            } else if indexPath.row == rows.count - 1 {
+//                cell.containerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+//            } else {
+//                cell.containerView.layer.maskedCorners = []
+//            }
             return cell
         }
     }
@@ -74,7 +81,6 @@ extension ProfileAdapter: UITableViewDataSource {
         case .account(_): break
         }
     }
-
 }
 
 extension ProfileAdapter: UITableViewDelegate {
@@ -89,7 +95,9 @@ extension ProfileAdapter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
 }
 
 extension ProfileAdapter: ProfileAdapterProtocol {

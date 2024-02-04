@@ -13,7 +13,7 @@ final class SettingsTableViewCell: UITableViewCell {
     
     static let identifier: String = "SettingsTableViewCell"
     
-    private lazy var containerView: UIView = .mainView(.viewShadow)
+    lazy var containerView: UIView = .mainView(.viewShadow)
     
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
@@ -48,7 +48,7 @@ final class SettingsTableViewCell: UITableViewCell {
     private func setupUI() {
         
         backgroundColor = .clear
-        //        selectionStyle = .none
+        selectionStyle = .none
         
         contentView.addSubview(containerView)
         containerView.addSubview(iconImageView)
@@ -59,8 +59,7 @@ final class SettingsTableViewCell: UITableViewCell {
     private func setupConstraints() {
         
         containerView.snp.makeConstraints { make in
-            make.verticalEdges.equalToSuperview()
-            make.horizontalEdges.equalToSuperview().inset(20.0)
+            make.edges.equalToSuperview()
         }
         
         iconImageView.snp.makeConstraints { make in
@@ -70,6 +69,7 @@ final class SettingsTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(iconImageView.snp.centerY)
             make.left.equalTo(iconImageView.snp.right).offset(8.0)
+            make.bottom.equalToSuperview().inset(16.0)
         }
         
         statusLabel.snp.makeConstraints { make in
