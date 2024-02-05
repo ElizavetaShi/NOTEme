@@ -13,6 +13,8 @@ final class CoreDataService {
     
     static var shared: CoreDataService = .init()
     
+    typealias CompletionHandler = (Bool) -> Void
+    
     var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
@@ -27,7 +29,7 @@ final class CoreDataService {
         return container
     }()
     
-    func saveContext (completion: ((Bool) -> Void)? = nil) {
+    func saveContext (completion: CompletionHandler? = nil) {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

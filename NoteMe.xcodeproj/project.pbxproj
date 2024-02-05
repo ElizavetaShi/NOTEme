@@ -84,6 +84,10 @@
 		728C08972AE8382C00066F58 /* UIImage+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C08962AE8382C00066F58 /* UIImage+Consts.swift */; };
 		728C089A2AE83AF300066F58 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 728C08992AE83AF300066F58 /* SnapKit */; };
 		728C089F2AE83DE100066F58 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C089E2AE83DE100066F58 /* LoginVC.swift */; };
+		729AA05A2B70CFC600A6A96C /* LocationNotificationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729AA0582B70CFC600A6A96C /* LocationNotificationMO+CoreDataClass.swift */; };
+		729AA05B2B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729AA0592B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift */; };
+		729AA05D2B70D17C00A6A96C /* LocationNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729AA05C2B70D17C00A6A96C /* LocationNotificationDTO.swift */; };
+		729AA05F2B70D8B600A6A96C /* LocationNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729AA05E2B70D8B600A6A96C /* LocationNotificationStorage.swift */; };
 		729C0ECC2AFAB88900E3D89D /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729C0ECB2AFAB88900E3D89D /* String+Localization.swift */; };
 		72B737E72AFE942D0039FFED /* UIButton+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B737E62AFE942D0039FFED /* UIButton+Actions.swift */; };
 		72B737E92AFE97800039FFED /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B737E82AFE97800039FFED /* LoginVM.swift */; };
@@ -204,6 +208,10 @@
 		728C08942AE834E200066F58 /* UIFont+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Consts.swift"; sourceTree = "<group>"; };
 		728C08962AE8382C00066F58 /* UIImage+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Consts.swift"; sourceTree = "<group>"; };
 		728C089E2AE83DE100066F58 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		729AA0582B70CFC600A6A96C /* LocationNotificationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationNotificationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		729AA0592B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		729AA05C2B70D17C00A6A96C /* LocationNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationDTO.swift; sourceTree = "<group>"; };
+		729AA05E2B70D8B600A6A96C /* LocationNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotificationStorage.swift; sourceTree = "<group>"; };
 		729C0ECB2AFAB88900E3D89D /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		72B737E62AFE942D0039FFED /* UIButton+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Actions.swift"; sourceTree = "<group>"; };
 		72B737E82AFE97800039FFED /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
@@ -546,6 +554,8 @@
 		727D864A2B6F8FE20092147B /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				729AA0582B70CFC600A6A96C /* LocationNotificationMO+CoreDataClass.swift */,
+				729AA0592B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift */,
 				727D864B2B6F90410092147B /* BaseNotificationMO+CoreDataClass.swift */,
 				727D864C2B6F90410092147B /* BaseNotificationMO+CoreDataProperties.swift */,
 				727D864D2B6F90410092147B /* DateNotificationMO+CoreDataClass.swift */,
@@ -558,6 +568,7 @@
 			isa = PBXGroup;
 			children = (
 				727D86542B6F93C00092147B /* DateNotificationDTO.swift */,
+				729AA05C2B70D17C00A6A96C /* LocationNotificationDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -574,6 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				727D865A2B6F98050092147B /* DateNotificationStorage.swift */,
+				729AA05E2B70D8B600A6A96C /* LocationNotificationStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -906,10 +918,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				727D86582B6F970A0092147B /* CoreDataService.swift in Sources */,
+				729AA05A2B70CFC600A6A96C /* LocationNotificationMO+CoreDataClass.swift in Sources */,
 				727D86552B6F93C00092147B /* DateNotificationDTO.swift in Sources */,
+				729AA05F2B70D8B600A6A96C /* LocationNotificationStorage.swift in Sources */,
 				727D865B2B6F98050092147B /* DateNotificationStorage.swift in Sources */,
+				729AA05B2B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift in Sources */,
 				727D86502B6F90410092147B /* BaseNotificationMO+CoreDataProperties.swift in Sources */,
 				727D86482B6F8E490092147B /* NotificationDatabase.xcdatamodeld in Sources */,
+				729AA05D2B70D17C00A6A96C /* LocationNotificationDTO.swift in Sources */,
 				727D865E2B6F9D7E0092147B /* NSPredicate+Const.swift in Sources */,
 				727D86512B6F90410092147B /* DateNotificationMO+CoreDataClass.swift in Sources */,
 				727D86522B6F90410092147B /* DateNotificationMO+CoreDataProperties.swift in Sources */,
