@@ -54,7 +54,7 @@ final class ResetVM: ResetViewModelProtocol {
     func resetButtonDidTap(email: String?) {
         
         guard
-            checkValidation(email: email), let email
+            checkValidation(email: email), let email = email
         else { return }
         
         authService.reset(email: email) { [weak self] isSuccess in

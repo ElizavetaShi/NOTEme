@@ -86,7 +86,7 @@ final class LoginVM: LoginViewModelProtocol {
         
         guard
             checkValidation(email: email, password: password),
-            let email, let password
+            let email = email, let password = password
         else { return }
         
         

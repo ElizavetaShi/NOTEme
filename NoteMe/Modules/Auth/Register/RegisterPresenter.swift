@@ -85,7 +85,7 @@ final class RegisterPresenter: RegisterPresenterProtocol {
         
         guard
             checkValidation(email: email, password: password, repeatPassword: repeatPassword),
-            let email, let password, let repeatPassword
+            let email = email, let password = password, let repeatPassword = repeatPassword
         else { return }
         
         authServise.register(email: email,

@@ -48,14 +48,14 @@ final class AlertService {
                                         message: message,
                                         preferredStyle: .alert)
         
-        if let cancelTitle {
+        if let cancelTitle = cancelTitle {
             let action = UIAlertAction(title: cancelTitle, style: .default) { [weak self] _ in
                 cancelHandler?()
                 self?.windowManager.hideAndRemove(type: .alert)
             }
             alertVC.addAction(action)
         }
-        if let okTitle {
+        if let okTitle = okTitle {
             let action = UIAlertAction(title: okTitle, style: .destructive) { [weak self]_ in
                 okHandler?()
                 self?.windowManager.hideAndRemove(type: .alert)

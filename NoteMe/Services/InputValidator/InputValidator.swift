@@ -23,7 +23,7 @@ final class InputValidator {
     
     private func validate(string: String?, pattern: String) -> Bool {
         guard
-            let string,
+            let string = string,
             let regex = try? NSRegularExpression(pattern: pattern,
                                                  options: .caseInsensitive)
         else { return false }
