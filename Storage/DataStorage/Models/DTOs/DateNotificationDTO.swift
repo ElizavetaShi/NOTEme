@@ -9,9 +9,7 @@ import UIKit
 
 public struct DateNotificationDTO: DTODescription {
     public typealias DTO = Self
-    
     public typealias MO = DateNotificationMO
-    
     
     public var date: Date
     public var id: String
@@ -21,11 +19,11 @@ public struct DateNotificationDTO: DTODescription {
     public var targetDate: Date
     
     public init(date: Date,
-         id: String,
-         title: String,
-         subtitle: String? = nil,
-         completedDate: Date? = nil,
-         targetDate: Date) {
+                id: String,
+                title: String,
+                subtitle: String? = nil,
+                completedDate: Date? = nil,
+                targetDate: Date) {
         self.date = date
         self.id = id
         self.title = title
@@ -34,7 +32,7 @@ public struct DateNotificationDTO: DTODescription {
         self.targetDate = targetDate
     }
     
-      public init?(mo: DateNotificationMO) {
+    public init?(mo: DateNotificationMO) {
         guard
             let id = mo.identifier,
             let title = mo.title,

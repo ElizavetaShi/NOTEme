@@ -44,7 +44,7 @@ public final class DateNotificationStorage: NotificationStorage<DateNotification
 //            CoreDataService.shared.saveContext(completion: completion)
 //        }
 //    }
-
+//
 ////    MARK: Update
 //    public func update(dto: DateNotificationDTO,
 //                completion: CompletionHandler? = nil) {

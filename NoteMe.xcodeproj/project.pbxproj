@@ -112,6 +112,10 @@
 		840AD9C62B73E41500FE81FF /* NotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9C52B73E41500FE81FF /* NotificationStorage.swift */; };
 		840AD9C82B73F57D00FE81FF /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9C72B73F57D00FE81FF /* HomeVM.swift */; };
 		840AD9CB2B73F5FD00FE81FF /* FRCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9CA2B73F5FD00FE81FF /* FRCService.swift */; };
+		840AD9CE2B74D04D00FE81FF /* TimerNotificationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9CC2B74D04D00FE81FF /* TimerNotificationMO+CoreDataClass.swift */; };
+		840AD9CF2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9CD2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift */; };
+		840AD9D12B74D08F00FE81FF /* TimerNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9D02B74D08F00FE81FF /* TimerNotificationDTO.swift */; };
+		840AD9D52B75030B00FE81FF /* TimerNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9D42B75030B00FE81FF /* TimerNotificationStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +244,10 @@
 		840AD9C52B73E41500FE81FF /* NotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStorage.swift; sourceTree = "<group>"; };
 		840AD9C72B73F57D00FE81FF /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		840AD9CA2B73F5FD00FE81FF /* FRCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCService.swift; sourceTree = "<group>"; };
+		840AD9CC2B74D04D00FE81FF /* TimerNotificationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerNotificationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		840AD9CD2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		840AD9D02B74D08F00FE81FF /* TimerNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationDTO.swift; sourceTree = "<group>"; };
+		840AD9D42B75030B00FE81FF /* TimerNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,6 +571,8 @@
 		727D864A2B6F8FE20092147B /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				840AD9CC2B74D04D00FE81FF /* TimerNotificationMO+CoreDataClass.swift */,
+				840AD9CD2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift */,
 				729AA0582B70CFC600A6A96C /* LocationNotificationMO+CoreDataClass.swift */,
 				729AA0592B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift */,
 				727D864B2B6F90410092147B /* BaseNotificationMO+CoreDataClass.swift */,
@@ -578,6 +588,7 @@
 			children = (
 				727D86542B6F93C00092147B /* DateNotificationDTO.swift */,
 				729AA05C2B70D17C00A6A96C /* LocationNotificationDTO.swift */,
+				840AD9D02B74D08F00FE81FF /* TimerNotificationDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -596,6 +607,7 @@
 				727D865A2B6F98050092147B /* DateNotificationStorage.swift */,
 				729AA05E2B70D8B600A6A96C /* LocationNotificationStorage.swift */,
 				840AD9C52B73E41500FE81FF /* NotificationStorage.swift */,
+				840AD9D42B75030B00FE81FF /* TimerNotificationStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -942,16 +954,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				727D86582B6F970A0092147B /* CoreDataService.swift in Sources */,
+				840AD9CE2B74D04D00FE81FF /* TimerNotificationMO+CoreDataClass.swift in Sources */,
 				729AA05A2B70CFC600A6A96C /* LocationNotificationMO+CoreDataClass.swift in Sources */,
 				727D86552B6F93C00092147B /* DateNotificationDTO.swift in Sources */,
 				729AA05F2B70D8B600A6A96C /* LocationNotificationStorage.swift in Sources */,
 				727D865B2B6F98050092147B /* DateNotificationStorage.swift in Sources */,
 				729AA05B2B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift in Sources */,
 				727D86502B6F90410092147B /* BaseNotificationMO+CoreDataProperties.swift in Sources */,
+				840AD9D12B74D08F00FE81FF /* TimerNotificationDTO.swift in Sources */,
 				840AD9CB2B73F5FD00FE81FF /* FRCService.swift in Sources */,
 				727D86482B6F8E490092147B /* NotificationDatabase.xcdatamodeld in Sources */,
+				840AD9CF2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift in Sources */,
 				729AA05D2B70D17C00A6A96C /* LocationNotificationDTO.swift in Sources */,
 				727D865E2B6F9D7E0092147B /* NSPredicate+Const.swift in Sources */,
+				840AD9D52B75030B00FE81FF /* TimerNotificationStorage.swift in Sources */,
 				840AD9C42B73E37100FE81FF /* DTODescription.swift in Sources */,
 				840AD9C62B73E41500FE81FF /* NotificationStorage.swift in Sources */,
 				727D86512B6F90410092147B /* DateNotificationMO+CoreDataClass.swift in Sources */,

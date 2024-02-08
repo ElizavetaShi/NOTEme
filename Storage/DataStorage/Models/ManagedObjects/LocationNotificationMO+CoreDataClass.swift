@@ -21,4 +21,3 @@ public class LocationNotificationMO: BaseNotificationMO {
         self.longitude = dto.longitude
     }
 }
-

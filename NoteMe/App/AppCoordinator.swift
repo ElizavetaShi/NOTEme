@@ -30,7 +30,7 @@ final class AppCoordinator: Coordinator {
         } else {
             openAuthModule()
         }
-    }
+    }    
     
     private func openAuthModule() {
         let coordinator = LoginCoordinator(container: container)

@@ -1,16 +1,16 @@
 //
-//  LocationNotificationDTO.swift
+//  TimerNotificationDTO.swift
 //  Storage
 //
-//  Created by Elizaveta Shidlovskaya on 5.02.24.
+//  Created by admin on 8.02.24.
 //
 
 import UIKit
 
-public struct LocationNotificationDTO: DTODescription {
-    public typealias DTO = Self
+public struct TimerNotificationDTO: DTODescription {
     
-    public typealias MO = LocationNotificationMO
+    public typealias DTO = Self
+    public typealias MO = TimerNotificationMO
     
     
     public var date: Date
@@ -18,37 +18,38 @@ public struct LocationNotificationDTO: DTODescription {
     public var title: String
     public var subtitle: String?
     public var completedDate: Date?
-    public var longitude: Double
-    public var latitude: Double
+    public var targetDate: Date
+    
+    public var timeLeft: TimeInterval {
+        targetDate.timeIntervalSince1970 - date.timeIntervalSince1970
+    }
     
     public init(date: Date,
                 id: String,
                 title: String,
                 subtitle: String? = nil,
                 completedDate: Date? = nil,
-                longitude: Double,
-                latitude: Double) {
+                targetDate: Date) {
         self.date = date
         self.id = id
         self.title = title
         self.subtitle = subtitle
         self.completedDate = completedDate
-        self.longitude = longitude
-        self.latitude = latitude
+        self.targetDate = targetDate
     }
     
-    public init?(mo: LocationNotificationMO) {
+    public init?(mo: TimerNotificationMO) {
         guard
-            let date = mo.date,
             let id = mo.identifier,
-            let title = mo.title
+            let date = mo.date,
+            let title = mo.title,
+            let targetDate = mo.targetDate
         else { return nil }
         self.date = date
         self.id = id
         self.title = title
+        self.targetDate = targetDate
         self.subtitle = mo.subtitle
         self.completedDate = mo.completedDate
-        self.longitude = mo.longitude
-        self.latitude = mo.latitude
     }
 }
