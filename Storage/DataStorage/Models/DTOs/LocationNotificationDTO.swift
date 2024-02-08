@@ -9,6 +9,8 @@ import UIKit
 
 public struct LocationNotificationDTO {
     
+        
+    
      public var date: Date
      public var id: String
      public var title: String
@@ -33,7 +35,7 @@ public struct LocationNotificationDTO {
         self.latitude = latitude
     }
     
-    init?(mo: LocationNotificationMO) {
+    public init?(mo: LocationNotificationMO) {
         guard
             let date = mo.date,
             let id = mo.identifier,

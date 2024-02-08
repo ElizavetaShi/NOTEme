@@ -7,7 +7,12 @@
 
 import UIKit
 
-public struct DateNotificationDTO {
+public struct DateNotificationDTO: DTODescription {
+    public typealias DTO = Self
+    
+    public typealias MO = DateNotificationMO
+    
+    
     public var date: Date
     public var id: String
     public var title: String
@@ -29,7 +34,7 @@ public struct DateNotificationDTO {
         self.targetDate = targetDate
     }
     
-    init?(mo: DateNotificationMO) {
+      public init?(mo: DateNotificationMO) {
         guard
             let id = mo.identifier,
             let title = mo.title,

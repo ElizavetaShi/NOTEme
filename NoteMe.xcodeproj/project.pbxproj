@@ -108,6 +108,10 @@
 		840AD9BD2B73B6DA00FE81FF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 840AD9BC2B73B6DA00FE81FF /* FirebaseAuth */; };
 		840AD9BF2B73B6DA00FE81FF /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 840AD9BE2B73B6DA00FE81FF /* FirebaseAuthCombine-Community */; };
 		840AD9C12B73B6DA00FE81FF /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 840AD9C02B73B6DA00FE81FF /* FirebaseCrashlytics */; };
+		840AD9C42B73E37100FE81FF /* DTODescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9C32B73E37100FE81FF /* DTODescription.swift */; };
+		840AD9C62B73E41500FE81FF /* NotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9C52B73E41500FE81FF /* NotificationStorage.swift */; };
+		840AD9C82B73F57D00FE81FF /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9C72B73F57D00FE81FF /* HomeVM.swift */; };
+		840AD9CB2B73F5FD00FE81FF /* FRCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9CA2B73F5FD00FE81FF /* FRCService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +236,10 @@
 		72ED6CDB2B2E15C70038D14C /* KeyboardAnimation+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardAnimation+Register.swift"; sourceTree = "<group>"; };
 		72ED6CDD2B2E5B5D0038D14C /* KeyboardAnimation+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardAnimation+Login.swift"; sourceTree = "<group>"; };
 		840AD9B32B73B45100FE81FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		840AD9C32B73E37100FE81FF /* DTODescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescription.swift; sourceTree = "<group>"; };
+		840AD9C52B73E41500FE81FF /* NotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStorage.swift; sourceTree = "<group>"; };
+		840AD9C72B73F57D00FE81FF /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		840AD9CA2B73F5FD00FE81FF /* FRCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				726CEA3B2B1C929400E734FC /* HomeVC.swift */,
+				840AD9C72B73F57D00FE81FF /* HomeVM.swift */,
 				726CEA712B28D30F00E734FC /* Coordinator */,
 			);
 			path = Home;
@@ -522,6 +531,7 @@
 		727D86382B6F8B6B0092147B /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				840AD9C92B73F5EB00FE81FF /* FRC */,
 				727D865C2B6F9D630092147B /* Consts */,
 				727D86592B6F97F00092147B /* Storages */,
 				727D86562B6F96F50092147B /* CoreData */,
@@ -543,6 +553,7 @@
 		727D86492B6F8FDC0092147B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				840AD9C22B73E35300FE81FF /* Protocols */,
 				727D86532B6F93A60092147B /* DTOs */,
 				727D864A2B6F8FE20092147B /* ManagedObjects */,
 			);
@@ -584,6 +595,7 @@
 			children = (
 				727D865A2B6F98050092147B /* DateNotificationStorage.swift */,
 				729AA05E2B70D8B600A6A96C /* LocationNotificationStorage.swift */,
+				840AD9C52B73E41500FE81FF /* NotificationStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -785,6 +797,22 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		840AD9C22B73E35300FE81FF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				840AD9C32B73E37100FE81FF /* DTODescription.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		840AD9C92B73F5EB00FE81FF /* FRC */ = {
+			isa = PBXGroup;
+			children = (
+				840AD9CA2B73F5FD00FE81FF /* FRCService.swift */,
+			);
+			path = FRC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -920,9 +948,12 @@
 				727D865B2B6F98050092147B /* DateNotificationStorage.swift in Sources */,
 				729AA05B2B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift in Sources */,
 				727D86502B6F90410092147B /* BaseNotificationMO+CoreDataProperties.swift in Sources */,
+				840AD9CB2B73F5FD00FE81FF /* FRCService.swift in Sources */,
 				727D86482B6F8E490092147B /* NotificationDatabase.xcdatamodeld in Sources */,
 				729AA05D2B70D17C00A6A96C /* LocationNotificationDTO.swift in Sources */,
 				727D865E2B6F9D7E0092147B /* NSPredicate+Const.swift in Sources */,
+				840AD9C42B73E37100FE81FF /* DTODescription.swift in Sources */,
+				840AD9C62B73E41500FE81FF /* NotificationStorage.swift in Sources */,
 				727D86512B6F90410092147B /* DateNotificationMO+CoreDataClass.swift in Sources */,
 				727D86522B6F90410092147B /* DateNotificationMO+CoreDataProperties.swift in Sources */,
 				727D864F2B6F90410092147B /* BaseNotificationMO+CoreDataClass.swift in Sources */,
@@ -954,6 +985,7 @@
 				727D85E72B5294C50092147B /* SettingsTableViewCell.swift in Sources */,
 				72B737F72B03E1180039FFED /* RegisterAssembler.swift in Sources */,
 				727D86312B6F85BC0092147B /* Collections+Register.swift in Sources */,
+				840AD9C82B73F57D00FE81FF /* HomeVM.swift in Sources */,
 				728C087C2AE8270F00066F58 /* AppDelegate.swift in Sources */,
 				726CEA182B14FD8700E734FC /* KeyboardHelper+Login.swift in Sources */,
 				726CEA392B1C920C00E734FC /* MainTabBarVC.swift in Sources */,

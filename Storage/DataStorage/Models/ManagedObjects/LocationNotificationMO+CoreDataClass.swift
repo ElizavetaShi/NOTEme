@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 @objc(LocationNotificationMO)
-class LocationNotificationMO: BaseNotificationMO {
+public class LocationNotificationMO: BaseNotificationMO {
     func apply(dto: LocationNotificationDTO) {
         self.identifier = dto.id
         self.title = dto.title
@@ -21,3 +21,4 @@ class LocationNotificationMO: BaseNotificationMO {
         self.longitude = dto.longitude
     }
 }
+

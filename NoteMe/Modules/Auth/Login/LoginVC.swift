@@ -102,6 +102,14 @@ final class LoginVC: UIViewController {
         
         setupUI()
         setupConstraints()
+        
+//        TEST
+//        let storage = DateNotificationStorage()
+//        storage.create(dto: .init(date: .init(), id: "note", title: "nte1", subtitle: "gggg", completedDate: .init(), targetDate: .init()))
+        let service = NotificationStorage<DateNotificationDTO>()
+//        или
+        let service2 = DateNotificationStorage()
+        print(service.fetch())
     }
     
     private func bind() {

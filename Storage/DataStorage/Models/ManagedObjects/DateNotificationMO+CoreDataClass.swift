@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 @objc(DateNotificationMO)
-class DateNotificationMO: BaseNotificationMO {
+public class DateNotificationMO: BaseNotificationMO {
     func apply(dto: DateNotificationDTO) {
         self.identifier = dto.id
         self.date = dto.date
@@ -20,3 +20,4 @@ class DateNotificationMO: BaseNotificationMO {
         self.targetDate = dto.targetDate
     }
 }
+
