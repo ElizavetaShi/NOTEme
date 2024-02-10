@@ -10,8 +10,7 @@ import UIKit
 public struct TimerNotificationDTO: DTODescription {
     
     public typealias DTO = Self
-    public typealias MO = TimerNotificationMO
-    
+    public typealias MO = TimerNotificationMO    
     
     public var date: Date
     public var id: String

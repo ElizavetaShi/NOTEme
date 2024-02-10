@@ -20,3 +20,10 @@ public class TimerNotificationMO: BaseNotificationMO {
         self.targetDate = dto.targetDate
     }
 }
+
+extension TimerNotificationMO: MODescription {
+    public func apply<Type>(_ dto: Type) where Type : DTODescription {
+        guard let specificDTO = dto as? TimerNotificationDTO else { return }
+        self.apply(dto: specificDTO)
+    }
+}

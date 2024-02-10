@@ -28,7 +28,7 @@ final class CoreDataService {
     }
 
     private var persistentContainer: NSPersistentContainer = {
-            let modelName = "NotificationDataBase"
+            let modelName = "NotificationDatabase"
             let bundle = Bundle(for: CoreDataService.self)
             
             guard

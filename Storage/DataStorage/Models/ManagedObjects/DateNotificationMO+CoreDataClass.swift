@@ -21,3 +21,9 @@ public class DateNotificationMO: BaseNotificationMO {
     }
 }
 
+extension DateNotificationMO: MODescription {
+    public func apply<Type>(_ dto: Type) where Type : DTODescription {
+        guard let specificDTO = dto as? DateNotificationDTO else { return }
+        self.apply(dto: specificDTO)
+    }
+}

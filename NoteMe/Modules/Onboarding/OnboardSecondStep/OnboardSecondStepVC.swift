@@ -44,7 +44,7 @@ final class OnboardSecondStepVC: UIViewController {
     
     private lazy var menuContainerView: UIView = UIView()
     
-    private lazy var onboardImageView: UIImageView = UIImageView(image: .General.onboardStep2)
+    private lazy var onboardImageView: UIImageView = UIImageView(image: .Onboarding.onboardStep2)
     
     private lazy var calendarLabel: UILabel = .menuLabel(L10n.calendar, fontSize: 16.0)
     

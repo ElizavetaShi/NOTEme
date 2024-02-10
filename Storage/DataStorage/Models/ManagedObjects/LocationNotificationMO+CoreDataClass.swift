@@ -21,3 +21,10 @@ public class LocationNotificationMO: BaseNotificationMO {
         self.longitude = dto.longitude
     }
 }
+
+extension LocationNotificationMO: MODescription {
+    public func apply<Type>(_ dto: Type) where Type : DTODescription {
+        guard let specificDTO = dto as? LocationNotificationDTO else { return }
+        self.apply(dto: specificDTO)
+    }
+}

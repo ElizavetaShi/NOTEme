@@ -62,6 +62,11 @@ final class LineTextField: UIView {
         set { textField.delegate = newValue }
     }
     
+    var input: UIView? {
+        get { textField.inputView }
+        set { textField.inputView = newValue }
+    }
+    
     init() {
         super.init(frame: .zero)
         commonInit()

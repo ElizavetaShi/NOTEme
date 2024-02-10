@@ -8,10 +8,9 @@
 import UIKit
 
 public struct LocationNotificationDTO: DTODescription {
+    
     public typealias DTO = Self
-    
     public typealias MO = LocationNotificationMO
-    
     
     public var date: Date
     public var id: String

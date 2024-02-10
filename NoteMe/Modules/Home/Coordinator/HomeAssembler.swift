@@ -12,6 +12,7 @@ final class HomeAssembler {
     private init() {}
     
     static func make() -> UIViewController {
-        return HomeVC()
+        let vm = HomeVM()
+        return HomeVC(viewModel: vm)
     }
 }

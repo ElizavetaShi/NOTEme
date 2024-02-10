@@ -9,6 +9,7 @@ import UIKit
 
 public struct DateNotificationDTO: DTODescription {
     public typealias DTO = Self
+    
     public typealias MO = DateNotificationMO
     
     public var date: Date

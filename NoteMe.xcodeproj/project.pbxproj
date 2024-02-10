@@ -116,6 +116,11 @@
 		840AD9CF2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9CD2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift */; };
 		840AD9D12B74D08F00FE81FF /* TimerNotificationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9D02B74D08F00FE81FF /* TimerNotificationDTO.swift */; };
 		840AD9D52B75030B00FE81FF /* TimerNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9D42B75030B00FE81FF /* TimerNotificationStorage.swift */; };
+		840AD9D92B75243A00FE81FF /* DateNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9D82B75243A00FE81FF /* DateNotificationVC.swift */; };
+		840AD9DB2B761A7100FE81FF /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9DA2B761A7000FE81FF /* CustomTextView.swift */; };
+		840AD9DD2B76421D00FE81FF /* DateNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9DC2B76421D00FE81FF /* DateNotificationVM.swift */; };
+		840AD9E02B76602B00FE81FF /* DateNotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9DF2B76602B00FE81FF /* DateNotificationAssembler.swift */; };
+		840AD9E22B76604400FE81FF /* DateNotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9E12B76604400FE81FF /* DateNotificationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +253,11 @@
 		840AD9CD2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerNotificationMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		840AD9D02B74D08F00FE81FF /* TimerNotificationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationDTO.swift; sourceTree = "<group>"; };
 		840AD9D42B75030B00FE81FF /* TimerNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationStorage.swift; sourceTree = "<group>"; };
+		840AD9D82B75243A00FE81FF /* DateNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationVC.swift; sourceTree = "<group>"; };
+		840AD9DA2B761A7000FE81FF /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		840AD9DC2B76421D00FE81FF /* DateNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationVM.swift; sourceTree = "<group>"; };
+		840AD9DF2B76602B00FE81FF /* DateNotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationAssembler.swift; sourceTree = "<group>"; };
+		840AD9E12B76604400FE81FF /* DateNotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				72456EB62AF16EC100898215 /* LineTextField.swift */,
+				840AD9DA2B761A7000FE81FF /* CustomTextView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -403,9 +414,9 @@
 		726CEA362B1C91DC00E734FC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				726CEA712B28D30F00E734FC /* Coordinator */,
 				726CEA3B2B1C929400E734FC /* HomeVC.swift */,
 				840AD9C72B73F57D00FE81FF /* HomeVM.swift */,
-				726CEA712B28D30F00E734FC /* Coordinator */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -571,14 +582,14 @@
 		727D864A2B6F8FE20092147B /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				840AD9CC2B74D04D00FE81FF /* TimerNotificationMO+CoreDataClass.swift */,
-				840AD9CD2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift */,
-				729AA0582B70CFC600A6A96C /* LocationNotificationMO+CoreDataClass.swift */,
-				729AA0592B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift */,
 				727D864B2B6F90410092147B /* BaseNotificationMO+CoreDataClass.swift */,
 				727D864C2B6F90410092147B /* BaseNotificationMO+CoreDataProperties.swift */,
 				727D864D2B6F90410092147B /* DateNotificationMO+CoreDataClass.swift */,
 				727D864E2B6F90410092147B /* DateNotificationMO+CoreDataProperties.swift */,
+				729AA0582B70CFC600A6A96C /* LocationNotificationMO+CoreDataClass.swift */,
+				729AA0592B70CFC600A6A96C /* LocationNotificationMO+CoreDataProperties.swift */,
+				840AD9CC2B74D04D00FE81FF /* TimerNotificationMO+CoreDataClass.swift */,
+				840AD9CD2B74D04D00FE81FF /* TimerNotificationMO+CoreDataProperties.swift */,
 			);
 			path = ManagedObjects;
 			sourceTree = "<group>";
@@ -688,6 +699,7 @@
 		728C089B2AE83D7B00066F58 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				840AD9D62B7523E800FE81FF /* Create */,
 				726CEA372B1C91E600E734FC /* TabBar */,
 				726CEA3D2B1C92C200E734FC /* Profile */,
 				728C089C2AE83DB200066F58 /* Auth */,
@@ -823,6 +835,33 @@
 				840AD9CA2B73F5FD00FE81FF /* FRCService.swift */,
 			);
 			path = FRC;
+			sourceTree = "<group>";
+		};
+		840AD9D62B7523E800FE81FF /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				840AD9D72B75242500FE81FF /* DateNotification */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		840AD9D72B75242500FE81FF /* DateNotification */ = {
+			isa = PBXGroup;
+			children = (
+				840AD9DE2B76600C00FE81FF /* Coordinator */,
+				840AD9D82B75243A00FE81FF /* DateNotificationVC.swift */,
+				840AD9DC2B76421D00FE81FF /* DateNotificationVM.swift */,
+			);
+			path = DateNotification;
+			sourceTree = "<group>";
+		};
+		840AD9DE2B76600C00FE81FF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				840AD9DF2B76602B00FE81FF /* DateNotificationAssembler.swift */,
+				840AD9E12B76604400FE81FF /* DateNotificationCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1008,8 +1047,10 @@
 				726CEA7E2B2DD76900E734FC /* AlertService+Reset.swift in Sources */,
 				72B737EB2AFE97F40039FFED /* LoginAssembler.swift in Sources */,
 				729C0ECC2AFAB88900E3D89D /* String+Localization.swift in Sources */,
+				840AD9E02B76602B00FE81FF /* DateNotificationAssembler.swift in Sources */,
 				72456EBF2AF6964D00898215 /* ResetVC.swift in Sources */,
 				726CEA272B16572800E734FC /* OnboardFirstStepAssembler.swift in Sources */,
+				840AD9E22B76604400FE81FF /* DateNotificationCoordinator.swift in Sources */,
 				726CEA572B1F95D700E734FC /* AuthService.swift in Sources */,
 				727D861B2B602CDC0092147B /* ProfileAdapter.swift in Sources */,
 				726CEA692B28C95800E734FC /* AlertService+Login.swift in Sources */,
@@ -1019,12 +1060,14 @@
 				726CEA332B165DD000E734FC /* OnboardSecondStepAssembler.swift in Sources */,
 				727D862D2B663E110092147B /* AuthService+Profile.swift in Sources */,
 				726CEA3C2B1C929400E734FC /* HomeVC.swift in Sources */,
+				840AD9DD2B76421D00FE81FF /* DateNotificationVM.swift in Sources */,
 				72B737E72AFE942D0039FFED /* UIButton+Actions.swift in Sources */,
 				728C08932AE82E7900066F58 /* UIColor+Consts.swift in Sources */,
 				727D86052B56EFF90092147B /* WindowManager.swift in Sources */,
 				727D862F2B6640510092147B /* AlertService+Profile.swift in Sources */,
 				727D86022B56E5520092147B /* ContainerRegistrator.swift in Sources */,
 				726CEA3F2B1C92D100E734FC /* ProfileVC.swift in Sources */,
+				840AD9D92B75243A00FE81FF /* DateNotificationVC.swift in Sources */,
 				727D86162B60231D0092147B /* ProfileVM.swift in Sources */,
 				72456EB12AF15F4700898215 /* View+Layer.swift in Sources */,
 				728C087E2AE8270F00066F58 /* SceneDelegate.swift in Sources */,
@@ -1039,6 +1082,7 @@
 				726CEA162B136C9A00E734FC /* ResetCoordinator.swift in Sources */,
 				726CEA7C2B2DD00C00E734FC /* ProfileAssembler.swift in Sources */,
 				726CEA602B246EF300E734FC /* AuthService+Register.swift in Sources */,
+				840AD9DB2B761A7100FE81FF /* CustomTextView.swift in Sources */,
 				72B738342B0D24C50039FFED /* RegisterCoordinator.swift in Sources */,
 				72456EBC2AF690DB00898215 /* RegisterVC.swift in Sources */,
 				726CEA622B2477D800E734FC /* AuthService+Reset.swift in Sources */,
@@ -1214,7 +1258,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1269,7 +1313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

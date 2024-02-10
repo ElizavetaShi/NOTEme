@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import SnapKit
+
+protocol HomeVMProtocol: AnyObject {}
 
 final class HomeVC: UIViewController {
     
@@ -13,7 +16,13 @@ final class HomeVC: UIViewController {
         static let home: String = "home_button".localized
     }
     
-    init() {
+    private lazy var contentView: UIView = .contentView(.appGrey)
+    
+    private var viewModel: HomeVMProtocol
+
+    
+    init(viewModel: HomeVMProtocol) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupTabBarItem()
     }
@@ -26,14 +35,22 @@ final class HomeVC: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        setupConstraints()
     }
     
     private func setupUI() {
         
         view.backgroundColor = .appGrey
+        view.addSubview(contentView)
     }
     
     private func setupTabBarItem() {
-        self.tabBarItem = UITabBarItem(title: L10n.home, image: UIImage(named: "home"), tag: .zero)
+        self.tabBarItem = UITabBarItem(title: L10n.home, image: .Profile.home , tag: .zero)
+    }
+    
+    private func setupConstraints() {
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
+        }
     }
 }

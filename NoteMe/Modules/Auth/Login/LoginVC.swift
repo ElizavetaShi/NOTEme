@@ -109,7 +109,9 @@ final class LoginVC: UIViewController {
         let service = NotificationStorage<DateNotificationDTO>()
 //        или
         let service2 = DateNotificationStorage()
-        print(service.fetch())
+        let dto = DateNotificationDTO(date: Date(), id: "1", title: "note", subtitle: "note done", targetDate: Date() + 100)
+        service2.create(dto: dto)
+        print(service2.fetch())
     }
     
     private func bind() {

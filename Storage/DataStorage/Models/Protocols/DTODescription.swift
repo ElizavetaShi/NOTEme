@@ -12,12 +12,11 @@ public protocol DTODescription {
     associatedtype DTO
     associatedtype MO: MODescription
     
-    var id: String { get set }
+    var id: String { get }
     init?(mo: MO)
 }
 
 public protocol MODescription: NSManagedObject, NSFetchRequestResult {
     
-    func apply(_ dto: any DTODescription)
-    
+    func apply<Type: DTODescription>(_ dto: Type)
 }

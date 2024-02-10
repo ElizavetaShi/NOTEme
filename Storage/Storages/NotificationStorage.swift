@@ -36,7 +36,7 @@ public class NotificationStorage<DTO: DTODescription> {
         let context = CoreDataService.shared.backgroundContext
         context.perform {
             let mo = DTO.MO(context: context)
-            mo.apply(dto: dto)
+            mo.apply(dto)
             CoreDataService.shared.saveContext(context: context, completion: completion)
         }
     }
@@ -51,7 +51,7 @@ public class NotificationStorage<DTO: DTODescription> {
                 let mo = self?.fetchMO(
                     predicate: .Notification.notification(byId: dto.id)).first
             else { return }
-            mo.apply(dto: dto)
+            mo.apply(dto)
             CoreDataService.shared.saveContext(context: context, completion: completion)
         }
     }
@@ -65,7 +65,3 @@ public class NotificationStorage<DTO: DTODescription> {
         }
     }
 }
-
-
-
-
