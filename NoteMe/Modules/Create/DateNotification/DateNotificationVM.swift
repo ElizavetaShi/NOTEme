@@ -9,14 +9,10 @@ import Foundation
 import Storage
 
 final class DateNotificationVM: DateNoticationViewModelProtocol {
-   
-    
-    
-    
-    
     
     
     func createButtonDidTap(title: String?, date: Date?, comment: String?) {
+        
 
     }
 

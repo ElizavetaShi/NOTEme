@@ -102,8 +102,6 @@ extension ProfileAdapter: UITableViewDelegate {
 
 extension ProfileAdapter: ProfileAdapterProtocol {
     
-    
-    
     func reloadData(with sections: [ProfileSections]) {
         self.sections = sections
     }

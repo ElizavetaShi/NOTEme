@@ -7,19 +7,42 @@
 //
 import UIKit
 import SnapKit
-//
+
+
 final class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
     
-    private lazy var plusButton: UIButton = .plusButton(UIImage(named: "plus"))
+    private lazy var plusButton: UIButton = .plusButton(.TabBar.plus).withAction(self, #selector(openMainMenu))
     
     override func viewDidLoad() {
+        
+        commonInit()
+    }
+    
+    @objc private func openMainMenu() {
+//        let vc = MainMenuVC()
+//        vc.modalPresentationStyle = .popover
+//        vc.preferredContentSize = CGSize(width: 180.0, height: 130)
+//        #warning("СПРОСИТЬ ПРО  ARROW")
+////        vc.popoverPresentationController?.arrowDirection = .down
+//        vc.popoverPresentationController?.delegate = vc
+//        vc.popoverPresentationController?.sourceView = plusButton
+//        vc.popoverPresentationController?.sourceRect = CGRect(x: plusButton.bounds.midX, y: plusButton.bounds.midY, width: .zero, height: .zero)
+//        present(vc, animated: true)
+        
+    }
+    
+    private func commonInit() {
+        setupUI()
+        setupConstraints()
+    }
+    
+    private func setupUI() {
+        
         tabBar.tintColor = .appYellow
         tabBar.backgroundColor = .appBlack
         tabBar.unselectedItemTintColor = .appWhite
         
-        self.tabBar.addSubview(plusButton)
-        setupConstraints()
-        
+        view.addSubview(plusButton)
     }
     
     private func setupConstraints() {

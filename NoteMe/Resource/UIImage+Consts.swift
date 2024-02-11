@@ -20,11 +20,22 @@ extension UIImage {
 
     }
     
+    enum TabBar {
+        static let plus: UIImage? = .init(named: "plus")
+        
+    }
+    
     enum Profile {
         static let profile: UIImage? = .init(named: "profile")
         static let notifications: UIImage? = .init(named: "notification")
         static let export: UIImage? = .init(named: "export")
         static let logout: UIImage? = .init(named: "logout")
         static let home: UIImage? = .init(named: "home")
+    }
+    
+    enum TabBarMenu {
+        static let timer: UIImage? = .init(named: "timer")
+        static let calendar: UIImage? = .init(named: "calendar")
+        static let location: UIImage? = .init(named: "location")
     }
 }
