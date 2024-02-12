@@ -9,26 +9,14 @@ import UIKit
 
 protocol MainMenuViewModelProtocol: AnyObject {
     
-    func openCreateDateNotification()
-    func openCreateTimerNotification()
-    func openCreateLocationNotification()
+    func makeTabLeView() -> UITableView
 }
 
 final class MainMenuVC: UIViewController {
     
     private lazy var containerView: UIView = .mainView(.viewShadow)
     
-    private lazy var tableView: UITableView = {
-       let tableview = UITableView()
-        tableview.backgroundColor = .clear
-        tableview.delegate = self
-        tableview.dataSource = self
-        tableview.separatorStyle = .singleLine
-        tableview.separatorInset = .zero
-//        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 1))
-        tableview.register(MenuTableViewCell.self)
-        return tableview
-    }()
+    private lazy var tableView: UITableView = viewModel.makeTabLeView()
     
     var viewModel: MainMenuViewModelProtocol
     
@@ -67,26 +55,6 @@ final class MainMenuVC: UIViewController {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    }
-}
-
-extension MainMenuVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        
-    }
-}
-
-extension MainMenuVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MainMenuRows.allCases.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MenuTableViewCell = tableView.dequeue(at: indexPath)
-        cell.setupCell(type: MainMenuRows.allCases[indexPath.row])
-        return cell
     }
 }
 

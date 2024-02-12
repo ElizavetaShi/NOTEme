@@ -38,7 +38,7 @@ final class  MenuTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(type: NotificationType) {
+    func setupCell(type: MainMenuRows) {
         titleLabel.text = type.title
         image.image = type.icon
     }

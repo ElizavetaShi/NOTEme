@@ -127,6 +127,7 @@
 		846564F32B792FDF00021181 /* MainMenuAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F22B792FDF00021181 /* MainMenuAssembler.swift */; };
 		846564F52B79308900021181 /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F42B79308900021181 /* MainMenuCoordinator.swift */; };
 		846564F82B793C1E00021181 /* MainMenuRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F72B793C1E00021181 /* MainMenuRows.swift */; };
+		846564FB2B79676600021181 /* MainMenuAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564FA2B79676600021181 /* MainMenuAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +271,7 @@
 		846564F22B792FDF00021181 /* MainMenuAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuAssembler.swift; sourceTree = "<group>"; };
 		846564F42B79308900021181 /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
 		846564F72B793C1E00021181 /* MainMenuRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuRows.swift; sourceTree = "<group>"; };
+		846564FA2B79676600021181 /* MainMenuAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -880,9 +882,8 @@
 		846564E92B78D48C00021181 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				846564F62B793C0800021181 /* Rows */,
+				846564F92B79670B00021181 /* Adapter */,
 				846564EF2B7929F600021181 /* Coordinator */,
-				846564EE2B7929E000021181 /* Cells */,
 				846564EA2B78D6AE00021181 /* MainMenuVC.swift */,
 				846564F02B792AF100021181 /* MainMenuVM.swift */,
 			);
@@ -912,6 +913,16 @@
 				846564F72B793C1E00021181 /* MainMenuRows.swift */,
 			);
 			path = Rows;
+			sourceTree = "<group>";
+		};
+		846564F92B79670B00021181 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				846564EE2B7929E000021181 /* Cells */,
+				846564F62B793C0800021181 /* Rows */,
+				846564FA2B79676600021181 /* MainMenuAdapter.swift */,
+			);
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1083,6 +1094,7 @@
 				726CEA772B2DCDC300E734FC /* MainTabBarAssembler.swift in Sources */,
 				72ED6CDA2B2DF5580038D14C /* NSAttributedString+HTML.swift in Sources */,
 				728C089F2AE83DE100066F58 /* LoginVC.swift in Sources */,
+				846564FB2B79676600021181 /* MainMenuAdapter.swift in Sources */,
 				726CEA752B28D35400E734FC /* HomeCoordinator.swift in Sources */,
 				846564EB2B78D6AE00021181 /* MainMenuVC.swift in Sources */,
 				72B737E92AFE97800039FFED /* LoginVM.swift in Sources */,

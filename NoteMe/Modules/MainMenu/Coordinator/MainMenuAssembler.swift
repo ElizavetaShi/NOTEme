@@ -11,9 +11,10 @@ final class MainMenuAssembler {
     
     private init() {}
     
-    static func make() -> UIViewController {
-
-        let vm = MainMenuVM()
+    static func make(coordinator: MainMenuCoordinatorProtocol) -> UIViewController {
+        
+        let adapter = MainMenuAdapter()
+        let vm = MainMenuVM(adapter: adapter, coordinator: coordinator)
         let vc = MainMenuVC(viewModel: vm)
         return vc
     }

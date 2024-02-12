@@ -19,16 +19,15 @@ final class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
     }
     
     @objc private func openMainMenu() {
-//        let vc = MainMenuVC()
-//        vc.modalPresentationStyle = .popover
-//        vc.preferredContentSize = CGSize(width: 180.0, height: 130)
-//        #warning("СПРОСИТЬ ПРО  ARROW")
+        let vc = MainMenuAssembler.make(coordinator: MainMenuCoordinator())
+        vc.modalPresentationStyle = .popover
+        vc.preferredContentSize = CGSize(width: 180.0, height: 130)
+       #warning("СПРОСИТЬ ПРО  ARROW")
 ////        vc.popoverPresentationController?.arrowDirection = .down
-//        vc.popoverPresentationController?.delegate = vc
-//        vc.popoverPresentationController?.sourceView = plusButton
-//        vc.popoverPresentationController?.sourceRect = CGRect(x: plusButton.bounds.midX, y: plusButton.bounds.midY, width: .zero, height: .zero)
-//        present(vc, animated: true)
-        
+        vc.popoverPresentationController?.delegate = (vc as! UIPopoverPresentationControllerDelegate)
+        vc.popoverPresentationController?.sourceView = plusButton
+        vc.popoverPresentationController?.sourceRect = CGRect(x: plusButton.bounds.midX, y: plusButton.bounds.midY, width: .zero, height: .zero)
+        present(vc, animated: true)
     }
     
     private func commonInit() {
