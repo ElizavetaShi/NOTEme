@@ -129,6 +129,7 @@
 		846564F82B793C1E00021181 /* MainMenuRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F72B793C1E00021181 /* MainMenuRows.swift */; };
 		846564FB2B79676600021181 /* MainMenuAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564FA2B79676600021181 /* MainMenuAdapter.swift */; };
 		846564FF2B7A633300021181 /* MainTabBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564FE2B7A633200021181 /* MainTabBarVM.swift */; };
+		846565032B7A8DAD00021181 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846565022B7A8DAB00021181 /* DatePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,6 +275,7 @@
 		846564F72B793C1E00021181 /* MainMenuRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuRows.swift; sourceTree = "<group>"; };
 		846564FA2B79676600021181 /* MainMenuAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuAdapter.swift; sourceTree = "<group>"; };
 		846564FE2B7A633200021181 /* MainTabBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVM.swift; sourceTree = "<group>"; };
+		846565022B7A8DAB00021181 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 			children = (
 				72456EB62AF16EC100898215 /* LineTextField.swift */,
 				840AD9DA2B761A7000FE81FF /* CustomTextView.swift */,
+				846565022B7A8DAB00021181 /* DatePickerView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1097,6 +1100,7 @@
 				726CEA1B2B15018100E734FC /* KeyboardAnimation.swift in Sources */,
 				726CEA772B2DCDC300E734FC /* MainTabBarAssembler.swift in Sources */,
 				72ED6CDA2B2DF5580038D14C /* NSAttributedString+HTML.swift in Sources */,
+				846565032B7A8DAD00021181 /* DatePickerView.swift in Sources */,
 				728C089F2AE83DE100066F58 /* LoginVC.swift in Sources */,
 				846564FB2B79676600021181 /* MainMenuAdapter.swift in Sources */,
 				726CEA752B28D35400E734FC /* HomeCoordinator.swift in Sources */,
