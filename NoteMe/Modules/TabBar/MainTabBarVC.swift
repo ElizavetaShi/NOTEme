@@ -9,9 +9,26 @@ import UIKit
 import SnapKit
 
 
+protocol MainTabBarViewModelProtocol: AnyObject {
+    func addButtonTapped()
+}
+
 final class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
     
-    private lazy var plusButton: UIButton = .plusButton(.TabBar.plus).withAction(self, #selector(openMainMenu))
+    private lazy var plusButton: UIButton =
+        .plusButton(.TabBar.plus)
+        .withAction(self, #selector(openMainMenu))
+    
+    private var viewModel: MainTabBarViewModelProtocol
+    
+    init(viewModel: MainTabBarViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         
@@ -19,15 +36,8 @@ final class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
     }
     
     @objc private func openMainMenu() {
-        let vc = MainMenuAssembler.make(coordinator: MainMenuCoordinator())
-        vc.modalPresentationStyle = .popover
-        vc.preferredContentSize = CGSize(width: 180.0, height: 130)
-       #warning("СПРОСИТЬ ПРО  ARROW")
-////        vc.popoverPresentationController?.arrowDirection = .down
-        vc.popoverPresentationController?.delegate = (vc as! UIPopoverPresentationControllerDelegate)
-        vc.popoverPresentationController?.sourceView = plusButton
-        vc.popoverPresentationController?.sourceRect = CGRect(x: plusButton.bounds.midX, y: plusButton.bounds.midY, width: .zero, height: .zero)
-        present(vc, animated: true)
+        
+        viewModel.addButtonTapped()
     }
     
     private func commonInit() {

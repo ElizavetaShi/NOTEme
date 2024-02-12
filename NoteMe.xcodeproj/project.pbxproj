@@ -128,6 +128,7 @@
 		846564F52B79308900021181 /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F42B79308900021181 /* MainMenuCoordinator.swift */; };
 		846564F82B793C1E00021181 /* MainMenuRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F72B793C1E00021181 /* MainMenuRows.swift */; };
 		846564FB2B79676600021181 /* MainMenuAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564FA2B79676600021181 /* MainMenuAdapter.swift */; };
+		846564FF2B7A633300021181 /* MainTabBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564FE2B7A633200021181 /* MainTabBarVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,6 +273,7 @@
 		846564F42B79308900021181 /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
 		846564F72B793C1E00021181 /* MainMenuRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuRows.swift; sourceTree = "<group>"; };
 		846564FA2B79676600021181 /* MainMenuAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuAdapter.swift; sourceTree = "<group>"; };
+		846564FE2B7A633200021181 /* MainTabBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +442,7 @@
 			children = (
 				726CEA6A2B28D0B400E734FC /* Coordinator */,
 				726CEA382B1C920C00E734FC /* MainTabBarVC.swift */,
+				846564FE2B7A633200021181 /* MainTabBarVM.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -1081,6 +1084,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72456EAE2AED60C400898215 /* UIView+Style.swift in Sources */,
+				846564FF2B7A633300021181 /* MainTabBarVM.swift in Sources */,
 				726CEA232B16547800E734FC /* OnboardFirstStepVC.swift in Sources */,
 				846564ED2B78DB8500021181 /* MenuTableViewCell.swift in Sources */,
 				72B738062B0BDAEC0039FFED /* KeyboardHelper+Register.swift in Sources */,
