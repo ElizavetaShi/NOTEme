@@ -10,6 +10,11 @@ import UIKit
 final class MainMenuCoordinator: Coordinator {
     
     private var rootVC: UIViewController?
+    private let container: Container
+    
+    init(container: Container) {
+        self.container = container
+    }
     
     override func start() -> UIViewController {
         let vc = MainMenuAssembler.make(coordinator: self)
@@ -21,7 +26,7 @@ final class MainMenuCoordinator: Coordinator {
 extension MainMenuCoordinator: MainMenuCoordinatorProtocol {
     
     func openCreateDateNotificationVC() {
-        let coordinator = DateNotificationCoordinator()
+        let coordinator = DateNotificationCoordinator(container: container)
         children.append(coordinator)
         let vc = coordinator.start()
         

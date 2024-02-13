@@ -41,7 +41,7 @@ final class MainTabBarCoordinator: Coordinator {
 
 extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
     func openMainMenu() {
-        let coordinator = MainMenuCoordinator()
+        let coordinator = MainMenuCoordinator(container: container)
         children.append(coordinator)
         let vc = coordinator.start()
         

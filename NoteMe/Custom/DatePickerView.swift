@@ -36,7 +36,8 @@ final class DatePickerView: UIView {
     private lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.backgroundColor = .appWhite
-
+        
+        #warning("CHECK")
 //        if #available(iOS 13.4, *) {
 //            datePicker.preferredDatePickerStyle = .wheels
 //        } else {

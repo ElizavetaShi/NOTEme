@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-protocol DateNoticationViewModelProtocol {
-    func createButtonDidTap(title: String?, date: Date?, comment: String?)
-    func cancelButtonDidTap()
+@objc protocol DateNotificationViewModelProtocol: AnyObject {
+    func createButtonDidTap(title: String?, date: String?, comment: String?)
+    @objc func cancelButtonDidTap()
 }
 
 final class DateNotificationVC: UIViewController, UITextFieldDelegate {
@@ -47,40 +47,27 @@ final class DateNotificationVC: UIViewController, UITextFieldDelegate {
     
     private lazy var cancelButton: UIButton =
         .cancelButton()
-        .withAction(self, #selector(cancelButtonDidTap))
-    
+        .withAction(viewModel, #selector(DateNotificationViewModelProtocol.cancelButtonDidTap))
 
     private lazy var dateTextField: LineTextField = {
        let textfield = LineTextField()
         textfield.title = "Date"
         textfield.placeholder = "Enter date"
-        textfield.input = datePicker
+        textfield.input = DatePickerView(.date)
         return textfield
     }()
-     
-    #warning("MOVE TO CUSTOM VIEW")
-//    InputView for DateTextField
+
     
-    @objc private func dateDidChanged(_ sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        let selectedDate = sender.date
-        dateFormatter.dateFormat = "dd MMM yyyy"
-        dateTextField.text = dateFormatter.string(from: selectedDate)
-    }
+//    @objc private func dateDidChanged(_ sender: UIDatePicker) {
+//        let dateFormatter = DateFormatter()
+//        let selectedDate = sender.date
+//        dateFormatter.dateFormat = "dd MMM yyyy"
+//        dateTextField.text = dateFormatter.string(from: selectedDate)
+//    }
     
-  
-    private lazy var datePicker: UIDatePicker = {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.date = Date()
-//        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.addTarget(self, action: #selector(dateDidChanged(_:)), for: .valueChanged)
-        return datePicker
-    }()
+    private var viewModel: DateNotificationViewModelProtocol
     
-    private var viewModel: DateNoticationViewModelProtocol
-    
-    init(viewModel: DateNoticationViewModelProtocol) {
+    init(viewModel: DateNotificationViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -97,7 +84,6 @@ final class DateNotificationVC: UIViewController, UITextFieldDelegate {
         setupUI()
         setupConstraints()
     }
-    
   
     private func setupUI() {
         
@@ -111,7 +97,6 @@ final class DateNotificationVC: UIViewController, UITextFieldDelegate {
         containerView.addSubview(titleTextField)
         containerView.addSubview(dateTextField)
         containerView.addSubview(commentTextView)
-        
     }
     
     private func setupConstraints() {
@@ -159,15 +144,11 @@ final class DateNotificationVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    
     @objc private func createButtonDidTap() {
-//        viewModel.createButtonDidTap(title: titleTextField.text, date: dateTextField.text, comment: commentTextView.infoText)
+        viewModel.createButtonDidTap(title: titleTextField.text, date: dateTextField.text, comment: commentTextView.infoText)
     }
 
     @objc private func cancelButtonDidTap() {
         print("\(#function)")
     }
-    
-    
 }
