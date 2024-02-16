@@ -10,7 +10,7 @@ import SnapKit
 
 
 protocol MainTabBarViewModelProtocol: AnyObject {
-    func addButtonTapped()
+    func addButtonTapped(_ button: UIButton)
 }
 
 final class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {

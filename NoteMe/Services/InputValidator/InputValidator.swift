@@ -33,4 +33,16 @@ final class InputValidator {
                                      range: NSRange(location: 0, length: string.count))
         return match != nil
     }
+    
+    func validate(title: String?) -> Bool {
+        if let title = title {
+            return title != ""
+        } else {
+            return false
+        }
+    }
+    
+    func validate(date: Date?) -> Bool {
+        return date != nil
+    }
 }

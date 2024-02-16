@@ -40,7 +40,7 @@ final class MainTabBarCoordinator: Coordinator {
 }
 
 extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
-    func openMainMenu() {
+    func openMainMenu(sourceView: UIView) {
         let coordinator = MainMenuCoordinator(container: container)
         children.append(coordinator)
         let vc = coordinator.start()
@@ -56,11 +56,11 @@ extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
         //        vc.popoverPresentationController?.arrowDirection = .down
         
         if let popoverVC = vc.popoverPresentationController {
-            let sourceView = tabBar?.view
+//            let sourceView = tabBar?.view
 #warning("CHECK")
             popoverVC.delegate = (vc as? UIPopoverPresentationControllerDelegate)
             popoverVC.sourceView = sourceView
-            popoverVC.sourceRect = CGRect(x: sourceView!.bounds.width / 2, y: sourceView!.bounds.height - 85.0, width: 0, height: 0)
+            popoverVC.sourceRect = CGRect(x: sourceView.bounds.width / 2, y: sourceView.bounds.height - 85.0, width: 0, height: 0)
             tabBar?.present(vc, animated: true)
         }
     }

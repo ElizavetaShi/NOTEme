@@ -48,6 +48,7 @@ final class MainMenuVM: MainMenuViewModelProtocol {
     }
     
     private func commonInit() {
+        bind()
         adapter.reloadData(with: rows)
     }
     

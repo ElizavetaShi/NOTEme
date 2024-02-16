@@ -13,6 +13,20 @@ final class DatePickerView: UIView {
     enum TypeMode {
         case date
         case time
+        
+        var datePickerMode: UIDatePicker.Mode {
+            switch self {
+            case .date: return .date
+            case .time: return .time
+            }
+        }
+        
+        var dateFormat: String {
+            switch self {
+            case .date: return "dd MMM yyyy"
+            case .time: return "hh:mm:ss"
+            }
+        }
     }
     
     private lazy var cancelButton: UIButton = {
@@ -36,21 +50,38 @@ final class DatePickerView: UIView {
     private lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.backgroundColor = .appWhite
+        datePicker.datePickerMode = typeMode.datePickerMode
         
-        #warning("CHECK")
-//        if #available(iOS 13.4, *) {
-//            datePicker.preferredDatePickerStyle = .wheels
-//        } else {
-//            // Fallback on earlier versions
-//        }
+                if #available(iOS 13.4, *) {
+                    datePicker.preferredDatePickerStyle = .wheels
+                } else {
+                    // Fallback on earlier versions
+                }
         datePicker.addTarget(self, action: #selector(dateDidChanged(_:)), for: .valueChanged)
         return datePicker
     }()
     
+    private lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        return dateFormatter
+    }()
     
-    init(_ datePickerMode: UIDatePicker.Mode) {
+    var typeMode: TypeMode
+#warning("CHECK")
+    var date: Date? {
+        get { datePicker.date }
+        set { convertToString(date: newValue) }
+    }
+    
+    func convertToString(date: Date?) -> String {
+        guard let date = date else { return "" }
+        dateFormatter.dateFormat = typeMode.dateFormat
+        return dateFormatter.string(from: date)
+    }
+    
+    init(typeMode: TypeMode) {
+        self.typeMode = typeMode
         super.init(frame: .zero)
-        datePicker.datePickerMode = datePickerMode
         
         commonInit()
     }

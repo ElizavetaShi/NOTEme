@@ -9,8 +9,11 @@ import UIKit
 import SnapKit
 
 @objc protocol DateNotificationViewModelProtocol: AnyObject {
-    func createButtonDidTap(title: String?, date: String?, comment: String?)
+//    func createButtonDidTap(title: String?, date: Date?, comment: String?)
     @objc func cancelButtonDidTap()
+    
+    var catchTitleError: ((String?) -> Void)? { get set }
+    var catchDateError: ((String?) -> Void)? { get set }
 }
 
 final class DateNotificationVC: UIViewController, UITextFieldDelegate {
@@ -53,7 +56,7 @@ final class DateNotificationVC: UIViewController, UITextFieldDelegate {
        let textfield = LineTextField()
         textfield.title = "Date"
         textfield.placeholder = "Enter date"
-        textfield.input = DatePickerView(.date)
+        textfield.input = DatePickerView(typeMode: .date)
         return textfield
     }()
 
@@ -70,6 +73,8 @@ final class DateNotificationVC: UIViewController, UITextFieldDelegate {
     init(viewModel: DateNotificationViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
+        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -144,8 +149,18 @@ final class DateNotificationVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    private func bind() {
+        viewModel.catchTitleError = { errorText in
+            self.titleTextField.errorText = errorText
+        }
+        
+        viewModel.catchDateError = { errorText in
+            self.dateTextField.errorText = errorText
+        }
+    }
+    
     @objc private func createButtonDidTap() {
-        viewModel.createButtonDidTap(title: titleTextField.text, date: dateTextField.text, comment: commentTextView.infoText)
+//        viewModel.createButtonDidTap(title: titleTextField.text, date: dateTextField.text, comment: commentTextView.infoText)
     }
 
     @objc private func cancelButtonDidTap() {

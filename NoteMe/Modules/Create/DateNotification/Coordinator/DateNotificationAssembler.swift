@@ -15,7 +15,8 @@ final class DateNotificationAssembler {
     static func make(coordinator: DateNotificationCoordinatorProtocol,
                      container: Container) -> UIViewController {
         let storage: DateNotificationStorage = container.resolve()
-        let vm = DateNotificationVM(coordinator: coordinator, storage: storage)
+        let inputValidator: InputValidator = container.resolve()
+        let vm = DateNotificationVM(coordinator: coordinator, storage: storage, inputValidator: inputValidator)
         return DateNotificationVC(viewModel: vm)
     }
 }
