@@ -51,12 +51,7 @@ final class DatePickerView: UIView {
         let datePicker = UIDatePicker()
         datePicker.backgroundColor = .appWhite
         datePicker.datePickerMode = typeMode.datePickerMode
-        
-                if #available(iOS 13.4, *) {
-                    datePicker.preferredDatePickerStyle = .wheels
-                } else {
-                    // Fallback on earlier versions
-                }
+        datePicker.preferredDatePickerStyle = .wheels
         datePicker.addTarget(self, action: #selector(dateDidChanged(_:)), for: .valueChanged)
         return datePicker
     }()

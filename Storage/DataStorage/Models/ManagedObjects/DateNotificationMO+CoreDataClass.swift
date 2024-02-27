@@ -11,19 +11,20 @@ import CoreData
 
 @objc(DateNotificationMO)
 public class DateNotificationMO: BaseNotificationMO {
-    func apply(dto: DateNotificationDTO) {
-        self.identifier = dto.id
-        self.date = dto.date
-        self.title = dto.title
-        self.subtitle = dto.subtitle
-        self.completedDate = dto.completedDate
-        self.targetDate = dto.targetDate
+    
+    public override func toDTO() -> (any DTODescription)? {
+        return DateNotificationDTO.fromMO(self)
+    }
+    
+    public override func apply(dto: any DTODescription) {
+        guard let dateDTO = dto as? DateNotificationDTO
+        else {
+            print("[MODTO]", "\(Self.self) apply failed: dto is type of \(type(of: dto))")
+            return
+        }
+        
+        super.apply(dto: dateDTO)
+        self.targetDate = dateDTO.targetDate
     }
 }
 
-extension DateNotificationMO: MODescription {
-    public func apply<Type>(_ dto: Type) where Type : DTODescription {
-        guard let specificDTO = dto as? DateNotificationDTO else { return }
-        self.apply(dto: specificDTO)
-    }
-}

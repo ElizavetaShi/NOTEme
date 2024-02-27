@@ -19,7 +19,7 @@ final class MainMenuCoordinator: Coordinator {
     override func start() -> UIViewController {
         let vc = MainMenuAssembler.make(coordinator: self)
         rootVC = vc
-        return vc
+        return rootVC ?? UIViewController()
     }
 }
 
@@ -32,7 +32,8 @@ extension MainMenuCoordinator: MainMenuCoordinatorProtocol {
         
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll { coordinator == $0 }
-            vc.dismiss(animated: true)
+            self?.rootVC?.dismiss(animated: true)
+            self?.finish()
         }
         
         vc.modalPresentationStyle = .fullScreen

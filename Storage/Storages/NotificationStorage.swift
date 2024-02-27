@@ -26,9 +26,9 @@ public class NotificationStorage<DTO: DTODescription> {
     }
     
     public func fetch(predicate: NSPredicate? = nil,
-                      sortDescriptors: [NSSortDescriptor] = []) -> [DTO] {
+                      sortDescriptors: [NSSortDescriptor] = []) -> [any DTODescription] {
         return fetchMO(predicate: predicate, sortDescriptors: sortDescriptors)
-            .compactMap { DTO(mo: $0) }
+            .compactMap { $0.toDTO() }
     }
     //    MARK: Create
     public func create(dto: DTO,
@@ -36,7 +36,7 @@ public class NotificationStorage<DTO: DTODescription> {
         let context = CoreDataService.shared.backgroundContext
         context.perform {
             let mo = DTO.MO(context: context)
-            mo.apply(dto)
+            mo.apply(dto: dto)
             CoreDataService.shared.saveContext(context: context, completion: completion)
         }
     }
@@ -51,7 +51,7 @@ public class NotificationStorage<DTO: DTODescription> {
                 let mo = self?.fetchMO(
                     predicate: .Notification.notification(byId: dto.id)).first
             else { return }
-            mo.apply(dto)
+            mo.apply(dto: dto)
             CoreDataService.shared.saveContext(context: context, completion: completion)
         }
     }

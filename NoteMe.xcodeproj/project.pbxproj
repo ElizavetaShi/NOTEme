@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -121,6 +121,8 @@
 		840AD9DD2B76421D00FE81FF /* DateNotificationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9DC2B76421D00FE81FF /* DateNotificationVM.swift */; };
 		840AD9E02B76602B00FE81FF /* DateNotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9DF2B76602B00FE81FF /* DateNotificationAssembler.swift */; };
 		840AD9E22B76604400FE81FF /* DateNotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9E12B76604400FE81FF /* DateNotificationCoordinator.swift */; };
+		841D8ECE2B8514CD00210EBC /* AllNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D8ECD2B8514CD00210EBC /* AllNotificationStorage.swift */; };
+		841D8ED02B851DC300210EBC /* NSSortDescriptor+Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D8ECF2B851DC300210EBC /* NSSortDescriptor+Const.swift */; };
 		846564EB2B78D6AE00021181 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564EA2B78D6AE00021181 /* MainMenuVC.swift */; };
 		846564ED2B78DB8500021181 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564EC2B78DB8500021181 /* MenuTableViewCell.swift */; };
 		846564F12B792AF100021181 /* MainMenuVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F02B792AF100021181 /* MainMenuVM.swift */; };
@@ -269,6 +271,8 @@
 		840AD9DC2B76421D00FE81FF /* DateNotificationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationVM.swift; sourceTree = "<group>"; };
 		840AD9DF2B76602B00FE81FF /* DateNotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationAssembler.swift; sourceTree = "<group>"; };
 		840AD9E12B76604400FE81FF /* DateNotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationCoordinator.swift; sourceTree = "<group>"; };
+		841D8ECD2B8514CD00210EBC /* AllNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotificationStorage.swift; sourceTree = "<group>"; };
+		841D8ECF2B851DC300210EBC /* NSSortDescriptor+Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSortDescriptor+Const.swift"; sourceTree = "<group>"; };
 		846564EA2B78D6AE00021181 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		846564EC2B78DB8500021181 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		846564F02B792AF100021181 /* MainMenuVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVM.swift; sourceTree = "<group>"; };
@@ -644,6 +648,7 @@
 				729AA05E2B70D8B600A6A96C /* LocationNotificationStorage.swift */,
 				840AD9C52B73E41500FE81FF /* NotificationStorage.swift */,
 				840AD9D42B75030B00FE81FF /* TimerNotificationStorage.swift */,
+				841D8ECD2B8514CD00210EBC /* AllNotificationStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -652,6 +657,7 @@
 			isa = PBXGroup;
 			children = (
 				727D865D2B6F9D7E0092147B /* NSPredicate+Const.swift */,
+				841D8ECF2B851DC300210EBC /* NSSortDescriptor+Const.swift */,
 			);
 			path = Consts;
 			sourceTree = "<group>";
@@ -1024,7 +1030,7 @@
 				};
 			};
 			buildConfigurationList = 728C08732AE8270F00066F58 /* Build configuration list for PBXProject "NoteMe" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1093,7 +1099,9 @@
 				840AD9C62B73E41500FE81FF /* NotificationStorage.swift in Sources */,
 				727D86512B6F90410092147B /* DateNotificationMO+CoreDataClass.swift in Sources */,
 				727D86522B6F90410092147B /* DateNotificationMO+CoreDataProperties.swift in Sources */,
+				841D8ECE2B8514CD00210EBC /* AllNotificationStorage.swift in Sources */,
 				727D864F2B6F90410092147B /* BaseNotificationMO+CoreDataClass.swift in Sources */,
+				841D8ED02B851DC300210EBC /* NSSortDescriptor+Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,7 +1249,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1278,7 +1286,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1432,7 +1440,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1463,7 +1471,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

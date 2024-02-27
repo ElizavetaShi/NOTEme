@@ -37,7 +37,7 @@ final class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
     
     @objc private func openMainMenu() {
         
-        viewModel.addButtonTapped()
+        viewModel.addButtonTapped(plusButton)
     }
     
     private func commonInit() {

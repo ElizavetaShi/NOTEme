@@ -5,10 +5,10 @@
 //  Created by admin on 12.02.24.
 //
 
-import Foundation
+import UIKit
 
 protocol MainTabBarCoordinatorProtocol: AnyObject {
-    func openMainMenu()
+    func openMainMenu(sourceView: UIView)
 }
 
 final class MainTabBarVM: MainTabBarViewModelProtocol {
@@ -19,8 +19,8 @@ final class MainTabBarVM: MainTabBarViewModelProtocol {
         self.coordinator = coordinator
     }
     
-    func addButtonTapped() {
+    func addButtonTapped(_ button: UIButton) {
         
-        coordinator?.openMainMenu()
+        coordinator?.openMainMenu(sourceView: button)
     }
 }

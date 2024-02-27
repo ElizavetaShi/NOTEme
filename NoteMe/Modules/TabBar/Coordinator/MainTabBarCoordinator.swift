@@ -11,7 +11,7 @@ final class MainTabBarCoordinator: Coordinator {
     
     private let container: Container
     
-    private var tabBar: UITabBarController?
+    private var rootVC: UIViewController?
     
     init(container: Container) {
         self.container = container
@@ -19,9 +19,10 @@ final class MainTabBarCoordinator: Coordinator {
     
     override func start() -> UIViewController {
         
-        tabBar = MainTabBarAssembler.make(coordinator: self)
-        tabBar?.viewControllers = [makeHomeModule(), makeProfileModule()]
-        return tabBar ?? UITabBarController()
+        let tabBar = MainTabBarAssembler.make(coordinator: self)
+        tabBar.viewControllers = [makeHomeModule(), makeProfileModule()]
+        rootVC = tabBar
+        return tabBar
     }
     
     private func makeHomeModule() -> UIViewController {
@@ -34,8 +35,14 @@ final class MainTabBarCoordinator: Coordinator {
     private func makeProfileModule() -> UIViewController {
         let coordinator = ProfileCoordinator(container: container)
         children.append(coordinator)
+        let vc = coordinator.start()
         
-        return coordinator.start()
+        coordinator.onDidFinish = { [weak self] coordinator in
+            self?.children.removeAll()
+            self?.rootVC?.dismiss(animated: true)
+            self?.finish()
+        }
+        return vc
     }
 }
 
@@ -48,20 +55,16 @@ extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll { coordinator == $0 }
             vc.dismiss(animated: true)
+            self?.rootVC?.dismiss(animated: true)
         }
         
         vc.modalPresentationStyle = .popover
         vc.preferredContentSize = CGSize(width: 180.0, height: 130)
-#warning("CHECK")
-        //        vc.popoverPresentationController?.arrowDirection = .down
         
         if let popoverVC = vc.popoverPresentationController {
-//            let sourceView = tabBar?.view
-#warning("CHECK")
-            popoverVC.delegate = (vc as? UIPopoverPresentationControllerDelegate)
             popoverVC.sourceView = sourceView
-            popoverVC.sourceRect = CGRect(x: sourceView.bounds.width / 2, y: sourceView.bounds.height - 85.0, width: 0, height: 0)
-            tabBar?.present(vc, animated: true)
+            popoverVC.sourceRect = CGRect(x: sourceView.bounds.width / 2, y: sourceView.bounds.height / 2, width: 0, height: 0)
+            rootVC?.present(vc, animated: true)
         }
     }
 }

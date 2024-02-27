@@ -7,9 +7,14 @@
 
 import CoreData
 
-extension NSPredicate {
+public extension NSPredicate {
     enum Notification {
-        static func notification(byId id: String) -> NSPredicate {
+        
+        public static var allNotCompleted: NSPredicate {
+            let completedDateKeyPath = #keyPath(BaseNotificationMO.completedDate)
+            return .init(format: "\(completedDateKeyPath) == NULL")
+        }
+        public static func notification(byId id: String) -> NSPredicate {
             let idKeyPath = #keyPath(BaseNotificationMO.identifier)
             return .init(format: "\(idKeyPath) CONTAINS[cd] $@", id)
         }

@@ -11,19 +11,22 @@ import CoreData
 
 @objc(TimerNotificationMO)
 public class TimerNotificationMO: BaseNotificationMO {
-    func apply(dto: TimerNotificationDTO) {
-        self.identifier = dto.id
-        self.date = dto.date
-        self.title = dto.title
-        self.subtitle = dto.subtitle
-        self.completedDate = dto.completedDate
-        self.targetDate = dto.targetDate
+    
+    public override func toDTO() -> (any DTODescription)? {
+        return TimerNotificationDTO.fromMO(self)
+    }
+    
+
+    
+    public override func apply(dto: any DTODescription) {
+        guard let timerDTO = dto as? TimerNotificationDTO
+        else {
+            print("[MODTO]", "\(Self.self) apply failed: dto is type of \(type(of: dto))")
+            return
+        }
+        
+        super.apply(dto: timerDTO)
+        self.targetDate = timerDTO.targetDate
     }
 }
 
-extension TimerNotificationMO: MODescription {
-    public func apply<Type>(_ dto: Type) where Type : DTODescription {
-        guard let specificDTO = dto as? TimerNotificationDTO else { return }
-        self.apply(dto: specificDTO)
-    }
-}

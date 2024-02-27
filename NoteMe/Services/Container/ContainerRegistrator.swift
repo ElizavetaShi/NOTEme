@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Storage
 
 final class ContainerRegistrator {
     
@@ -15,6 +16,8 @@ final class ContainerRegistrator {
         container.register({ AuthService() })
         container.register({ KeyboardHelper() })
         container.register({ InputValidator() })
+        container.register ({ DateNotificationStorage() })
+
         
         return container
     }

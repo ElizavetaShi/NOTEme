@@ -8,7 +8,9 @@
 import UIKit
 import SnapKit
 
-protocol HomeVMProtocol: AnyObject {}
+protocol HomeViewModelProtocol: AnyObject {
+    func viewDidLoad()
+}
 
 final class HomeVC: UIViewController {
     
@@ -18,10 +20,10 @@ final class HomeVC: UIViewController {
     
     private lazy var contentView: UIView = .contentView(.appGrey)
     
-    private var viewModel: HomeVMProtocol
+    private var viewModel: HomeViewModelProtocol
 
     
-    init(viewModel: HomeVMProtocol) {
+    init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupTabBarItem()
@@ -33,6 +35,7 @@ final class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        viewModel.viewDidLoad()
         
         setupUI()
         setupConstraints()

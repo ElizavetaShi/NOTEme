@@ -8,7 +8,6 @@
 import UIKit
 
 public struct DateNotificationDTO: DTODescription {
-    public typealias DTO = Self
     
     public typealias MO = DateNotificationMO
     
@@ -33,18 +32,29 @@ public struct DateNotificationDTO: DTODescription {
         self.targetDate = targetDate
     }
     
-    public init?(mo: DateNotificationMO) {
+//    public init?(mo: DateNotificationMO) {
+//        guard
+//            let id = mo.identifier,
+//            let title = mo.title,
+//            let date = mo.date,
+//            let targetDate = mo.targetDate
+//        else { return nil }
+//        self.date = date
+//        self.id = id
+//        self.title = title
+//        self.subtitle = mo.subtitle
+//        self.completedDate = mo.completedDate
+//        self.targetDate = targetDate
+//    }
+    
+    public static func fromMO(_ mo: DateNotificationMO) -> DateNotificationDTO? {
         guard
             let id = mo.identifier,
             let title = mo.title,
             let date = mo.date,
             let targetDate = mo.targetDate
         else { return nil }
-        self.date = date
-        self.id = id
-        self.title = title
-        self.subtitle = mo.subtitle
-        self.completedDate = mo.completedDate
-        self.targetDate = targetDate
+        
+        return DateNotificationDTO(date: date, id: id, title: title, subtitle: mo.subtitle, completedDate: mo.completedDate, targetDate: targetDate)
     }
 }

@@ -74,7 +74,7 @@ final class DateNotificationVC: UIViewController, UITextFieldDelegate {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         
-        bind()
+//        ?bind()
     }
     
     required init?(coder: NSCoder) {
@@ -84,10 +84,11 @@ final class DateNotificationVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Create Date Notification"
+//        title = "Create Date Notification"
         
         setupUI()
         setupConstraints()
+        bind()
     }
   
     private func setupUI() {
