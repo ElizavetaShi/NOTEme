@@ -50,6 +50,13 @@
 //Home
 "home_button" = "Домой";
 
+//MenuPopover
+"edit" = "Редактировать";
+"delete" = "Удалить";
+"calendar" = "Календарь";
+"timer" = "Таймер";
+"location" = "Локация";
+
 //Profile
 "profile_button" = "Профиль";
 //"account_title_label" = "Профиль";

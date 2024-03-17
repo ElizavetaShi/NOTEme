@@ -47,24 +47,34 @@ final class MainTabBarCoordinator: Coordinator {
 }
 
 extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
-    func openMainMenu(sourceView: UIView) {
-        let coordinator = MainMenuCoordinator(container: container)
+    func showMenu(sender: UIView, delegate: any MenuPopoverDelegate) {
+        let menu = MenuPopoverBuilder.buildAddMenu(delegate: delegate, sourceView: sender)
+        rootVC?.present(menu, animated: true)
+    }
+    
+    func openNewDateNotification() {
+       let coordinator = DateNotificationCoordinator(container: container)
         children.append(coordinator)
         let vc = coordinator.start()
         
         coordinator.onDidFinish = { [weak self] coordinator in
             self?.children.removeAll { coordinator == $0 }
             vc.dismiss(animated: true)
-            self?.rootVC?.dismiss(animated: true)
         }
         
-        vc.modalPresentationStyle = .popover
-        vc.preferredContentSize = CGSize(width: 180.0, height: 130)
-        
-        if let popoverVC = vc.popoverPresentationController {
-            popoverVC.sourceView = sourceView
-            popoverVC.sourceRect = CGRect(x: sourceView.bounds.width / 2, y: sourceView.bounds.height / 2, width: 0, height: 0)
-            rootVC?.present(vc, animated: true)
-        }
+        vc.modalPresentationStyle = .fullScreen
+        rootVC?.present(vc, animated: true)
     }
+    
+    func openNewTimerNotification() {
+        print("open new timer")
+    }
+    
+    func openNewLocationNotification() {
+        print("open new location")
+    }
+    
+    
+    
+    
 }

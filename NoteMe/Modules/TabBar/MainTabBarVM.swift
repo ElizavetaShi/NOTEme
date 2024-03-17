@@ -8,7 +8,10 @@
 import UIKit
 
 protocol MainTabBarCoordinatorProtocol: AnyObject {
-    func openMainMenu(sourceView: UIView)
+    func showMenu(sender: UIView, delegate: MenuPopoverDelegate)
+    func openNewDateNotification()
+    func openNewTimerNotification()
+    func openNewLocationNotification()
 }
 
 final class MainTabBarVM: MainTabBarViewModelProtocol {
@@ -19,8 +22,21 @@ final class MainTabBarVM: MainTabBarViewModelProtocol {
         self.coordinator = coordinator
     }
     
-    func addButtonTapped(_ button: UIButton) {
-        
-        coordinator?.openMainMenu(sourceView: button)
+    func addButtonTapped(_ sender: UIView) {
+        coordinator?.showMenu(sender: sender, delegate: self)
     }
+}
+
+
+extension MainTabBarVM: MenuPopoverDelegate {
+    func didSelect(action: MenuPopoverVC.Action) {
+        switch action {
+        case .calendar: coordinator?.openNewDateNotification()
+        case .timer: coordinator?.openNewTimerNotification()
+        case .location: coordinator?.openNewLocationNotification()
+        default: break
+        }
+    }
+    
+    
 }

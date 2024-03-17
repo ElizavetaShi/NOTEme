@@ -48,6 +48,13 @@
 //Home
 "home_button" = "Home";
 
+//MenuPopover
+"edit" = "Edit";
+"delete" = "Delete";
+"calendar" = "Calendar";
+"timer" = "Timer";
+"location" = "Location";
+
 //Profile
 "profile_button" = "Profile";
 //"account_title_label" = "Account";

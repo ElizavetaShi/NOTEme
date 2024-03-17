@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EBD7D192BA743000092D72B /* MenuPopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBD7D182BA743000092D72B /* MenuPopoverVC.swift */; };
+		6EBD7D1B2BA746560092D72B /* MenuPopoverBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBD7D1A2BA746560092D72B /* MenuPopoverBuilder.swift */; };
+		6EBD7D1D2BA748230092D72B /* MenuPopoverAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBD7D1C2BA748230092D72B /* MenuPopoverAdapter.swift */; };
+		6EBD7D202BA749820092D72B /* MenuActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBD7D1F2BA749820092D72B /* MenuActionCell.swift */; };
 		72456EAE2AED60C400898215 /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EAD2AED60C400898215 /* UIView+Style.swift */; };
 		72456EB12AF15F4700898215 /* View+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EB02AF15F4700898215 /* View+Layer.swift */; };
 		72456EB42AF1602C00898215 /* UIButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72456EB32AF1602C00898215 /* UIButton+Styles.swift */; };
@@ -123,13 +127,6 @@
 		840AD9E22B76604400FE81FF /* DateNotificationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AD9E12B76604400FE81FF /* DateNotificationCoordinator.swift */; };
 		841D8ECE2B8514CD00210EBC /* AllNotificationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D8ECD2B8514CD00210EBC /* AllNotificationStorage.swift */; };
 		841D8ED02B851DC300210EBC /* NSSortDescriptor+Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D8ECF2B851DC300210EBC /* NSSortDescriptor+Const.swift */; };
-		846564EB2B78D6AE00021181 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564EA2B78D6AE00021181 /* MainMenuVC.swift */; };
-		846564ED2B78DB8500021181 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564EC2B78DB8500021181 /* MenuTableViewCell.swift */; };
-		846564F12B792AF100021181 /* MainMenuVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F02B792AF100021181 /* MainMenuVM.swift */; };
-		846564F32B792FDF00021181 /* MainMenuAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F22B792FDF00021181 /* MainMenuAssembler.swift */; };
-		846564F52B79308900021181 /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F42B79308900021181 /* MainMenuCoordinator.swift */; };
-		846564F82B793C1E00021181 /* MainMenuRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564F72B793C1E00021181 /* MainMenuRows.swift */; };
-		846564FB2B79676600021181 /* MainMenuAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564FA2B79676600021181 /* MainMenuAdapter.swift */; };
 		846564FF2B7A633300021181 /* MainTabBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846564FE2B7A633200021181 /* MainTabBarVM.swift */; };
 		846565032B7A8DAD00021181 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846565022B7A8DAB00021181 /* DatePickerView.swift */; };
 		84FCE85E2B7B86D2006F3773 /* InputValidator+CreateDateNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCE85D2B7B86D2006F3773 /* InputValidator+CreateDateNotificationUseCase.swift */; };
@@ -161,6 +158,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6EBD7D182BA743000092D72B /* MenuPopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverVC.swift; sourceTree = "<group>"; };
+		6EBD7D1A2BA746560092D72B /* MenuPopoverBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverBuilder.swift; sourceTree = "<group>"; };
+		6EBD7D1C2BA748230092D72B /* MenuPopoverAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverAdapter.swift; sourceTree = "<group>"; };
+		6EBD7D1F2BA749820092D72B /* MenuActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActionCell.swift; sourceTree = "<group>"; };
 		72456EAD2AED60C400898215 /* UIView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Style.swift"; sourceTree = "<group>"; };
 		72456EB02AF15F4700898215 /* View+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Layer.swift"; sourceTree = "<group>"; };
 		72456EB32AF1602C00898215 /* UIButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Styles.swift"; sourceTree = "<group>"; };
@@ -273,13 +274,6 @@
 		840AD9E12B76604400FE81FF /* DateNotificationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNotificationCoordinator.swift; sourceTree = "<group>"; };
 		841D8ECD2B8514CD00210EBC /* AllNotificationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotificationStorage.swift; sourceTree = "<group>"; };
 		841D8ECF2B851DC300210EBC /* NSSortDescriptor+Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSortDescriptor+Const.swift"; sourceTree = "<group>"; };
-		846564EA2B78D6AE00021181 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
-		846564EC2B78DB8500021181 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		846564F02B792AF100021181 /* MainMenuVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVM.swift; sourceTree = "<group>"; };
-		846564F22B792FDF00021181 /* MainMenuAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuAssembler.swift; sourceTree = "<group>"; };
-		846564F42B79308900021181 /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
-		846564F72B793C1E00021181 /* MainMenuRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuRows.swift; sourceTree = "<group>"; };
-		846564FA2B79676600021181 /* MainMenuAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuAdapter.swift; sourceTree = "<group>"; };
 		846564FE2B7A633200021181 /* MainTabBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVM.swift; sourceTree = "<group>"; };
 		846565022B7A8DAB00021181 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		84FCE85D2B7B86D2006F3773 /* InputValidator+CreateDateNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputValidator+CreateDateNotificationUseCase.swift"; sourceTree = "<group>"; };
@@ -312,6 +306,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EBD7D172BA742EE0092D72B /* MenuPopover */ = {
+			isa = PBXGroup;
+			children = (
+				6EBD7D1E2BA749770092D72B /* Cell */,
+				6EBD7D182BA743000092D72B /* MenuPopoverVC.swift */,
+				6EBD7D1A2BA746560092D72B /* MenuPopoverBuilder.swift */,
+				6EBD7D1C2BA748230092D72B /* MenuPopoverAdapter.swift */,
+			);
+			path = MenuPopover;
+			sourceTree = "<group>";
+		};
+		6EBD7D1E2BA749770092D72B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6EBD7D1F2BA749820092D72B /* MenuActionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		72456EAF2AF15EC400898215 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -731,7 +744,7 @@
 			isa = PBXGroup;
 			children = (
 				840AD9D62B7523E800FE81FF /* Create */,
-				846564E92B78D48C00021181 /* MainMenu */,
+				6EBD7D172BA742EE0092D72B /* MenuPopover */,
 				726CEA372B1C91E600E734FC /* TabBar */,
 				726CEA3D2B1C92C200E734FC /* Profile */,
 				728C089C2AE83DB200066F58 /* Auth */,
@@ -895,52 +908,6 @@
 				840AD9E12B76604400FE81FF /* DateNotificationCoordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		846564E92B78D48C00021181 /* MainMenu */ = {
-			isa = PBXGroup;
-			children = (
-				846564F92B79670B00021181 /* Adapter */,
-				846564EF2B7929F600021181 /* Coordinator */,
-				846564EA2B78D6AE00021181 /* MainMenuVC.swift */,
-				846564F02B792AF100021181 /* MainMenuVM.swift */,
-			);
-			path = MainMenu;
-			sourceTree = "<group>";
-		};
-		846564EE2B7929E000021181 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				846564EC2B78DB8500021181 /* MenuTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		846564EF2B7929F600021181 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				846564F22B792FDF00021181 /* MainMenuAssembler.swift */,
-				846564F42B79308900021181 /* MainMenuCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		846564F62B793C0800021181 /* Rows */ = {
-			isa = PBXGroup;
-			children = (
-				846564F72B793C1E00021181 /* MainMenuRows.swift */,
-			);
-			path = Rows;
-			sourceTree = "<group>";
-		};
-		846564F92B79670B00021181 /* Adapter */ = {
-			isa = PBXGroup;
-			children = (
-				846564EE2B7929E000021181 /* Cells */,
-				846564F62B793C0800021181 /* Rows */,
-				846564FA2B79676600021181 /* MainMenuAdapter.swift */,
-			);
-			path = Adapter;
 			sourceTree = "<group>";
 		};
 		84FCE85C2B7B869A006F3773 /* UseCase */ = {
@@ -1112,7 +1079,7 @@
 				72456EAE2AED60C400898215 /* UIView+Style.swift in Sources */,
 				846564FF2B7A633300021181 /* MainTabBarVM.swift in Sources */,
 				726CEA232B16547800E734FC /* OnboardFirstStepVC.swift in Sources */,
-				846564ED2B78DB8500021181 /* MenuTableViewCell.swift in Sources */,
+				6EBD7D202BA749820092D72B /* MenuActionCell.swift in Sources */,
 				72B738062B0BDAEC0039FFED /* KeyboardHelper+Register.swift in Sources */,
 				728C08972AE8382C00066F58 /* UIImage+Consts.swift in Sources */,
 				72B737F32AFEA8140039FFED /* InputValidator+Login.swift in Sources */,
@@ -1125,9 +1092,7 @@
 				72ED6CDA2B2DF5580038D14C /* NSAttributedString+HTML.swift in Sources */,
 				846565032B7A8DAD00021181 /* DatePickerView.swift in Sources */,
 				728C089F2AE83DE100066F58 /* LoginVC.swift in Sources */,
-				846564FB2B79676600021181 /* MainMenuAdapter.swift in Sources */,
 				726CEA752B28D35400E734FC /* HomeCoordinator.swift in Sources */,
-				846564EB2B78D6AE00021181 /* MainMenuVC.swift in Sources */,
 				72B737E92AFE97800039FFED /* LoginVM.swift in Sources */,
 				726CEA7A2B2DCFFD00E734FC /* ProfileCoordinator.swift in Sources */,
 				726CEA732B28D31F00E734FC /* HomeAssembler.swift in Sources */,
@@ -1140,9 +1105,9 @@
 				726CEA182B14FD8700E734FC /* KeyboardHelper+Login.swift in Sources */,
 				726CEA392B1C920C00E734FC /* MainTabBarVC.swift in Sources */,
 				726CEA7E2B2DD76900E734FC /* AlertService+Reset.swift in Sources */,
-				846564F82B793C1E00021181 /* MainMenuRows.swift in Sources */,
 				72B737EB2AFE97F40039FFED /* LoginAssembler.swift in Sources */,
 				729C0ECC2AFAB88900E3D89D /* String+Localization.swift in Sources */,
+				6EBD7D192BA743000092D72B /* MenuPopoverVC.swift in Sources */,
 				840AD9E02B76602B00FE81FF /* DateNotificationAssembler.swift in Sources */,
 				72456EBF2AF6964D00898215 /* ResetVC.swift in Sources */,
 				726CEA272B16572800E734FC /* OnboardFirstStepAssembler.swift in Sources */,
@@ -1172,7 +1137,6 @@
 				726CEA252B16568600E734FC /* OnboardFirstStepVM.swift in Sources */,
 				72B737EF2AFEA1B90039FFED /* InputValidator.swift in Sources */,
 				72B7382E2B0D12AF0039FFED /* Coordinator.swift in Sources */,
-				846564F32B792FDF00021181 /* MainMenuAssembler.swift in Sources */,
 				72B737FA2B03E53A0039FFED /* KeyboardHelper.swift in Sources */,
 				72B737F52B03DB880039FFED /* RegisterPresenter.swift in Sources */,
 				72B7382B2B0D124D0039FFED /* AppCoordinator.swift in Sources */,
@@ -1187,10 +1151,10 @@
 				72456EB92AF57AC600898215 /* UILabel+Style.swift in Sources */,
 				726CEA2D2B165B1C00E734FC /* OnboardSecondStepVC.swift in Sources */,
 				726CEA592B1F975D00E734FC /* AuthService+Login.swift in Sources */,
-				846564F12B792AF100021181 /* MainMenuVM.swift in Sources */,
 				72B737FD2B0A2D280039FFED /* InputValidator+Register.swift in Sources */,
 				727D85E32B4F1EA20092147B /* HeaderView.swift in Sources */,
-				846564F52B79308900021181 /* MainMenuCoordinator.swift in Sources */,
+				6EBD7D1D2BA748230092D72B /* MenuPopoverAdapter.swift in Sources */,
+				6EBD7D1B2BA746560092D72B /* MenuPopoverBuilder.swift in Sources */,
 				72B737FF2B0A69090039FFED /* ResetVM.swift in Sources */,
 				726CEA292B1657D900E734FC /* OnboardFirstStepCoordinator.swift in Sources */,
 				726CEA6E2B28D1B300E734FC /* MainTabBarCoordinator.swift in Sources */,

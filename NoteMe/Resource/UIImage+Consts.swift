@@ -25,6 +25,14 @@ extension UIImage {
         
     }
     
+    enum MenuAction {
+        static let edit: UIImage? = .init(named: "edit")
+        static let delete: UIImage? = .init(named: "delete")
+        static let calendar: UIImage? = .init(named: "calendar")
+        static let location: UIImage? = .init(named: "location")
+        static let timer: UIImage? = .init(named: "timer")
+    }
+    
     enum Profile {
         static let profile: UIImage? = .init(named: "profile")
         static let notifications: UIImage? = .init(named: "notification")

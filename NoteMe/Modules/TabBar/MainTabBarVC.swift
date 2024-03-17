@@ -9,15 +9,15 @@ import UIKit
 import SnapKit
 
 
-protocol MainTabBarViewModelProtocol: AnyObject {
-    func addButtonTapped(_ button: UIButton)
+@objc protocol MainTabBarViewModelProtocol: AnyObject {
+    @objc func addButtonTapped(_ sender: UIView)
 }
 
 final class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
     
     private lazy var plusButton: UIButton =
         .plusButton(.TabBar.plus)
-        .withAction(self, #selector(openMainMenu))
+        .withAction(viewModel, #selector(MainTabBarViewModelProtocol.addButtonTapped))
     
     private var viewModel: MainTabBarViewModelProtocol
     
